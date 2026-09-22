@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact &amp; Store Locator | Sovereign Pyrotechnics</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<script>tailwind.config = {theme: {extend: {fontFamily: {sans: ["Outfit", "sans-serif"], serif: ["Playfair Display", "serif"], headline: ["Outfit"], display: ["Outfit"], body: ["Plus Jakarta Sans"], label: ["Outfit"]}, colors: {brand: {red: "#C2260E", redHover: "#A81E09", gold: "#D4AF37", cream: "#FFFDF9", creamSoft: "#FFF8F0", creamCard: "#FFF2E6", border: "#F0DEC8"}, "on-surface-variant": "#5b403b", "on-background": "#2b160e", "secondary-fixed-dim": "#ffb77d", "on-primary-container": "#fffcff", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-dim": "#f9d2c4", "surface-container": "#ffe9e2", surface: "#fff8f6", "primary-container": "#d9381e", "inverse-on-surface": "#ffede7", secondary: "#904d00", "primary-fixed-dim": "#ffb4a6", background: "#fff8f6", "on-error-container": "#93000a", "on-secondary-container": "#663500", "surface-bright": "#fff8f6", "on-tertiary-fixed": "#251a00", "on-secondary-fixed": "#2f1500", "on-primary-fixed": "#3f0300", "on-primary-fixed-variant": "#8f1100", "on-secondary-fixed-variant": "#6e3900", "secondary-fixed": "#ffdcc3", "primary-fixed": "#ffdad3", "tertiary-container": "#927000", "surface-container-high": "#ffe2d9", "secondary-container": "#fe932c", "surface-container-lowest": "#ffffff", outline: "#907069", "tertiary-fixed": "#ffdf98", "on-surface": "#2b160e", "surface-tint": "#b82007", "inverse-primary": "#ffb4a6", tertiary: "#745800", error: "#ba1a1a", "surface-container-highest": "#ffdbcf", "outline-variant": "#e4beb6", "on-tertiary-container": "#fffcff", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#5a4300", "inverse-surface": "#432b22", "surface-container-low": "#fff1ec", "tertiary-fixed-dim": "#eec14b", primary: "#b51d04", "surface-variant": "#ffdbcf"}, fontSize: {}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+    body {
+      background-color: #FFFDF9;
+      color: #1A1A1A;
+      font-family: 'Outfit', sans-serif;
+    }
+    .serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+</head>
+<body class="bg-[#FFFDF9] text-gray-900 min-h-screen flex flex-col antialiased selection:bg-brand-red selection:text-white">
+<!-- Top Announcement Bar -->
+<div class="bg-[#C2260E] text-white text-xs font-semibold py-2 px-4 tracking-wider uppercase flex items-center justify-between">
+<div class="flex items-center gap-2 mx-auto">
+<span class="material-symbols-outlined text-sm">local_shipping</span>
+<span>FESTIVAL DISPATCH ACTIVE • EXTENDED COUNTER HOURS: 09:00 AM – 11:00 PM IST DAILY • SIVAKASI DIRECT CLEARANCE</span>
+</div>
+</div>
+<!-- Main Navigation Header -->
+<header class="sticky top-0 z-40 bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#F0DEC8]">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3" href="#">
+<div class="w-8 h-8 bg-[#C2260E] rotate-45 flex items-center justify-center text-white text-sm font-bold shadow-sm">
+<span class="-rotate-45 font-serif font-black">S</span>
+</div>
+<div>
+<span class="text-2xl font-black tracking-widest text-[#C2260E] uppercase block leading-none font-sans">SOVEREIGN</span>
+<span class="text-[9px] uppercase tracking-[0.25em] text-gray-700 font-semibold mt-0.5 block">Ceremonial Fireworks • Sivakasi</span>
+</div>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-10 text-sm font-bold tracking-wider uppercase">
+<a class="text-gray-700 hover:text-[#C2260E] transition-colors" href="#">Home</a>
+<a class="text-gray-700 hover:text-[#C2260E] transition-colors" href="#">About Us</a>
+<a class="text-gray-700 hover:text-[#C2260E] transition-colors" href="#">Products</a>
+<a class="text-[#C2260E] border-b-2 border-[#C2260E] pb-1" href="#">Contact</a>
+</nav>
+<!-- Cart Button with Count -->
+<button class="border-2 border-[#C2260E] text-[#C2260E] bg-white hover:bg-[#FFF5F2] px-5 py-2.5 font-bold text-sm tracking-wider uppercase flex items-center gap-2.5 transition-all shadow-sm" onclick="toggleCart()">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+<span>BURST BOX</span>
+<span class="bg-[#C2260E] text-white text-xs px-2 py-0.5 font-black">3</span>
+</button>
+</div>
+</header>
+<!-- Slide-over Cart Drawer -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="cart-drawer" role="dialog">
+<div class="absolute inset-0 bg-black/30 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+<div class="w-screen max-w-md bg-[#FFFDF9] border-l border-[#F0DEC8] shadow-2xl flex flex-col justify-between">
+<div class="p-6 border-b border-[#F0DEC8] flex items-center justify-between bg-[#FFF8F0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#C2260E]">shopping_bag</span>
+<h2 class="text-lg font-bold text-gray-900 uppercase tracking-wider">YOUR BURST BOX (3)</h2>
+</div>
+<button class="text-gray-500 hover:text-gray-800 p-1" onclick="toggleCart()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto p-6 space-y-4">
+<div class="p-4 bg-white border border-[#F0DEC8] flex items-center justify-between gap-4" id="drawer-c-1">
+<div>
+<h4 class="font-bold text-sm text-gray-900">120-Shot Golden Brocade</h4>
+<p class="text-xs text-gray-600">Aerial Repeater</p>
+<p class="text-sm font-black text-[#C2260E] mt-1">₹3,450</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center border border-gray-300 bg-[#FFFDF9]">
+<button class="px-2 py-0.5 text-xs hover:bg-gray-100 font-bold">-</button>
+<span class="px-2 text-xs font-bold">1</span>
+<button class="px-2 py-0.5 text-xs hover:bg-gray-100 font-bold">+</button>
+</div>
+<button class="text-[11px] font-bold text-[#C2260E] uppercase hover:underline" onclick="document.getElementById('drawer-c-1').remove()">Remove</button>
+</div>
+</div>
+<div class="p-4 bg-white border border-[#F0DEC8] flex items-center justify-between gap-4" id="drawer-c-2">
+<div>
+<h4 class="font-bold text-sm text-gray-900">Tri-Color Deluxe Flower Pot</h4>
+<p class="text-xs text-gray-600">Pack of 10 Pcs</p>
+<p class="text-sm font-black text-[#C2260E] mt-1">₹650</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center border border-gray-300 bg-[#FFFDF9]">
+<button class="px-2 py-0.5 text-xs hover:bg-gray-100 font-bold">-</button>
+<span class="px-2 text-xs font-bold">1</span>
+<button class="px-2 py-0.5 text-xs hover:bg-gray-100 font-bold">+</button>
+</div>
+<button class="text-[11px] font-bold text-[#C2260E] uppercase hover:underline" onclick="document.getElementById('drawer-c-2').remove()">Remove</button>
+</div>
+</div>
+</div>
+<div class="p-6 bg-[#FFF8F0] border-t border-[#F0DEC8] space-y-3">
+<div class="flex justify-between items-baseline pt-2">
+<span class="text-xs uppercase font-bold text-gray-700 tracking-wider">Estimated Total</span>
+<span class="text-2xl font-black text-gray-900">₹4,580</span>
+</div>
+<a class="block w-full text-center bg-[#C2260E] hover:bg-[#A81E09] text-white py-3.5 font-bold uppercase tracking-wider text-sm transition-all shadow-md" href="#">
+            PROCEED TO CHECKOUT
+          </a>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Header -->
+<section class="bg-[#FFF5ED] border-b border-[#F0DEC8] py-14">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-3">
+<div class="inline-flex items-center gap-2 bg-[#FFE6D9] text-[#C2260E] border border-[#F5C4B1] px-3 py-1 text-xs font-bold uppercase tracking-widest">
+<span class="w-2 h-2 bg-[#C2260E]"></span>
+<span>CEREMONIAL HOTLINE &amp; DEPOTS</span>
+</div>
+<h1 class="text-4xl sm:text-5xl font-black text-gray-950 uppercase tracking-tight">
+            Direct Sovereign Concierge
+          </h1>
+<p class="text-base text-gray-700 max-w-2xl">
+            Priority channels for ceremonial pyrotechnic permits, corporate banquet allocations, bulk temple festival orders, and direct Sivakasi depot visits.
+          </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-3">
+<a class="bg-[#075E54] hover:bg-[#064e46] text-white px-6 py-3 font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2 shadow-sm transition-all" href="https://wa.me/919840012345" target="_blank">
+<span class="material-symbols-outlined text-lg">chat</span>
+<span>1-Click WhatsApp Concierge</span>
+</a>
+<a class="border-2 border-gray-900 bg-white hover:bg-gray-50 text-gray-900 px-6 py-3 font-bold text-sm tracking-wider uppercase flex items-center justify-center gap-2 transition-all" href="tel:+914562234000">
+<span class="material-symbols-outlined text-lg">call</span>
+<span>+91 4562 234000</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="py-16 bg-[#FFFDF9] border-b border-[#F0DEC8]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left: Quick Bulk & Callback Inquiry Form -->
+<div class="lg:col-span-7 bg-white border-2 border-[#F0DEC8] p-8 shadow-sm">
+<div class="flex items-center justify-between border-b border-[#F0DEC8] pb-4 mb-6">
+<div>
+<span class="text-xs font-bold text-[#C2260E] uppercase tracking-widest block">Priority Booking</span>
+<h3 class="text-2xl font-black text-gray-900 uppercase tracking-tight">Instant Callback &amp; Bulk Inquiry</h3>
+</div>
+<div class="text-right">
+<span class="text-[11px] uppercase font-bold text-gray-500 block">Response Guarantee</span>
+<span class="text-xs font-black text-[#C2260E]">Within 15 Minutes</span>
+</div>
+</div>
+<form class="space-y-5" onsubmit="event.preventDefault(); alert('Inquiry Transmitted! Our Sovereign Concierge will contact you within 15 minutes.');">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div>
+<label class="block text-xs font-bold uppercase text-gray-700 mb-1.5 tracking-wider">Your Full Name *</label>
+<input class="w-full bg-[#FFFDF9] border border-[#F0DEC8] focus:border-[#C2260E] focus:outline-none px-4 py-3 text-sm font-medium text-gray-900" placeholder="Raghavendran Varma" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-gray-700 mb-1.5 tracking-wider">Direct Phone / WhatsApp *</label>
+<input class="w-full bg-[#FFFDF9] border border-[#F0DEC8] focus:border-[#C2260E] focus:outline-none px-4 py-3 text-sm font-medium text-gray-900" placeholder="+91 98400 12345" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<div>
+<label class="block text-xs font-bold uppercase text-gray-700 mb-1.5 tracking-wider">Delivery City / Pin Code *</label>
+<input class="w-full bg-[#FFFDF9] border border-[#F0DEC8] focus:border-[#C2260E] focus:outline-none px-4 py-3 text-sm font-medium text-gray-900" placeholder="Chennai / Hyderabad / 500033" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-gray-700 mb-1.5 tracking-wider">Celebration Type</label>
+<select class="w-full bg-[#FFFDF9] border border-[#F0DEC8] focus:border-[#C2260E] focus:outline-none px-4 py-3 text-sm font-medium text-gray-900">
+<option>Royal Wedding Grand Display (Custom Mix)</option>
+<option>Family Diwali Mega Celebration</option>
+<option>Corporate Diwali Gifting Hamper</option>
+<option>Temple Festival &amp; Public Procession</option>
+<option>Wholesale Resale Consignment</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-xs font-bold uppercase text-gray-700 mb-1.5 tracking-wider">Order Requirements &amp; Special Preferences</label>
+<textarea class="w-full bg-[#FFFDF9] border border-[#F0DEC8] focus:border-[#C2260E] focus:outline-none p-4 text-sm font-medium text-gray-900" placeholder="Specify crate quantities, soundless pyro requirements, high-altitude aerials, or target delivery date..." rows="4"></textarea>
+</div>
+<div class="flex items-center gap-3 bg-[#FFF8F0] p-3 border border-[#F0DEC8]">
+<input checked="" class="w-4 h-4 accent-[#C2260E]" id="compliance-check" type="checkbox"/>
+<label class="text-xs text-gray-700 font-semibold cursor-pointer" for="compliance-check">
+                I confirm compliance with PESO Indian Pyrotechnic Transport safety protocols for ceremonial delivery.
+              </label>
+</div>
+<button class="w-full bg-[#C2260E] hover:bg-[#A81E09] text-white py-4 font-bold uppercase tracking-widest text-sm transition-all shadow-md flex items-center justify-center gap-2" type="submit">
+<span>TRANSMIT CALLBACK REQUEST</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Right: Depots & Operating Hours -->
+<div class="lg:col-span-5 space-y-6">
+<!-- Festival Operating Hours -->
+<div class="bg-white border-2 border-[#F0DEC8] p-6 shadow-sm">
+<div class="flex items-center gap-2 mb-4 text-[#C2260E]">
+<span class="material-symbols-outlined">schedule</span>
+<h4 class="text-base font-black uppercase text-gray-900 tracking-wider">Festival Operating Hours</h4>
+</div>
+<div class="space-y-3 text-sm">
+<div class="flex justify-between py-2 border-b border-[#F0DEC8]">
+<span class="text-gray-600 font-medium">Monday – Saturday</span>
+<span class="font-bold text-gray-900">09:00 AM – 11:00 PM IST</span>
+</div>
+<div class="flex justify-between py-2 border-b border-[#F0DEC8]">
+<div class="flex items-center gap-2">
+<span class="text-gray-600 font-medium">Sunday Muhurat Hours</span>
+<span class="bg-[#FFE6D9] text-[#C2260E] text-[10px] font-bold px-1.5 py-0.5">ACTIVE</span>
+</div>
+<span class="font-bold text-gray-900">09:00 AM – 11:00 PM IST</span>
+</div>
+<div class="flex justify-between py-2">
+<span class="text-gray-600 font-medium">Dispatch Counter Clearance</span>
+<span class="font-bold text-[#C2260E]">Continuous 24/7 Loading</span>
+</div>
+</div>
+</div>
+<!-- Sivakasi Depot -->
+<div class="bg-[#FFF8F0] border-2 border-[#F0DEC8] p-6 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-[#C2260E] uppercase tracking-widest">Heirloom Production HQ</span>
+<span class="text-[11px] font-bold bg-white border border-[#F0DEC8] px-2 py-0.5">DEPOT 01</span>
+</div>
+<h4 class="text-lg font-black text-gray-900 uppercase">Sivakasi Central Depot</h4>
+<p class="text-xs text-gray-700 leading-relaxed">
+              Sovereign Industrial Enclave, 42-B Sattur Road, Sivakasi, Tamil Nadu 626123
+            </p>
+<div class="pt-2 flex items-center justify-between text-xs font-bold">
+<span class="text-gray-900 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#C2260E]">call</span>
+                +91 4562 234000
+              </span>
+<span class="text-[#C2260E] uppercase tracking-wider flex items-center gap-0.5 hover:underline cursor-pointer">
+                Directions <span class="material-symbols-outlined text-sm">north_east</span>
+</span>
+</div>
+</div>
+<!-- Chennai Flagship -->
+<div class="bg-[#FFF8F0] border-2 border-[#F0DEC8] p-6 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<span class="text-xs font-bold text-[#C2260E] uppercase tracking-widest">Boutique &amp; Tasting Room</span>
+<span class="text-[11px] font-bold bg-white border border-[#F0DEC8] px-2 py-0.5">DEPOT 02</span>
+</div>
+<h4 class="text-lg font-black text-gray-900 uppercase">Chennai Flagship Gallery</h4>
+<p class="text-xs text-gray-700 leading-relaxed">
+              The Sovereign Pavilion, 18 Khader Nawaz Khan Road, Nungambakkam, Chennai 600006
+            </p>
+<div class="pt-2 flex items-center justify-between text-xs font-bold">
+<span class="text-gray-900 flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-[#C2260E]">call</span>
+                +91 44 2833 4900
+              </span>
+<span class="text-[#C2260E] uppercase tracking-wider flex items-center gap-0.5 hover:underline cursor-pointer">
+                Directions <span class="material-symbols-outlined text-sm">north_east</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Bar Highlights -->
+<section class="py-10 bg-[#FFF5ED] border-b border-[#F0DEC8]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-5 bg-white border border-[#F0DEC8] flex items-start gap-4">
+<div class="w-10 h-10 bg-[#FFF8F0] border border-[#F0DEC8] flex items-center justify-center text-[#C2260E] shrink-0">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<h5 class="text-xs font-black uppercase text-gray-900 tracking-wider">100% PESO Certified</h5>
+<p class="text-xs text-gray-600 mt-0.5">Manufactured under Chief Controller of Explosives safety norms.</p>
+</div>
+</div>
+<div class="p-5 bg-white border border-[#F0DEC8] flex items-start gap-4">
+<div class="w-10 h-10 bg-[#FFF8F0] border border-[#F0DEC8] flex items-center justify-center text-[#C2260E] shrink-0">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<h5 class="text-xs font-black uppercase text-gray-900 tracking-wider">Hazard Transport Safe</h5>
+<p class="text-xs text-gray-600 mt-0.5">Bonded climate-controlled transport trucks for festive bulk drops.</p>
+</div>
+</div>
+<div class="p-5 bg-white border border-[#F0DEC8] flex items-start gap-4">
+<div class="w-10 h-10 bg-[#FFF8F0] border border-[#F0DEC8] flex items-center justify-center text-[#C2260E] shrink-0">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div>
+<h5 class="text-xs font-black uppercase text-gray-900 tracking-wider">Institutional Invoicing</h5>
+<p class="text-xs text-gray-600 mt-0.5">GST compliant billing with corporate banquet pyrotechnic vouchers.</p>
+</div>
+</div>
+<div class="p-5 bg-white border border-[#F0DEC8] flex items-start gap-4">
+<div class="w-10 h-10 bg-[#FFF8F0] border border-[#F0DEC8] flex items-center justify-center text-[#C2260E] shrink-0">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h5 class="text-xs font-black uppercase text-gray-900 tracking-wider">Festival Rapid Line</h5>
+<p class="text-xs text-gray-600 mt-0.5">Dedicated dispatch coordinators on active standby until midnight.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Global Footer -->
+<footer class="bg-[#FFF8F0] border-t border-[#F0DEC8] pt-14 pb-8 text-gray-700">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#F0DEC8]">
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 bg-[#C2260E] rotate-45 flex items-center justify-center text-white text-xs font-bold">
+<span class="-rotate-45 font-serif font-black">S</span>
+</div>
+<span class="text-lg font-black tracking-widest text-[#C2260E] uppercase font-sans">SOVEREIGN</span>
+</div>
+<p class="text-xs text-gray-600 leading-relaxed">
+            Ceremonial Illumination &amp; Heirloom Craftsmanship. Sivakasi registered manufacturer &amp; direct festival supplier since 1984.
+          </p>
+<div class="text-[11px] font-bold text-gray-800">
+            PESO LICENSE #SV-7821-EXP
+          </div>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-gray-900 mb-4">Navigation</h4>
+<ul class="space-y-2 text-xs font-semibold">
+<li><a class="hover:text-[#C2260E] transition-colors" href="#">Home</a></li>
+<li><a class="hover:text-[#C2260E] transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-[#C2260E] transition-colors" href="#">Products Catalog</a></li>
+<li><a class="text-[#C2260E]" href="#">Contact Concierge</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-gray-900 mb-4">Compliance &amp; Safety</h4>
+<ul class="space-y-2 text-xs font-semibold">
+<li><a class="hover:text-[#C2260E] transition-colors" href="#">Safety Compliance Manual</a></li>
+<li><a class="hover:text-[#C2260E] transition-colors" href="#">Store Locator &amp; Depots</a></li>
+<li><a class="hover:text-[#C2260E] transition-colors" href="#">Festival 24/7 Hotline</a></li>
+<li><a class="hover:text-[#C2260E] transition-colors" href="#">Permits &amp; Express Delivery</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-gray-900 mb-4">Depot Inquiries</h4>
+<p class="text-xs text-gray-600 leading-relaxed mb-3">
+            Sovereign Pyrotechnic Works, 42-B Sattur Road, Sivakasi, Tamil Nadu 626123.
+          </p>
+<p class="text-xs font-bold text-gray-800">Direct Desk: +91 4562 234000</p>
+<p class="text-xs font-bold text-gray-800">WhatsApp: +91 98400 12345</p>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+<p>© 2025 Sovereign Pyrotechnics. Heirloom Craftsmanship &amp; Ceremonial Illumination. All Rights Reserved.</p>
+<div class="flex items-center gap-4 text-gray-700 font-bold">
+<span>ZERO PLASTIC PACKAGING</span>
+<span>•</span>
+<span>100% GREEN RAW MATERIAL</span>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      if (drawer.classList.contains('hidden')) {
+        drawer.classList.remove('hidden');
+      } else {
+        drawer.classList.add('hidden');
+      }
+    }
+  </script>
+</body></html>

@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Confirmation | SOVEREIGN Pyrotechnics</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Typography: Outfit & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration matching exact visual tokens -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#745800",
+            "on-primary-fixed": "#3f0300",
+            "secondary-fixed": "#ffdcc3",
+            "outline": "#907069",
+            "inverse-primary": "#ffb4a6",
+            "tertiary-container": "#927000",
+            "surface-tint": "#b82007",
+            "on-background": "#2b160e",
+            "surface-bright": "#fff8f6",
+            "primary": "#b51d04",
+            "secondary-container": "#fe932c",
+            "outline-variant": "#e4beb6",
+            "on-secondary-container": "#663500",
+            "on-primary-fixed-variant": "#8f1100",
+            "tertiary-fixed-dim": "#eec14b",
+            "surface-variant": "#ffdbcf",
+            "on-error": "#ffffff",
+            "on-surface": "#2b160e",
+            "error": "#ba1a1a",
+            "inverse-surface": "#432b22",
+            "inverse-on-surface": "#ffede7",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed": "#ffdf98",
+            "on-secondary-fixed-variant": "#6e3900",
+            "primary-container": "#d9381e",
+            "background": "#fff8f6",
+            "surface": "#fff8f6",
+            "surface-container": "#ffe9e2",
+            "on-primary-container": "#fffcff",
+            "surface-container-high": "#ffe2d9",
+            "on-surface-variant": "#5b403b",
+            "primary-fixed": "#ffdad3",
+            "on-secondary-fixed": "#2f1500",
+            "surface-dim": "#f9d2c4",
+            "on-tertiary-fixed-variant": "#5a4300",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#251a00",
+            "on-tertiary-container": "#fffcff",
+            "surface-container-highest": "#ffdbcf",
+            "surface-container-low": "#fff1ec",
+            "secondary-fixed-dim": "#ffb77d",
+            "secondary": "#904d00",
+            "on-error-container": "#93000a",
+            "primary-fixed-dim": "#ffb4a6",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1.5rem",
+            "margin": "3rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Outfit"],
+            "headline-sm": ["Outfit"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-lg": ["Outfit"],
+            "label-sm": ["Outfit"],
+            "display-hero": ["Outfit"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Outfit"],
+            "display-hero-mobile": ["Outfit"],
+            "label-md": ["Outfit"],
+            "headline-md": ["Outfit"]
+          },
+          "fontSize": {
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.14em", "fontWeight": "700" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .diamond-glyph {
+      color: #C59B27;
+      font-size: 0.75rem;
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary selection:text-surface-bright min-h-screen flex flex-col">
+<!-- TOP APP BAR (Shared Component JSON anchor) -->
+<header class="bg-inverse-surface dark:bg-inverse-surface border-b border-outline dark:border-outline-variant w-full sticky top-0 z-50">
+<div class="w-full px-6 md:px-12 max-w-7xl mx-auto flex items-center justify-between h-20">
+<!-- Brand Logo Anchor -->
+<a class="text-headline-md font-headline-md tracking-widest text-primary-container dark:text-primary-container uppercase font-semibold flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-primary-container" data-icon="sparkles">arrow_back_ios_new</span>
+        SOVEREIGN
+      </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-surface dark:text-surface uppercase tracking-widest pb-1 transition-colors duration-150 hover:text-primary-container dark:hover:text-primary-container font-label-md text-label-md" href="#">Home</a>
+<a class="text-surface dark:text-surface uppercase tracking-widest pb-1 transition-colors duration-150 hover:text-primary-container dark:hover:text-primary-container font-label-md text-label-md" href="#">About Us</a>
+<a class="border-b-2 border-primary-container text-primary-container font-semibold uppercase tracking-widest pb-1 font-label-md text-label-md" href="#">Products</a>
+<a class="text-surface dark:text-surface uppercase tracking-widest pb-1 transition-colors duration-150 hover:text-primary-container dark:hover:text-primary-container font-label-md text-label-md" href="#">Contact</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-4">
+<button class="relative p-2 text-surface hover:text-primary-container transition-colors duration-150 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container"></span>
+</button>
+<a class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-primary transition-colors duration-150 border border-primary-container" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="local_fire_department">local_fire_department</span>
+          Burst Box
+        </a>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS: Architectural Festive Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10">
+<!-- AUSPICIOUS BANNER / HEADER CONFIRMATION POD -->
+<div class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-10 mb-8 relative overflow-hidden">
+<!-- Decorative Imperial Sunburst Corner Accent -->
+<div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-surface-container opacity-50 pointer-events-none"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+<div class="flex items-start md:items-center gap-5">
+<!-- Green & Gold Auspicious Seal -->
+<div class="w-16 h-16 rounded-xl bg-surface-bright border-2 border-tertiary-fixed-dim flex items-center justify-center flex-shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded text-label-sm font-label-sm uppercase bg-surface-container text-primary font-bold border border-outline-variant">
+                Royal Order Confirmed
+              </span>
+<span class="text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+                Shubh Muhurat Sealed
+              </span>
+</div>
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface font-semibold tracking-tight">
+              Order Confirmed &amp; Sealed for Festival Dispatch
+            </h1>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">
+              Thank you, Vikramaditya Singhania. Your ceremonial consignment has entered Sivakasi's climate-controlled moisture encapsulation queue.
+            </p>
+</div>
+</div>
+<!-- Order Identity Tag -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-4 text-right flex-shrink-0 w-full md:w-auto">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-widest">Consignment Dossier</p>
+<p class="text-headline-sm font-headline-sm text-primary font-bold">#SOV-94821</p>
+<p class="text-body-sm font-body-sm text-on-surface mt-0.5">Dhanteras Eve Delivery (Priority Morning)</p>
+</div>
+</div>
+<!-- Live Logistics Progress Timeline -->
+<div class="mt-10 pt-8 border-t border-outline-variant">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="local_shipping">local_shipping</span>
+<h2 class="text-label-lg font-label-lg uppercase tracking-wider text-on-surface font-semibold">
+              Guaranteed 48-Hr Delivery via Bonded Armored Logistics
+            </h2>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-bold px-3 py-1 bg-surface-container rounded-full border border-outline-variant">
+            ACTIVE EN-ROUTE
+          </span>
+</div>
+<!-- 4 Visual Progress Milestones -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+<!-- Step 1: Payment Authorized -->
+<div class="p-4 rounded-lg bg-surface-bright border border-tertiary-fixed-dim relative">
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-label-md font-label-md">
+<span class="material-symbols-outlined text-base" data-icon="check">check</span>
+</span>
+<span class="text-label-sm font-label-sm font-bold text-tertiary uppercase">COMPLETED</span>
+</div>
+<p class="text-label-lg font-label-lg text-on-surface font-semibold">Payment Authorized</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Instant clearance via UPI gateway</p>
+</div>
+<!-- Step 2: Sealed in 5-Ply Moisture Barrier -->
+<div class="p-4 rounded-lg bg-surface-container border-2 border-primary-container relative">
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center text-label-md font-label-md">
+<span class="material-symbols-outlined text-base animate-pulse" data-icon="hourglass_top">hourglass_top</span>
+</span>
+<span class="text-label-sm font-label-sm font-bold text-primary uppercase">IN PROGRESS</span>
+</div>
+<p class="text-label-lg font-label-lg text-on-surface font-semibold">Sealed in 5-Ply Barrier</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Sivakasi ISO chamber vacuum sealing</p>
+</div>
+<!-- Step 3: Dispatched from Sivakasi Depot -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant opacity-85">
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-full bg-surface-dim text-on-surface-variant flex items-center justify-center text-label-md font-label-md">3</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">NEXT STAGE</span>
+</div>
+<p class="text-label-lg font-label-lg text-on-surface font-semibold">Dispatched from Sivakasi</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">Bonded explosive carrier handover</p>
+</div>
+<!-- Step 4: Delivered to Doorstep -->
+<div class="p-4 rounded-lg bg-surface-container-low border border-outline-variant opacity-85">
+<div class="flex items-center justify-between mb-2">
+<span class="w-8 h-8 rounded-full bg-surface-dim text-on-surface-variant flex items-center justify-center text-label-md font-label-md">4</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase">FINAL</span>
+</div>
+<p class="text-label-lg font-label-lg text-on-surface font-semibold">Delivered to Doorstep</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">OTP-verified secure physical drop</p>
+</div>
+</div>
+</div>
+</div>
+<!-- 12-COLUMN ARCHITECTURAL GRID: CONSISTENT BENTO SECTIONS -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-8">
+<!-- LEFT POD (8 Cols Desktop): Items Breakdown & Handling Protocol -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Ordered Items Manifest -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-8">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant mb-6">
+<div>
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Ordered Manifest &amp; Curation</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Class 7.2.2 certified ceremonial pyrotechnic assortment</p>
+</div>
+<span class="material-symbols-outlined text-tertiary" data-icon="inventory_2">inventory_2</span>
+</div>
+<!-- Items Table -->
+<div class="divide-y divide-outline-variant">
+<!-- Item 1 -->
+<div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant flex-shrink-0 text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="star">star</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-bold uppercase border border-outline-variant">ROYAL RESERVE</span>
+<h3 class="text-label-lg font-label-lg text-on-surface font-semibold">Maharaja Family Festive Hamper</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                    Includes 45 bespoke artisanal fireworks, golden sparklers &amp; aerial fountains.
+                  </p>
+<p class="text-label-sm font-label-sm text-tertiary mt-1">Quantity: 1 Unit · Sivakasi Sealed Batch #M-88</p>
+</div>
+</div>
+<div class="text-right sm:flex-shrink-0">
+<p class="text-headline-sm font-headline-sm text-on-surface font-semibold">₹4,999</p>
+<span class="text-label-sm font-label-sm text-on-surface-variant line-through">₹6,500</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant flex-shrink-0 text-secondary-container">
+<span class="material-symbols-outlined text-2xl text-secondary" data-icon="flare">flare</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container text-secondary font-bold uppercase border border-outline-variant">AERIAL CHRYSANTHEMUM</span>
+<h3 class="text-label-lg font-label-lg text-on-surface font-semibold">120-Shot Brocade Aerial Repeater</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                    Synchronized multi-color sky canopy, 180-ft peak burst altitude.
+                  </p>
+<p class="text-label-sm font-label-sm text-tertiary mt-1">Quantity: 1 Unit · Electronic Match Lead Fuse</p>
+</div>
+</div>
+<div class="text-right sm:flex-shrink-0">
+<p class="text-headline-sm font-headline-sm text-on-surface font-semibold">₹3,450</p>
+<span class="text-label-sm font-label-sm text-on-surface-variant line-through">₹4,200</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant flex-shrink-0 text-tertiary">
+<span class="material-symbols-outlined text-2xl" data-icon="local_florist">local_florist</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-bright text-tertiary font-bold uppercase border border-tertiary-fixed-dim">SMOKELESS GREEN</span>
+<h3 class="text-label-lg font-label-lg text-on-surface font-semibold">Tri-Color Deluxe Flower Pot</h3>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+                    Low decibel emission with cascading golden sparks and emerald flares.
+                  </p>
+<p class="text-label-sm font-label-sm text-tertiary mt-1">Quantity: 2 Units (Packs of 10) · Certified Green</p>
+</div>
+</div>
+<div class="text-right sm:flex-shrink-0">
+<p class="text-headline-sm font-headline-sm text-on-surface font-semibold">₹1,300</p>
+<span class="text-label-sm font-label-sm text-on-surface-variant line-through">₹1,800</span>
+</div>
+</div>
+</div>
+<!-- Financial Calculation Breakdown -->
+<div class="mt-6 pt-6 border-t border-outline-variant bg-surface-container-low rounded-lg p-5">
+<div class="flex justify-between items-center py-1">
+<span class="text-body-md font-body-md text-on-surface-variant">Subtotal of Pyrotechnics:</span>
+<span class="text-body-md font-body-md text-on-surface font-semibold">₹9,749</span>
+</div>
+<div class="flex justify-between items-center py-1 text-primary">
+<span class="text-body-md font-body-md flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="redeem">redeem</span>
+                Festive Grandeur Privilege Discount:
+              </span>
+<span class="text-body-md font-body-md font-semibold">-₹2,500</span>
+</div>
+<div class="flex justify-between items-center py-1 text-tertiary">
+<span class="text-body-md font-body-md flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="shield">shield</span>
+                Moisture-Proof 5-Ply Packaging &amp; Express Transit:
+              </span>
+<span class="text-label-lg font-label-lg font-bold uppercase">FREE</span>
+</div>
+<div class="flex justify-between items-center py-3 mt-3 border-t border-outline-variant">
+<div>
+<p class="text-headline-sm font-headline-sm text-on-surface font-semibold">Total Paid via UPI</p>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Inclusive of all Central &amp; State Pyrotechnic Cess</p>
+</div>
+<div class="text-right">
+<span class="text-display-hero-mobile md:text-headline-lg font-headline-lg text-primary font-bold">₹7,249</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Safety & Handling Advisory Box -->
+<div class="bg-surface-bright border border-tertiary-fixed-dim rounded-xl p-6 relative">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="health_and_safety">health_and_safety</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">
+              Festival Storage &amp; Safe Lighting Protocol
+            </h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="thermostat">thermostat</span>
+<p class="text-label-lg font-label-lg font-semibold uppercase">Keep Dry &amp; Cool</p>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Retain original sealed foil pouches. Store below 32°C away from incense or kitchen hearths.
+              </p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="social_distance">social_distance</span>
+<p class="text-label-lg font-label-lg font-semibold uppercase">15m Clear Radius</p>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Ensure outdoor ignition with minimum 15-meter clearance from trees, wires, and vehicles.
+              </p>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant">
+<div class="flex items-center gap-2 mb-2 text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="supervised_user_circle">supervised_user_circle</span>
+<p class="text-label-lg font-label-lg font-semibold uppercase">Adult Supervision</p>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Mandatory adult operation. Keep two buckets of clean sand and water near the launch plate.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT POD (4 Cols Desktop): Customer, Delivery Details & Actions -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Recipient & Delivery Details Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h3 class="text-label-lg font-label-lg uppercase tracking-wider text-on-surface font-semibold mb-4 flex items-center justify-between pb-2 border-b border-outline-variant">
+<span>Customer &amp; Address</span>
+<span class="material-symbols-outlined text-primary text-xl" data-icon="person_pin_circle">person_pin_circle</span>
+</h3>
+<div class="space-y-4">
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase">Recipient Name</p>
+<p class="text-body-lg font-body-lg text-on-surface font-semibold mt-0.5">Vikramaditya Singhania</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase">Delivery Residence</p>
+<p class="text-body-md font-body-md text-on-surface mt-0.5">
+                Singhania Palace, Road No. 12<br/>
+                Jubilee Hills, Hyderabad, Telangana<br/>
+                PIN: 500033
+              </p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase">Registered Mobile / WhatsApp</p>
+<p class="text-body-md font-body-md text-on-surface font-semibold mt-0.5 flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-base" data-icon="call">call</span>
+                +91 98201 44520
+              </p>
+</div>
+<div class="pt-3 border-t border-outline-variant">
+<p class="text-label-sm font-label-sm text-on-surface-variant uppercase">Priority Slot Assigned</p>
+<div class="mt-1 flex items-center gap-2 text-primary font-semibold text-body-md font-body-md">
+<span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span>
+                Dhanteras Morning (07:00 - 11:30 AM)
+              </div>
+</div>
+</div>
+</div>
+<!-- Payment Authentication Details Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6">
+<h3 class="text-label-lg font-label-lg uppercase tracking-wider text-on-surface font-semibold mb-4 flex items-center justify-between pb-2 border-b border-outline-variant">
+<span>Payment Summary</span>
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Method:</span>
+<span class="text-label-md font-label-md text-on-surface font-bold">UPI / Instant Auto-Settlement</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-sm font-body-sm text-on-surface-variant">UPI Ref ID:</span>
+<span class="text-body-sm font-body-sm text-on-surface font-mono">UPI-94821990142-OKAXIS</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-sm font-body-sm text-on-surface-variant">Status:</span>
+<span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-bright text-tertiary font-bold border border-tertiary-fixed-dim uppercase">PAID &amp; SETTLED</span>
+</div>
+</div>
+</div>
+<!-- High-Impact Action CTAs -->
+<div class="flex flex-col gap-3">
+<!-- Primary CTA: Track on WhatsApp -->
+<button class="w-full bg-primary-container text-on-primary-container rounded-lg py-3.5 px-4 font-label-lg text-label-lg uppercase font-semibold flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-150 border border-primary-container shadow-none" onclick="simulateWhatsAppTrack()">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+            Track Live Freight on WhatsApp
+          </button>
+<!-- Secondary CTA: Download Invoice -->
+<button class="w-full bg-surface-container-lowest text-on-surface border border-tertiary-fixed-dim rounded-lg py-3.5 px-4 font-label-lg text-label-lg uppercase font-semibold flex items-center justify-center gap-2 hover:bg-surface-container transition-colors duration-150" onclick="simulateInvoiceDownload()">
+<span class="material-symbols-outlined text-lg text-tertiary" data-icon="description">description</span>
+            Download Tax Invoice (PDF)
+          </button>
+<!-- Tertiary CTA: Return Home -->
+<a class="w-full text-center py-2 text-primary font-label-md text-label-md uppercase tracking-wider font-semibold underline underline-offset-4 hover:text-on-primary-fixed-variant transition-colors duration-150" href="#">
+            Continue Shopping / Return Home
+          </a>
+</div>
+<!-- Trust Badges Pod -->
+<div class="bg-surface-bright border border-outline-variant rounded-xl p-5 space-y-3.5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="military_tech">military_tech</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-semibold">100% PESO Certified</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Central Petroleum &amp; Explosives Safety Compliant</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="water_drop">water_drop</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-semibold">Zero Damp Moisture Guarantee</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Full replacement if damaged by humidity</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="support_agent">support_agent</span>
+<div>
+<p class="text-label-md font-label-md text-on-surface font-semibold">24/7 Sivakasi Dispatch Helpline</p>
+<p class="text-body-sm font-body-sm text-on-surface-variant">+91 4562 234000 (Direct Priority Line)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- MODAL: POLICY & INFORMATION SCRIM (Initially Hidden) -->
+<div class="fixed inset-0 z-50 hidden bg-surface-bright/90 backdrop-blur-md flex items-center justify-center p-4" id="policyModal">
+<div class="bg-surface-container-lowest border-2 border-tertiary-fixed-dim rounded-xl max-w-lg w-full p-6 relative">
+<button class="absolute top-4 right-4 p-1 rounded-lg text-on-surface-variant hover:text-primary" onclick="closeModal()">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="policy">policy</span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-bold" id="modalTitle">Policy Overview</h3>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed" id="modalContent">
+        Content details will appear here dynamically.
+      </p>
+<div class="mt-6 pt-4 border-t border-outline-variant flex justify-end">
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-md text-label-md uppercase font-semibold hover:bg-primary transition-colors duration-150" onclick="closeModal()">
+          Understood &amp; Acknowledged
+        </button>
+</div>
+</div>
+</div>
+<!-- NOTIFICATION TOAST FOR INTERACTIONS -->
+<div class="fixed bottom-6 right-6 z-50 hidden bg-surface-container-lowest border-2 border-primary-container text-on-surface px-5 py-3 rounded-lg flex items-center gap-3 transition-all duration-300" id="toastNotification">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="text-label-md font-label-md font-semibold" id="toastMessage">Action completed successfully.</span>
+</div>
+<!-- FOOTER (Shared Component JSON anchor) -->
+<footer class="bg-inverse-surface dark:bg-inverse-surface border-t border-outline dark:border-outline-variant mt-12 w-full">
+<div class="w-full py-16 px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
+<!-- Top Section of Footer -->
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-outline">
+<div>
+<span class="text-headline-md font-headline-md text-primary-container dark:text-primary-container uppercase tracking-widest font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="sparkles">arrow_back_ios_new</span>
+            SOVEREIGN PYROTECHNICS
+          </span>
+<p class="text-body-sm font-body-sm text-surface-container-highest mt-1">
+            Purveyors of Ceremonial Radiance and Master Pyrotechnic Craftsmanship since 1974.
+          </p>
+</div>
+<div class="flex items-center gap-4 text-surface-container-highest">
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-primary-container">Government Approved Class 7.2</span>
+<span>◆</span>
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-primary-container">PESO Reg: #SIV-8491-DEL</span>
+</div>
+</div>
+<!-- Links Cluster with Modal Action triggers -->
+<div class="flex flex-wrap items-center justify-between gap-6">
+<div class="flex flex-wrap items-center gap-8">
+<button class="text-surface-container-highest dark:text-surface-container-highest uppercase transition-colors duration-150 hover:text-primary-container dark:hover:text-primary-container font-label-sm text-label-sm" onclick="openModal('Safety Compliance', 'SOVEREIGN pyrotechnics are certified by the Petroleum and Explosives Safety Organization (PESO). All formulations utilize CSIR-NEERI approved formulations with zero barium nitrate and banned chlorates.')">
+            Safety Compliance
+          </button>
+<button class="text-surface-container-highest dark:text-surface-container-highest uppercase transition-colors duration-150 hover:text-primary-container dark:hover:text-primary-container font-label-sm text-label-sm" onclick="openModal('Store Locator', 'Visit our flagship ceremonial experience centers in Sivakasi, Hyderabad (Jubilee Hills), Bengaluru (Indiranagar), and New Delhi (Connaught Place). Curated previews by festival appointment.')">
+            Store Locator
+          </button>
+<button class="text-surface-container-highest dark:text-surface-container-highest uppercase transition-colors duration-150 hover:text-primary-container dark:hover:text-primary-container font-label-sm text-label-sm" onclick="openModal('Festival Hotline', 'Our Sivakasi logistics headquarters runs round-the-clock festival shifts. Direct access lines: +91 4562 234000 or priority concierge at dispatch@sovereignpyro.in.')">
+            Festival Hotline
+          </button>
+<button class="text-surface-container-highest dark:text-surface-container-highest uppercase transition-colors duration-150 hover:text-primary-container dark:hover:text-primary-container font-label-sm text-label-sm" onclick="openModal('Permits &amp; Delivery', 'All festive dispatches travel via specialized explosive-licensed bonded freight vans under Section 6 of the Indian Explosives Act. Safe handover is guaranteed within 48-hours.')">
+            Permits &amp; Delivery
+          </button>
+<button class="text-surface-container-highest dark:text-surface-container-highest uppercase transition-colors duration-150 hover:text-primary-container dark:hover:text-primary-container font-label-sm text-label-sm" onclick="openModal('Terms of Grandeur', 'Sales of sovereign fireworks are strictly restricted to patrons aged 18 and above. Our Zero Damp Moisture Guarantee covers 100% replacement within 24 hours of festival deployment.')">
+            Terms of Grandeur
+          </button>
+</div>
+<p class="text-body-sm font-body-sm text-surface-container-highest">
+          © 2024 SOVEREIGN PYROTECHNICS. HEIRLOOM CRAFTSMANSHIP &amp; CEREMONIAL ILLUMINATION. ALL RIGHTS RESERVED.
+        </p>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripting -->
+<script>
+    // Modal interactions
+    function openModal(title, text) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalContent').innerText = text;
+      document.getElementById('policyModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('policyModal').classList.add('hidden');
+    }
+
+    // Toast feedback simulation
+    function showToast(msg) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').innerText = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4000);
+    }
+
+    function simulateWhatsAppTrack() {
+      showToast("Live bonded freight coordinates sent to +91 9820144520 via WhatsApp.");
+    }
+
+    function simulateInvoiceDownload() {
+      showToast("Downloading GST Tax Invoice for Consignment #SOV-94821 (PDF)...");
+    }
+
+    // Close modal on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body></html>

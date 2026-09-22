@@ -1,0 +1,452 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Sovereign Pyrotechnics — Express Checkout &amp; Burst Box</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-warm": "#FFFDF8", "surface-pastel": "#FFF8EB", "surface-card": "#FFFFFF", "border-gold": "#E2D3BE", "border-gold-dark": "#C8B59B", "festive-red": "#B51D04", "festive-crimson": "#901400", "festive-gold": "#D99B00", "festive-amber": "#927000", "text-main": "#1C1917", "text-muted": "#60584F", "badge-bg": "#FEF3C7", "on-surface-variant": "#5b403b", "on-background": "#2b160e", "secondary-fixed-dim": "#ffb77d", "on-primary-container": "#fffcff", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-dim": "#f9d2c4", "surface-container": "#ffe9e2", surface: "#fff8f6", "primary-container": "#d9381e", "inverse-on-surface": "#ffede7", secondary: "#904d00", "primary-fixed-dim": "#ffb4a6", background: "#fff8f6", "on-error-container": "#93000a", "on-secondary-container": "#663500", "surface-bright": "#fff8f6", "on-tertiary-fixed": "#251a00", "on-secondary-fixed": "#2f1500", "on-primary-fixed": "#3f0300", "on-primary-fixed-variant": "#8f1100", "on-secondary-fixed-variant": "#6e3900", "secondary-fixed": "#ffdcc3", "primary-fixed": "#ffdad3", "tertiary-container": "#927000", "surface-container-high": "#ffe2d9", "secondary-container": "#fe932c", "surface-container-lowest": "#ffffff", outline: "#907069", "tertiary-fixed": "#ffdf98", "on-surface": "#2b160e", "surface-tint": "#b82007", "inverse-primary": "#ffb4a6", tertiary: "#745800", error: "#ba1a1a", "surface-container-highest": "#ffdbcf", "outline-variant": "#e4beb6", "on-tertiary-container": "#fffcff", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#5a4300", "inverse-surface": "#432b22", "surface-container-low": "#fff1ec", "tertiary-fixed-dim": "#eec14b", primary: "#b51d04", "surface-variant": "#ffdbcf"}, fontFamily: {sans: ["Plus Jakarta Sans", "sans-serif"], display: ["Outfit"], headline: ["Outfit"], body: ["Plus Jakarta Sans"], label: ["Outfit"]}, fontSize: {}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+    * {
+      border-radius: 0 !important;
+    }
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    .soft-shadow {
+      box-shadow: 2px 2px 0px rgba(181, 29, 4, 0.15);
+    }
+    .gold-shadow {
+      box-shadow: 3px 3px 0px #E2D3BE;
+    }
+    .red-shadow {
+      box-shadow: 3px 3px 0px #B51D04;
+    }
+  </style>
+</head>
+<body class="bg-[#FFFDF8] text-text-main antialiased font-sans min-h-screen flex flex-col selection:bg-festive-red selection:text-white">
+<!-- ==================== TOP NAVIGATION BAR (BRIGHT FESTIVE PASTEL) ==================== -->
+<header class="w-full bg-[#FFFDF8] border-b border-border-gold sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
+<!-- Brand Logo -->
+<a class="font-display text-2xl tracking-widest text-festive-red uppercase font-bold flex items-center gap-2.5" href="#">
+<span class="w-3 h-3 bg-festive-red rotate-45 inline-block"></span>
+      SOVEREIGN
+    </a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center space-x-9">
+<a class="font-display text-sm text-text-main font-semibold uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="#">Home</a>
+<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="#">About Us</a>
+<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="#">Products</a>
+<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="#">Contact</a>
+</nav>
+<!-- Cart Access / Burst Box Action -->
+<div class="flex items-center space-x-4">
+<button class="flex items-center gap-3 bg-surface-pastel px-5 py-2.5 text-festive-red font-display text-xs font-bold tracking-widest uppercase transition-all duration-150 border-2 border-festive-red hover:bg-festive-red hover:text-white gold-shadow">
+<span class="material-symbols-outlined text-lg" data-icon="shopping_bag">shopping_bag</span>
+<span class="">Burst Box</span>
+<span class="bg-festive-red text-white text-[11px] font-bold px-2 py-0.5" id="cart-badge-count">0</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ==================== CEREMONIAL STATUS BANNER (LIGHT FESTIVE PASTEL MARIGOLD) ==================== -->
+<section class="bg-[#FFF8EB] text-festive-red py-2.5 px-6 border-b border-border-gold">
+<div class="max-w-7xl mx-auto flex items-center justify-between font-display text-xs tracking-widest uppercase font-semibold">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-festive-red inline-block"></span>
+<span class="">Pre-Diwali Priority Dispatch Active — Guaranteed Secure Freight</span>
+</div>
+<div class="hidden sm:flex items-center gap-4 text-festive-amber font-semibold">
+<span class="">PESO Certified Protocol</span>
+<span class="text-festive-red">✦</span>
+<span class="">Direct Factory Warehouse Dispatch</span>
+</div>
+</div>
+</section>
+<!-- ==================== MAIN CONTENT / BILLING CANVAS ==================== -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-6 md:px-12 py-10">
+<!-- Page Title Anchor -->
+<div class="mb-10 pb-5 border-b border-border-gold flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 mb-1.5">
+<span class="font-display text-xs text-festive-red tracking-widest uppercase font-bold">Heirloom Illuminations</span>
+<span class="text-border-gold-dark font-medium">/</span>
+<span class="font-display text-xs text-text-muted tracking-wider uppercase font-semibold">Instant Checkout</span>
+</div>
+<h1 class="font-display text-3xl md:text-4xl text-text-main font-bold tracking-tight">Express Billing &amp; Dispatch</h1>
+</div>
+<div class="flex items-center gap-3 text-text-muted font-display text-xs">
+<span class="flex items-center gap-1.5 text-festive-amber font-bold">
+<span class="material-symbols-outlined text-base" data-icon="lock">lock</span> 256-Bit Encrypted
+      </span>
+<span class="text-border-gold-dark">|</span>
+<span class="">Order Token: <strong class="text-text-main font-bold">#SOV-94821</strong></span>
+</div>
+</div>
+<!-- Dual Column Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+<!-- ==================== LEFT COLUMN: ADDRESS & PAYMENT (7 COLS) ==================== -->
+<div class="lg:col-span-7 space-y-8">
+<!-- 1. Express Delivery Address Block -->
+<section class="bg-[#FFFDF8] border-2 border-border-gold p-6 md:p-8 gold-shadow">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-border-gold">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 bg-[#FFF8EB] border border-border-gold-dark text-festive-red flex items-center justify-center font-display text-xs font-bold">1</span>
+<h2 class="font-display text-lg uppercase tracking-wider font-bold text-text-main">Express Delivery Address</h2>
+</div>
+<span class="font-display text-xs text-festive-red uppercase font-bold tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="bolt">bolt</span> Instant Dispatch
+          </span>
+</div>
+<form class="space-y-5" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Full Name -->
+<div>
+<label class="block font-display text-xs tracking-wider uppercase mb-1.5 text-text-muted font-bold">Full Name *</label>
+<input class="w-full h-12 bg-white border border-border-gold px-4 text-sm font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none transition-colors" placeholder="Legal full name" type="text" value="Vikramaditya Singhania">
+</div>
+<!-- Phone / WhatsApp -->
+<div>
+<label class="block font-display text-xs tracking-wider uppercase mb-1.5 text-text-muted font-bold">Phone / WhatsApp *</label>
+<div class="relative">
+<span class="absolute left-3.5 top-3.5 font-display text-xs font-bold text-festive-red">+91</span>
+<input class="w-full h-12 bg-white border border-border-gold pl-12 pr-4 text-sm font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none transition-colors" placeholder="Mobile Number" type="tel" value="98201 44520">
+</div>
+</div>
+</div>
+<!-- Festival Delivery Address -->
+<div>
+<label class="block font-display text-xs tracking-wider uppercase mb-1.5 text-text-muted font-bold">Festival Delivery Address *</label>
+<textarea class="w-full bg-white border border-border-gold p-4 text-sm font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none transition-colors resize-none" placeholder="Bungalow / Estate No, Landmark, Sector" rows="2">Singhania Palace, Road No. 12, Jubilee Hills</textarea>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<!-- Pincode -->
+<div>
+<label class="block font-display text-xs tracking-wider uppercase mb-1.5 text-text-muted font-bold">Postal Pincode *</label>
+<div class="relative">
+<input class="w-full h-12 bg-white border border-border-gold px-4 text-sm font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none transition-colors" placeholder="6-Digit Code" type="text" value="500033">
+<span class="absolute right-3.5 top-3.5 text-xs font-display text-festive-red uppercase font-bold">Hyderabad</span>
+</div>
+</div>
+<!-- Pre-Diwali Preferred Delivery Slot -->
+<div>
+<label class="block font-display text-xs tracking-wider uppercase mb-1.5 text-text-muted font-bold">Pre-Diwali Slot *</label>
+<select class="w-full h-12 bg-white border border-border-gold px-4 text-sm font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none transition-colors">
+<option selected="">Dhanteras Eve (Priority Morning Slot)</option>
+<option>Choti Diwali (Guaranteed Before 2 PM)</option>
+<option>Diwali Special (Instant Red-Line Transit)</option>
+<option>Custom Muhurat Dispatch</option>
+</select>
+</div>
+</div>
+</form>
+</section>
+<!-- 2. Payment Options Block -->
+<section class="bg-[#FFFDF8] border-2 border-border-gold p-6 md:p-8 gold-shadow">
+<div class="flex items-center justify-between pb-4 mb-6 border-b border-border-gold">
+<div class="flex items-center gap-3">
+<span class="w-7 h-7 bg-[#FFF8EB] border border-border-gold-dark text-festive-red flex items-center justify-center font-display text-xs font-bold">2</span>
+<h2 class="font-display text-lg uppercase tracking-wider font-bold text-text-main">Payment Options</h2>
+</div>
+<span class="font-display text-xs text-festive-amber tracking-widest uppercase font-bold">Instant Clearance</span>
+</div>
+<div class="space-y-4"><!-- Option 1: UPI -->
+<div id="pay-opt-upi" onclick="selectPaymentMethod('upi')" class="cursor-pointer border-2 border-festive-red bg-[#FFF8EB] p-5 transition-all">
+  <div class="flex items-start gap-4">
+    <input type="radio" name="payment_method" id="radio-upi" checked="" class="mt-1 w-4 h-4 text-festive-red border-border-gold-dark focus:ring-0 cursor-pointer">
+    <div class="flex-grow">
+      <div class="flex items-center justify-between">
+        <span class="font-display text-base font-bold text-text-main">UPI / GooglePay / PhonePe</span>
+        <span class="bg-festive-red text-white font-display text-[10px] font-bold uppercase px-2 py-0.5 tracking-wider">Fastest Clearance</span>
+      </div>
+      <p class="font-sans text-xs text-text-muted mt-1 font-medium">Instant QR scan or direct VPA handle dispatch without gateway delay.</p>
+      <!-- Inset VPA quick enter -->
+      <div id="details-upi" class="mt-4 flex gap-3">
+        <input id="upi-input" class="h-10 bg-white border border-border-gold px-3 text-xs font-sans text-text-main font-semibold flex-grow focus:border-festive-red focus:ring-0 focus:outline-none" placeholder="Enter UPI ID (e.g. name@okhdfcbank)" type="text" onclick="event.stopPropagation()">
+        <button class="bg-festive-red text-white px-5 font-display text-xs uppercase font-bold tracking-widest hover:bg-festive-crimson transition-colors" onclick="event.stopPropagation(); alert('UPI ID verified successfully!')">Verify</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Option 2: Net Banking -->
+<div id="pay-opt-netbanking" onclick="selectPaymentMethod('netbanking')" class="cursor-pointer border border-border-gold bg-white p-5 transition-all hover:border-festive-red">
+  <div class="flex items-start gap-4">
+    <input type="radio" name="payment_method" id="radio-netbanking" class="mt-1 w-4 h-4 text-festive-red border-border-gold-dark focus:ring-0 cursor-pointer">
+    <div class="flex-grow">
+      <div class="flex items-center justify-between">
+        <span class="font-display text-base font-bold text-text-main">Net Banking</span>
+        <div class="flex gap-2">
+          <span class="font-display text-[11px] font-bold border border-border-gold bg-[#FFFDF8] px-2 py-0.5 text-text-main">HDFC</span>
+          <span class="font-display text-[11px] font-bold border border-border-gold bg-[#FFFDF8] px-2 py-0.5 text-text-main">ICICI</span>
+          <span class="font-display text-[11px] font-bold border border-border-gold bg-[#FFFDF8] px-2 py-0.5 text-text-main">SBI</span>
+        </div>
+      </div>
+      <p class="font-sans text-xs text-text-muted mt-1 font-medium">Direct corporate &amp; premier bank portal settlement.</p>
+      <div id="details-netbanking" class="hidden mt-4 pt-3 border-t border-border-gold">
+        <label class="block font-display text-[11px] font-bold uppercase text-text-muted mb-1.5">Select Banking Partner</label>
+        <select class="w-full h-10 bg-white border border-border-gold px-3 text-xs font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none" onclick="event.stopPropagation()">
+          <option>HDFC Bank — Corporate Priority</option>
+          <option>ICICI Bank Sovereign Portal</option>
+          <option>State Bank of India — ePay</option>
+          <option>Axis Bank Commercial</option>
+          <option>Kotak Mahindra Privileged Banking</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Option 3: Credit / Debit Card -->
+<div id="pay-opt-card" onclick="selectPaymentMethod('card')" class="cursor-pointer border border-border-gold bg-white p-5 transition-all hover:border-festive-red">
+  <div class="flex items-start gap-4">
+    <input type="radio" name="payment_method" id="radio-card" class="mt-1 w-4 h-4 text-festive-red border-border-gold-dark focus:ring-0 cursor-pointer">
+    <div class="flex-grow">
+      <div class="flex items-center justify-between">
+        <span class="font-display text-base font-bold text-text-main">Credit / Debit Card</span>
+        <span class="font-display text-xs text-text-muted font-semibold tracking-wider">VISA / Mastercard / RuPay / Amex</span>
+      </div>
+      <p class="font-sans text-xs text-text-muted mt-1 font-medium">Domestic &amp; sovereign international card access.</p>
+      <div id="details-card" class="hidden mt-4 pt-3 border-t border-border-gold space-y-3" onclick="event.stopPropagation()">
+        <div>
+          <label class="block font-display text-[11px] font-bold uppercase text-text-muted mb-1">Card Number</label>
+          <input class="w-full h-10 bg-white border border-border-gold px-3 text-xs font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none" placeholder="4532 •••• •••• 8821" type="text">
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-display text-[11px] font-bold uppercase text-text-muted mb-1">Expiry (MM/YY)</label>
+            <input class="w-full h-10 bg-white border border-border-gold px-3 text-xs font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none" placeholder="11/27" type="text">
+          </div>
+          <div>
+            <label class="block font-display text-[11px] font-bold uppercase text-text-muted mb-1">CVV / CVC</label>
+            <input class="w-full h-10 bg-white border border-border-gold px-3 text-xs font-sans text-text-main font-semibold focus:border-festive-red focus:ring-0 focus:outline-none" placeholder="•••" type="password" maxlength="4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Option 4: Cash on Delivery (Deposit Token) -->
+<div id="pay-opt-cod" onclick="selectPaymentMethod('cod')" class="cursor-pointer border border-border-gold bg-white p-5 transition-all hover:border-festive-red">
+  <div class="flex items-start gap-4">
+    <input type="radio" name="payment_method" id="radio-cod" class="mt-1 w-4 h-4 text-festive-red border-border-gold-dark focus:ring-0 cursor-pointer">
+    <div class="flex-grow">
+      <div class="flex items-center justify-between">
+        <span class="font-display text-base font-bold text-text-main">Cash on Delivery</span>
+        <span class="border border-festive-red font-display text-[11px] text-festive-red font-bold px-2 py-0.5 bg-[#FFF8EB]">₹500 Deposit Token</span>
+      </div>
+      <p class="font-sans text-xs text-text-muted mt-1 font-medium">Pay nominal reservation token online to lock freight; balance in cash upon ceremonial arrival.</p>
+      <div id="details-cod" class="hidden mt-4 pt-3 border-t border-border-gold">
+        <div class="bg-[#FFF8EB] border border-border-gold p-3 flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-festive-amber text-base" data-icon="info">info</span>
+          <p class="font-sans text-[11px] text-text-muted font-medium leading-relaxed">
+            An initial security token of <strong class="text-festive-red font-bold">₹500</strong> will be verified via UPI/Card to reserve high-security freight slots. Balance <strong class="text-text-main font-bold">₹6,749</strong> payable upon door delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></div>
+</section>
+</div>
+<!-- ==================== RIGHT COLUMN: BURST BOX ORDER SUMMARY (5 COLS) ==================== -->
+<div class="lg:col-span-5 space-y-6">
+<div class="bg-[#FFFDF8] border-2 border-border-gold p-6 md:p-8 relative gold-shadow">
+<!-- Top Festive Accent Strip -->
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-festive-red"></div>
+<!-- Summary Header -->
+<div class="flex items-center justify-between pb-4 border-b border-border-gold">
+<div>
+<h2 class="font-display text-xl uppercase tracking-wider font-bold text-text-main">Burst Box Summary</h2>
+<p class="font-sans text-xs text-text-muted mt-0.5">Instant Item &amp; Quantity Management</p>
+</div>
+<span class="bg-[#FFF8EB] border border-festive-red text-festive-red font-display text-xs px-2.5 py-1 tracking-wider font-bold" id="crate-counter">3 CRATES</span>
+</div>
+<!-- Product Line Items dynamically populated -->
+<div class="divide-y divide-border-gold my-2" id="checkout-cart-item-list">
+</div>
+<!-- Financial Breakdown -->
+<div class="border-t border-b border-border-gold py-4 space-y-2.5 font-sans text-xs">
+<div class="flex justify-between text-text-muted font-medium">
+<span class="">Gross Artifact Value</span>
+<span class="font-display text-sm font-bold text-text-main" id="checkout-subtotal">₹0</span>
+</div>
+<div class="flex justify-between text-festive-red font-bold">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base" data-icon="local_activity">local_activity</span> Festive Discount Applied
+            </span>
+<span class="font-display text-sm font-bold" id="checkout-discount">-₹0</span>
+</div>
+<div class="flex justify-between text-text-main font-medium">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-festive-amber" data-icon="shield">shield</span> Moisture-Proof Protective 5-Ply Packaging
+            </span>
+<span class="font-display text-xs text-festive-red uppercase font-bold tracking-wider">FREE</span>
+</div>
+<div class="flex justify-between text-text-main font-medium">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base text-festive-amber" data-icon="local_shipping">local_shipping</span> Guaranteed Express Transit
+            </span>
+<span class="font-display text-xs text-festive-red uppercase font-bold tracking-wider">FREE</span>
+</div>
+</div>
+<!-- Total Amount Block -->
+<div class="py-5 flex items-baseline justify-between">
+<div>
+<span class="block font-display text-xs tracking-wider uppercase text-text-muted font-bold">Total Amount Payable</span>
+<span class="font-sans text-[11px] text-text-muted">Inclusive of all ceremonial surcharges &amp; GST</span>
+</div>
+<div class="text-right">
+<span class="font-display text-3xl font-bold text-festive-red" id="checkout-grandtotal">₹0</span>
+</div>
+</div>
+<!-- Sovereign CTA Button -->
+<button onclick="proceedToPayment(event)" class="w-full py-4 bg-festive-red text-white font-display text-sm font-bold uppercase tracking-widest hover:bg-festive-crimson border-2 border-festive-red transition-all duration-150 flex items-center justify-center gap-3 gold-shadow cursor-pointer text-center block">
+<span class="material-symbols-outlined text-lg" data-icon="security">security</span>
+<span class="">COMPLETE SECURE PAYMENT &amp; BURST ORDER</span>
+</button>
+<!-- Frictionless Assurance Subtext -->
+<p class="mt-3 text-center font-display text-xs text-text-muted tracking-wide font-medium">
+          Instant SMS &amp; WhatsApp dispatch tracking link delivered immediately upon authorization.
+        </p>
+</div>
+<!-- Trust Badges Container (Warm Ivory & Gold Border) -->
+<div class="bg-[#FFFDF8] border-2 border-border-gold p-5 grid grid-cols-3 gap-3 text-center gold-shadow">
+<div class="border-r border-border-gold pr-2 flex flex-col items-center">
+<span class="material-symbols-outlined text-festive-amber mb-1" data-icon="verified">verified</span>
+<span class="font-display text-xs font-bold text-text-main uppercase">100% PESO</span>
+<span class="font-sans text-text-muted text-[11px] font-medium leading-tight">Govt Certified</span>
+</div>
+<div class="border-r border-border-gold pr-2 flex flex-col items-center">
+<span class="material-symbols-outlined text-festive-red mb-1" data-icon="water_drop">water_drop</span>
+<span class="font-display text-xs font-bold text-text-main uppercase">Zero Damp</span>
+<span class="font-sans text-text-muted text-[11px] font-medium leading-tight">Dry Guarantee</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="material-symbols-outlined text-festive-amber mb-1" data-icon="support_agent">support_agent</span>
+<span class="font-display text-xs font-bold text-text-main uppercase">24/7 Dispatch</span>
+<span class="font-sans text-text-muted text-[11px] font-medium leading-tight">Live Hotline</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ==================== FOOTER (BRIGHT FESTIVE LINEN / WARM CREME — NO DARK CONTAINERS) ==================== -->
+<footer class="w-full bg-[#FFF8EB] border-t-2 border-border-gold mt-16">
+<div class="max-w-7xl mx-auto py-14 px-6 md:px-12 flex flex-col gap-10">
+<!-- Top Row: Logo & Links -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-border-gold">
+<div>
+<span class="font-display text-2xl text-festive-red uppercase tracking-widest flex items-center gap-2.5 font-bold">
+<span class="w-3 h-3 bg-festive-red rotate-45 inline-block"></span>
+          SOVEREIGN
+        </span>
+<p class="font-sans text-xs text-text-muted font-medium mt-1.5">Heirloom Craftsmanship &amp; Ceremonial Illumination Since 1948</p>
+</div>
+<nav class="flex flex-wrap gap-6 md:gap-8"><button type="button" onclick="openInfoModal('Safety Compliance', 'All Sovereign Pyrotechnic consignments conform strictly with Petroleum and Explosives Safety Organization (PESO) 2024 protocols. Each carton is fitted with damp-resistant inner insulation and tamper-evident holographic serial seals.')" class="font-display text-xs text-text-main uppercase font-bold tracking-wider transition-colors duration-150 hover:text-festive-red">Safety Compliance</button>
+<button type="button" onclick="openInfoModal('Store Locator', 'Ceremonial Hubs &amp; Depots:\n• Sivakasi Main Depot: Sovereign Estate, Bypass Road\n• Hyderabad Express Center: Road No. 12, Jubilee Hills\n• Bengaluru Dispatch Terminal: Peenya Industrial Substation\n• Mumbai Air Freight Hub: Santacruz Cargo Complex')" class="font-display text-xs text-text-main uppercase font-bold tracking-wider transition-colors duration-150 hover:text-festive-red">Store Locator</button>
+<button type="button" onclick="openInfoModal('Festival Hotline', 'Priority Concierge: +91 1800 425 7979 (Toll-Free)\nWhatsApp Dispatch Desk: +91 98201 44520\nOperating 24 hours daily during the festive season with immediate tracking dispatch.')" class="font-display text-xs text-text-main uppercase font-bold tracking-wider transition-colors duration-150 hover:text-festive-red">Festival Hotline</button>
+<button type="button" onclick="openInfoModal('Permits &amp; Delivery', 'PESO License Number: PESO/EXP/2024-SV/8841. All regional transports operate via designated hazardous materials logistics partners with temperature-controlled transit.')" class="font-display text-xs text-text-main uppercase font-bold tracking-wider transition-colors duration-150 hover:text-festive-red">Permits &amp; Delivery</button>
+<button type="button" onclick="openInfoModal('Terms of Grandeur', '1. Deliveries guaranteed before Dhanteras for all orders booked prior to cutoff.\n2. Replacements issued immediately upon verification of seal defects.\n3. Storage instructions must be strictly followed upon receipt.')" class="font-display text-xs text-text-main uppercase font-bold tracking-wider transition-colors duration-150 hover:text-festive-red">Terms of Grandeur</button></nav>
+</div>
+<!-- Bottom Row: Copyright & Legal Assertion -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-sans text-xs text-text-muted font-medium">
+<p class="">© 2024 SOVEREIGN PYROTECHNICS. HEIRLOOM CRAFTSMANSHIP &amp; CEREMONIAL ILLUMINATION. ALL RIGHTS RESERVED.</p>
+<div class="flex items-center gap-4 text-festive-red font-display text-xs font-bold tracking-wider uppercase">
+<span class="">Standard Operating Code: PESO/EXP/2024-SV</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Interactive Quantity & Item Removal Scripts -->
+
+
+
+<!-- Information Dialog Modal -->
+<div id="info-modal-backdrop" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onclick="closeInfoModal()">
+  <div class="bg-[#FFFDF8] border-2 border-festive-red p-6 md:p-8 max-w-lg w-full gold-shadow relative" onclick="event.stopPropagation()">
+    <div class="flex items-center justify-between pb-3 mb-4 border-b border-border-gold">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 bg-festive-red rotate-45 inline-block"></span>
+        <h3 id="info-modal-title" class="font-display text-lg uppercase font-bold text-text-main tracking-wider">Notice</h3>
+      </div>
+      <button onclick="closeInfoModal()" class="text-text-muted hover:text-festive-red font-bold text-xl leading-none px-2 py-1">✕</button>
+    </div>
+    <div id="info-modal-content" class="font-sans text-xs leading-relaxed text-text-main font-medium whitespace-pre-line"></div>
+    <div class="mt-6 flex justify-end">
+      <button onclick="closeInfoModal()" class="bg-festive-red text-white px-6 py-2.5 font-display text-xs uppercase font-bold tracking-widest hover:bg-festive-crimson transition-colors">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function selectPaymentMethod(method) {
+    const methods = ['upi', 'netbanking', 'card', 'cod'];
+    methods.forEach(function(m) {
+      const card = document.getElementById('pay-opt-' + m);
+      const radio = document.getElementById('radio-' + m);
+      const details = document.getElementById('details-' + m);
+      if (m === method) {
+        if (card) {
+          card.className = 'cursor-pointer border-2 border-festive-red bg-[#FFF8EB] p-5 transition-all';
+        }
+        if (radio) radio.checked = true;
+        if (details) details.classList.remove('hidden');
+      } else {
+        if (card) {
+          card.className = 'cursor-pointer border border-border-gold bg-white p-5 transition-all hover:border-festive-red';
+        }
+        if (radio) radio.checked = false;
+        if (details) details.classList.add('hidden');
+      }
+    });
+  }
+
+  function openInfoModal(title, text) {
+    const modal = document.getElementById('info-modal-backdrop');
+    const titleEl = document.getElementById('info-modal-title');
+    const contentEl = document.getElementById('info-modal-content');
+    if (modal && titleEl && contentEl) {
+      titleEl.textContent = title;
+      contentEl.textContent = text;
+      modal.classList.remove('hidden');
+    }
+  }
+
+  function closeInfoModal() {
+    const modal = document.getElementById('info-modal-backdrop');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  function proceedToPayment(e) {
+    e.preventDefault();
+    const cartJson = localStorage.getItem('burstBoxCart');
+    const cart = cartJson ? JSON.parse(cartJson) : [];
+    if (cart.length === 0) {
+      alert('Your Burst Box is empty. Add items to checkout.');
+      return;
+    }
+    window.location.href = '../payment_confirmation_order_status_sovereign_pyrotechnics/index.html';
+  }
+</script>
+<script src="../shared_cart.js"></script>
+</body></html>

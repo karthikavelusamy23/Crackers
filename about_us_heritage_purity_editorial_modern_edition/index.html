@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us — Sivakasi Heritage &amp; Pyrotechnic Artistry | Sovereign</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&amp;family=Playfair+Display:ital,wght@0,600;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Outfit", "sans-serif"],
+            outfit: ["Outfit", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+            body: ["Plus Jakarta Sans", "sans-serif"]
+          },
+          colors: {
+            brand: {
+              vermilion: "#B51D04",
+              crimson: "#8F1100",
+              amber: "#FE932C",
+              gold: "#927000",
+              tertiary: "#745800"
+            },
+            pastel: {
+              cream: "#FFFDF9",
+              warm: "#FFF8F0",
+              card: "#FFF2E6",
+              soft: "#FFE9E2",
+              border: "#F3DEC8",
+              tint: "#FFE2D9"
+            }
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    body {
+      background-color: #FFFDF9;
+      color: #2B160E;
+      font-family: 'Outfit', sans-serif;
+    }
+    .serif-accent {
+      font-family: 'Playfair Display', serif;
+    }
+    .font-body-text {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#FFFDF9] text-[#2B160E] min-h-screen flex flex-col antialiased selection:bg-[#B51D04] selection:text-white">
+<!-- Top Announcement Bar -->
+<div class="bg-[#B51D04] text-[#FFFCFF] text-xs font-semibold py-2.5 px-4 tracking-wider uppercase flex items-center justify-between border-b border-[#8F1100]">
+<div class="flex items-center gap-3 mx-auto text-center flex-wrap justify-center">
+<span class="material-symbols-outlined text-sm text-[#FFDF98]">flare</span>
+<span class="tracking-widest">40+ Years of Sivakasi Fireworks Mastery</span>
+<span class="hidden sm:inline opacity-60">•</span>
+<span class="tracking-widest">100% Certified Green Formulations (CSIR-NEERI)</span>
+<span class="hidden sm:inline opacity-60">•</span>
+<span class="tracking-widest">PESO Approved License #SV-7821-EXP</span>
+<span class="material-symbols-outlined text-sm text-[#FFDF98]">flare</span>
+</div>
+</div>
+<!-- Main Navigation Header -->
+<header class="sticky top-0 z-40 bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#F3DEC8]">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group" href="../index.html">
+<div style="width:2.5rem;height:2.5rem;border-radius:0.375rem;background:linear-gradient(135deg,#E5BA73,#904d00);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(0,0,0,0.18);flex-shrink:0;">
+<span class="material-symbols-outlined" style="color:white;font-size:22px;line-height:1;">flare</span>
+</div>
+<div>
+<span style="font-family:'Outfit',sans-serif;font-size:1.5rem;letter-spacing:0.18em;color:#b51d04;text-transform:uppercase;font-weight:800;display:block;line-height:1;">SOVEREIGN</span>
+<span style="font-size:10px;letter-spacing:0.15em;color:#904d00;font-weight:700;text-transform:uppercase;">100% SIVAKASI DIRECT</span>
+</div>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-10 text-xs font-bold tracking-[0.18em] uppercase">
+<a class="text-[#5B403B] hover:text-[#B51D04] transition-colors py-2" href="../index.html">Home</a>
+<a class="text-[#B51D04] border-b-2 border-[#B51D04] py-2" href="../about_us_heritage_purity_editorial_modern_edition/index.html">About Us</a>
+<a class="text-[#5B403B] hover:text-[#B51D04] transition-colors py-2" href="../products_bright_pastel_festive_catalog/index.html">Products</a>
+<a class="text-[#5B403B] hover:text-[#B51D04] transition-colors py-2" href="../contact_store_locator_bright_pastel_edition/index.html">Contact</a>
+</nav>
+<!-- Cart Button with Count (Burst Box) -->
+<button class="border-2 border-[#B51D04] text-[#B51D04] bg-white hover:bg-[#FFF2E6] px-5 py-2.5 font-bold text-xs tracking-widest uppercase flex items-center gap-3 transition-all shadow-sm" onclick="toggleCart()">
+<span class="material-symbols-outlined text-lg">shopping_bag</span>
+<span>BURST BOX</span>
+<span class="bg-[#B51D04] text-white text-xs px-2 py-0.5 font-black" id="cart-badge-count">0</span>
+</button>
+</div>
+</header>
+<!-- Slide-over Cart Drawer -->
+<div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="cart-drawer" role="dialog">
+<div class="absolute inset-0 bg-[#2B160E]/40 backdrop-blur-sm transition-opacity" onclick="toggleCart()"></div>
+<div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+<div class="w-screen max-w-md bg-[#FFFDF9] border-l border-[#F3DEC8] shadow-2xl flex flex-col justify-between">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-[#F3DEC8] flex items-center justify-between bg-[#FFF8F0]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#B51D04]">shopping_bag</span>
+<h2 class="text-sm font-black text-[#2B160E] uppercase tracking-widest">YOUR BURST BOX (<span id="cart-count-display">0</span>)</h2>
+</div>
+<button class="text-[#5B403B] hover:text-[#2B160E] p-1 rounded-sm" onclick="toggleCart()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Cart Items List -->
+<div class="flex-1 overflow-y-auto p-6 space-y-4" id="cartItemsList">
+</div>
+<!-- Drawer Footer -->
+<div class="p-6 bg-[#FFF8F0] border-t border-[#F3DEC8] space-y-3">
+<div class="flex justify-between text-xs text-[#5B403B]">
+<span>Festive Pre-Season Privilege</span>
+<span class="font-bold text-[#B51D04]">-₹1,200</span>
+</div>
+<div class="flex justify-between items-baseline pt-2 border-t border-[#F3DEC8]">
+<span class="text-xs uppercase font-bold text-[#2B160E] tracking-wider">Estimated Total</span>
+<span class="text-2xl font-black text-[#2B160E]" id="cartGrandTotal">₹0</span>
+</div>
+<button class="block w-full text-center bg-[#B51D04] hover:bg-[#8F1100] text-white py-3.5 font-bold uppercase tracking-widest text-xs transition-all shadow-sm" onclick="proceedToCheckout(event)">
+            PROCEED TO VERIFIED CHECKOUT
+          </button>
+<p class="text-[11px] text-center text-[#745800] font-medium font-body-text">Moisture-proof crate shipping direct from Sivakasi factory depot.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- HERO BANNER: Editorial Magazine Layout -->
+<section class="relative bg-gradient-to-b from-[#FFF5ED] via-[#FFFDF9] to-[#FFF8F0] border-b border-[#F3DEC8] pt-14 pb-20 overflow-hidden">
+<!-- Subtle festive watermark badge -->
+<div class="absolute -right-16 -top-16 w-96 h-96 rounded-full bg-[#FFE9E2]/50 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6">
+<!-- Eyebrow Ribbon -->
+<div class="flex items-center gap-3 mb-6">
+<span class="inline-block px-3 py-1 bg-[#FFE6D9] text-[#B51D04] border border-[#F5C4B1] text-[11px] font-extrabold uppercase tracking-[0.25em]">
+          Volume XL • Sivakasi Atelier Gazette
+        </span>
+<span class="h-px flex-1 bg-gradient-to-r from-[#F3DEC8] to-transparent"></span>
+<span class="hidden sm:inline text-xs font-bold uppercase tracking-widest text-[#745800]">Heirloom Guild Est. 1984</span>
+</div>
+<!-- Main Editorial Headline Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+<div class="lg:col-span-8 space-y-6">
+<h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-[#2B160E] leading-[1.05]">
+            40 Years of <br class="hidden sm:inline"/>
+<span class="serif-accent italic font-normal text-[#B51D04]">Sivakasi Pyrotechnic</span><br/>
+            Mastery &amp; Pure Craft.
+          </h1>
+<p class="text-lg sm:text-xl text-[#5B403B] font-body-text leading-relaxed max-w-2xl">
+            Ceremonial radiance forged in Tamil Nadu's pyrotechnic capital. We unite generational artisanal blending with national CSIR-NEERI green laboratory formulas to illuminate India’s grandest celebrations without compromise.
+          </p>
+</div>
+<!-- Featured Authority Stamp Card -->
+<div class="lg:col-span-4 bg-white border-2 border-[#F3DEC8] p-6 shadow-sm relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-[#B51D04] text-white px-3 py-1 text-[10px] font-black tracking-[0.2em] uppercase">
+            PESO VERIFIED
+          </div>
+<div class="flex items-center gap-3 mb-4 mt-2">
+<span class="material-symbols-outlined text-3xl text-[#B51D04]">verified_user</span>
+<div>
+<span class="text-[10px] uppercase font-bold tracking-widest text-[#745800] block">Central License</span>
+<span class="text-sm font-black text-[#2B160E]">#SV-7821-EXP</span>
+</div>
+</div>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed mb-4">
+            Authorized manufacturer adhering to national Supreme Court standards, strict decibel thresholds, and tamper-evident packaging.
+          </p>
+<div class="flex items-center justify-between pt-3 border-t border-[#F3DEC8] text-[11px] font-bold">
+<span class="text-[#2B160E]">ISO 9001:2015</span>
+<span class="text-[#B51D04] uppercase">100% Zero Barium</span>
+</div>
+</div>
+</div>
+<!-- Trust Metrics Strip -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 pt-8 border-t border-[#F3DEC8]">
+<div class="bg-white border border-[#F3DEC8] p-5">
+<span class="text-3xl sm:text-4xl font-black text-[#B51D04] block font-sans">40+</span>
+<span class="text-xs font-bold uppercase tracking-wider text-[#2B160E] mt-1 block">Years Sivakasi Legacy</span>
+<p class="text-[11px] text-[#5B403B] font-body-text mt-1">Multi-generational artisans and blenders</p>
+</div>
+<div class="bg-white border border-[#F3DEC8] p-5">
+<span class="text-3xl sm:text-4xl font-black text-[#B51D04] block font-sans">100%</span>
+<span class="text-xs font-bold uppercase tracking-wider text-[#2B160E] mt-1 block">CSIR Green Lab</span>
+<p class="text-[11px] text-[#5B403B] font-body-text mt-1">Official STAR &amp; SWAS de-polluting QR</p>
+</div>
+<div class="bg-white border border-[#F3DEC8] p-5">
+<span class="text-3xl sm:text-4xl font-black text-[#B51D04] block font-sans">2.4M+</span>
+<span class="text-xs font-bold uppercase tracking-wider text-[#2B160E] mt-1 block">Celebrations Lit</span>
+<p class="text-[11px] text-[#5B403B] font-body-text mt-1">Weddings, temple festivals, and Diwali</p>
+</div>
+<div class="bg-white border border-[#F3DEC8] p-5">
+<span class="text-3xl sm:text-4xl font-black text-[#B51D04] block font-sans">0%</span>
+<span class="text-xs font-bold uppercase tracking-wider text-[#2B160E] mt-1 block">Barium Nitrates</span>
+<p class="text-[11px] text-[#5B403B] font-body-text mt-1">Tested zero banned chemicals or arsenic</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ASYMMETRICAL EDITORIAL STORY SECTION: Artisanal Blenders & Green Formulas -->
+<section class="py-20 bg-[#FFFDF9] border-b border-[#F3DEC8]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Editorial Column -->
+<div class="lg:col-span-6 space-y-6">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 bg-[#B51D04]"></span>
+<span class="text-xs font-black uppercase tracking-[0.25em] text-[#B51D04]">The Alchemy of Light</span>
+</div>
+<h2 class="text-3xl sm:text-4xl font-black tracking-tight text-[#2B160E] leading-tight uppercase">
+            Where Ancestral Firework Guilds Meet Contemporary Environmental Chemistry.
+          </h2>
+<div class="space-y-4 text-[#5B403B] font-body-text leading-relaxed text-sm sm:text-base">
+<p>
+              In Sivakasi’s arid, sun-baked landscape, pyrotechny is not mass manufacturing—it is an inherited sensory craft. For four decades, Sovereign has guarded the delicate balance of grain density, hand-rolled kraft paper housings, and precision timing cords.
+            </p>
+<p>
+              When national environmental directives called for reform, we didn’t retreat to substitutes; we partnered at the frontline with CSIR-NEERI to pioneer patented formulations. Our crackers generate 30–35% less particulate matter while actually deepening the rich golds, vibrant magentas, and thunderous resonance India expects.
+            </p>
+</div>
+<!-- Highlight pill quote -->
+<div class="p-5 bg-[#FFF2E6] border-l-4 border-[#B51D04] text-xs leading-relaxed text-[#2B160E]">
+<span class="font-bold text-[#B51D04] block mb-1 uppercase tracking-wider">The Sovereign Promise</span>
+            “Every aerial burst and sparkler produced in our Sivakasi workshops is crafted fresh for the current season, eliminating aged duds and volatile warehouse deterioration.”
+          </div>
+<div class="flex flex-wrap items-center gap-6 pt-2">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#B51D04] text-2xl">science</span>
+<span class="text-xs font-bold uppercase tracking-wider text-[#2B160E]">SWAS &amp; STAR Formulations</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#B51D04] text-2xl">verified</span>
+<span class="text-xs font-bold uppercase tracking-wider text-[#2B160E]">Government Scannable QR</span>
+</div>
+</div>
+</div>
+<!-- Right Visual Showcase / Magazine Editorial Collage -->
+<div class="lg:col-span-6">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<!-- Collage Card 1: Artisanal Blending -->
+<div class="p-6 bg-[#FFF8F0] border-2 border-[#F3DEC8] hover:border-[#B51D04] transition-all space-y-4">
+<div class="w-12 h-12 bg-white border border-[#F3DEC8] flex items-center justify-center text-[#B51D04]">
+<span class="material-symbols-outlined text-2xl">palette</span>
+</div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-[#B51D04] block">Artisanal Guild</span>
+<h3 class="text-lg font-black text-[#2B160E] leading-snug">Hand-Folded Kraft Shell Casings</h3>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">
+                Thick multi-ply recycled kraft paper wound by hand ensures safe upward trajectory and crisp, uniform star detonations.
+              </p>
+</div>
+<!-- Collage Card 2: Zero Barium -->
+<div class="p-6 bg-[#FFF2E6] border-2 border-[#F3DEC8] hover:border-[#B51D04] transition-all space-y-4 sm:translate-y-6">
+<div class="w-12 h-12 bg-white border border-[#F3DEC8] flex items-center justify-center text-[#B51D04]">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-[#927000] block">CSIR-NEERI Validated</span>
+<h3 class="text-lg font-black text-[#2B160E] leading-snug">Zero Barium, Zero Heavy Metals</h3>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">
+                Replaced hazardous barium salts with safe oxidizers to produce breathtaking emerald and gold sparkles without toxic residues.
+              </p>
+</div>
+<!-- Collage Card 3: Controlled Decibels -->
+<div class="p-6 bg-white border-2 border-[#F3DEC8] hover:border-[#B51D04] transition-all space-y-4">
+<div class="w-12 h-12 bg-[#FFF8F0] border border-[#F3DEC8] flex items-center justify-center text-[#B51D04]">
+<span class="material-symbols-outlined text-2xl">volume_down</span>
+</div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-[#B51D04] block">Acoustic Engineering</span>
+<h3 class="text-lg font-black text-[#2B160E] leading-snug">Calibrated Festive Sonic Levels</h3>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">
+                Tested within national 125dB limits at 4 meters, keeping festival joyous without alarming elderly, children, or neighborhood pets.
+              </p>
+</div>
+<!-- Collage Card 4: Master Craftsmen -->
+<div class="p-6 bg-[#FFF8F0] border-2 border-[#F3DEC8] hover:border-[#B51D04] transition-all space-y-4 sm:translate-y-6">
+<div class="w-12 h-12 bg-white border border-[#F3DEC8] flex items-center justify-center text-[#B51D04]">
+<span class="material-symbols-outlined text-2xl">workspace_premium</span>
+</div>
+<span class="text-[10px] font-black uppercase tracking-[0.2em] text-[#927000] block">Ethical Workshop</span>
+<h3 class="text-lg font-black text-[#2B160E] leading-snug">Adult Master Pyrotechnicians</h3>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">
+                100% fair-wage, certified adult craftspeople with rigorous safety gear, health benefits, and zero child labor policies.
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CLEAN FEATURE BREAKDOWN: 3 Distinctions -->
+<section class="py-20 bg-[#FFF8F0] border-b border-[#F3DEC8]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+<span class="text-xs font-bold text-[#B51D04] tracking-widest uppercase block">Uncompromising Standards</span>
+<h2 class="text-3xl sm:text-4xl font-black text-[#2B160E] uppercase tracking-tight">
+          Three Foundations of Sovereign Distinction
+        </h2>
+<p class="text-sm text-[#5B403B] font-body-text">Why thousands of premier families, luxury wedding venues, and temples choose direct Sivakasi fresh batches.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1 -->
+<div class="p-8 bg-white border-2 border-[#F3DEC8] space-y-5 hover:border-[#B51D04] transition-all flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-12 h-12 bg-[#FFF8F0] border border-[#F3DEC8] flex items-center justify-center text-[#B51D04]">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<span class="text-[11px] font-black tracking-widest uppercase text-[#B51D04] block">CSIR-NEERI Certified</span>
+<h3 class="text-xl font-black text-[#2B160E]">100% Certified Green Formulations</h3>
+<p class="text-sm text-[#5B403B] font-body-text leading-relaxed">
+              Formulated strictly under Supreme Court &amp; NEERI guidelines. We utilize patented de-polluting compositions with SWAS and STAR chemistry that minimize particulate emissions by 35% without dimming grand luminosity.
+            </p>
+</div>
+<ul class="text-xs space-y-2.5 text-[#2B160E] font-semibold pt-4 border-t border-[#F3DEC8]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> Zero Barium Nitrate &amp; Arsenic</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> Scannable CSIR Green QR on every pack</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> Reduced decibel sonic blast thresholds</li>
+</ul>
+</div>
+<!-- Pillar 2 -->
+<div class="p-8 bg-white border-2 border-[#F3DEC8] space-y-5 hover:border-[#B51D04] transition-all flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-12 h-12 bg-[#FFF8F0] border border-[#F3DEC8] flex items-center justify-center text-[#B51D04]">
+<span class="material-symbols-outlined text-2xl">precision_manufacturing</span>
+</div>
+<span class="text-[11px] font-black tracking-widest uppercase text-[#B51D04] block">Pure Artisanal Heritage</span>
+<h3 class="text-xl font-black text-[#2B160E]">Direct from Sivakasi Master Craftsmen</h3>
+<p class="text-sm text-[#5B403B] font-body-text leading-relaxed">
+              Zero middlemen and zero aged warehouse stock. Our fireworks are blended and rolled fresh in Sivakasi by multi-generational guild artisans, preserving radiant color fidelity, reliable fuses, and peak festive altitude.
+            </p>
+</div>
+<ul class="text-xs space-y-2.5 text-[#2B160E] font-semibold pt-4 border-t border-[#F3DEC8]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> Guaranteed fresh 2025 seasonal batch</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> Precision-wound thick shell casings</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> Wholesale factory pricing direct to patrons</li>
+</ul>
+</div>
+<!-- Pillar 3 -->
+<div class="p-8 bg-white border-2 border-[#F3DEC8] space-y-5 hover:border-[#B51D04] transition-all flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-12 h-12 bg-[#FFF8F0] border border-[#F3DEC8] flex items-center justify-center text-[#B51D04]">
+<span class="material-symbols-outlined text-2xl">shield_with_heart</span>
+</div>
+<span class="text-[11px] font-black tracking-widest uppercase text-[#B51D04] block">Logistical Integrity</span>
+<h3 class="text-xl font-black text-[#2B160E]">5-Ply Moisture-Proof Sealed Delivery</h3>
+<p class="text-sm text-[#5B403B] font-body-text leading-relaxed">
+              Pan-India logistics executed via certified explosive freight carriers. Every consignment is locked in heavy-gauge 5-ply waterproof corrugated master-cartons with tamper seals, ensuring safety from dispatch to celebration.
+            </p>
+</div>
+<ul class="text-xs space-y-2.5 text-[#2B160E] font-semibold pt-4 border-t border-[#F3DEC8]">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> 100% moisture desiccant sealed inner liners</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> Live dispatch tracking via SMS &amp; WhatsApp</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-[#B51D04]"></span> Zero Breakage Guarantee with doorstep arrival</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE TIMELINE OF MILESTONES: 1984 to 2025 -->
+<section class="py-20 bg-[#FFFDF9] border-b border-[#F3DEC8]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="space-y-3">
+<span class="text-xs font-bold text-[#B51D04] tracking-widest uppercase block">Chronicle of Excellence</span>
+<h2 class="text-3xl sm:text-4xl font-black text-[#2B160E] tracking-tight uppercase">
+            From a Modest Shed in 1984 to India's Premier Fireworks Atelier.
+          </h2>
+<p class="text-sm text-[#5B403B] font-body-text max-w-2xl">
+            Started four decades ago with four artisans hand-blending sulfur-free sparkler mixtures, Sovereign today spans over 48 safety-zoned acres adhering to strict national defense and hazardous cargo protocols.
+          </p>
+</div>
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-[#FFF2E6] border border-[#F3DEC8] text-xs font-black text-[#2B160E] tracking-widest uppercase">
+<span class="material-symbols-outlined text-[#B51D04] text-base">history_edu</span>
+<span>4 Decades of Precision</span>
+</div>
+</div>
+<!-- Modern Timeline Track with Sleek Cards -->
+<div class="relative border-l-2 border-[#F3DEC8] ml-4 md:ml-8 pl-6 md:pl-10 space-y-12">
+<!-- Milestone 1 -->
+<div class="relative group">
+<div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-[#B51D04] group-hover:scale-125 transition-transform"></div>
+<div class="bg-white border-2 border-[#F3DEC8] p-6 group-hover:border-[#B51D04] transition-all shadow-sm max-w-4xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+<span class="text-2xl font-black text-[#B51D04] tracking-wide">1984</span>
+<span class="text-xs font-bold uppercase tracking-widest bg-[#FFE6D9] text-[#B51D04] px-2.5 py-1">Genesis</span>
+</div>
+<h4 class="text-lg font-black text-[#2B160E] uppercase tracking-wide">Founding at Sivakasi Grounds</h4>
+<p class="text-sm text-[#5B403B] font-body-text mt-2 leading-relaxed">
+              Pioneered low-smoke golden sparklers and long-lasting flower pots crafted specifically for South Indian wedding muhurats and temple deepams.
+            </p>
+</div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative group">
+<div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-[#FE932C] group-hover:scale-125 transition-transform"></div>
+<div class="bg-white border-2 border-[#F3DEC8] p-6 group-hover:border-[#FE932C] transition-all shadow-sm max-w-4xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+<span class="text-2xl font-black text-[#904D00] tracking-wide">2002</span>
+<span class="text-xs font-bold uppercase tracking-widest bg-[#FFF2E6] text-[#904D00] px-2.5 py-1">Expansion</span>
+</div>
+<h4 class="text-lg font-black text-[#2B160E] uppercase tracking-wide">48-Acre Safety-Zoned Production Campus</h4>
+<p class="text-sm text-[#5B403B] font-body-text mt-2 leading-relaxed">
+              Constructed isolated blast-proof sheds with natural earth embankments, earning the prestigious PESO compliance seal with zero reportable incidents.
+            </p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative group">
+<div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-[#745800] group-hover:scale-125 transition-transform"></div>
+<div class="bg-white border-2 border-[#F3DEC8] p-6 group-hover:border-[#745800] transition-all shadow-sm max-w-4xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+<span class="text-2xl font-black text-[#745800] tracking-wide">2018</span>
+<span class="text-xs font-bold uppercase tracking-widest bg-[#FFF8F0] text-[#745800] px-2.5 py-1">Green Revolution</span>
+</div>
+<h4 class="text-lg font-black text-[#2B160E] uppercase tracking-wide">CSIR-NEERI Green Transition</h4>
+<p class="text-sm text-[#5B403B] font-body-text mt-2 leading-relaxed">
+              Became one of the first 10 certified manufacturers in India to completely convert 100% capacity to certified green crackers featuring SWAS and STAR formulas.
+            </p>
+</div>
+</div>
+<!-- Milestone 4 -->
+<div class="relative group">
+<div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-white border-4 border-[#B51D04] group-hover:scale-125 transition-transform"></div>
+<div class="bg-white border-2 border-[#F3DEC8] p-6 group-hover:border-[#B51D04] transition-all shadow-sm max-w-4xl">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+<span class="text-2xl font-black text-[#B51D04] tracking-wide">2025</span>
+<span class="text-xs font-bold uppercase tracking-widest bg-[#FFE6D9] text-[#B51D04] px-2.5 py-1">Present Day</span>
+</div>
+<h4 class="text-lg font-black text-[#2B160E] uppercase tracking-wide">Direct-to-Patron Digital Logistics</h4>
+<p class="text-sm text-[#5B403B] font-body-text mt-2 leading-relaxed">
+              Delivering fresh Sivakasi bursts directly to over 18,000 pin codes across India in waterproof 5-ply crates with full real-time explosive freight tracking.
+            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- QUALITY & COMPLIANCE SHOWCASE -->
+<section class="py-20 bg-[#FFF5ED] border-b border-[#F3DEC8]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+<span class="text-xs font-black tracking-widest text-[#B51D04] uppercase">Verified Credentials</span>
+<h2 class="text-3xl font-black text-[#2B160E] uppercase tracking-tight">Quality &amp; Legal Compliance Showcase</h2>
+<p class="text-xs sm:text-sm text-[#5B403B] font-body-text">Operating under full transparent federal statutory certifications.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 bg-white border-2 border-[#F3DEC8] space-y-3 hover:border-[#B51D04] transition-all">
+<span class="material-symbols-outlined text-3xl text-[#B51D04]">verified_user</span>
+<h4 class="font-bold text-base text-[#2B160E]">PESO Approved</h4>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">Petroleum and Explosives Safety Org compliant safety distances, test firings, and verified licenses.</p>
+<span class="text-[11px] font-bold text-[#745800] block pt-2 border-t border-[#F3DEC8]">Lic #SV-7821-EXP</span>
+</div>
+<div class="p-6 bg-white border-2 border-[#F3DEC8] space-y-3 hover:border-[#B51D04] transition-all">
+<span class="material-symbols-outlined text-3xl text-[#B51D04]">biotech</span>
+<h4 class="font-bold text-base text-[#2B160E]">CSIR NEERI Lab</h4>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">Regular batch emissions chromatography checks with scannable official QR stamps on every retail box.</p>
+<span class="text-[11px] font-bold text-[#745800] block pt-2 border-t border-[#F3DEC8]">Green Crackers Star #81</span>
+</div>
+<div class="p-6 bg-white border-2 border-[#F3DEC8] space-y-3 hover:border-[#B51D04] transition-all">
+<span class="material-symbols-outlined text-3xl text-[#B51D04]">water_drop</span>
+<h4 class="font-bold text-base text-[#2B160E]">Zero Water Damage</h4>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">5-layer moisture barrier with inner desiccant packs guarantees flawless spark ignition regardless of coastal weather.</p>
+<span class="text-[11px] font-bold text-[#745800] block pt-2 border-t border-[#F3DEC8]">Moisture Barrier Seal</span>
+</div>
+<div class="p-6 bg-white border-2 border-[#F3DEC8] space-y-3 hover:border-[#B51D04] transition-all">
+<span class="material-symbols-outlined text-3xl text-[#B51D04]">local_shipping</span>
+<h4 class="font-bold text-base text-[#2B160E]">Pan-India Freight</h4>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">Regulated hazardous transit network with designated transport passes ensuring safe, on-time festive arrival.</p>
+<span class="text-[11px] font-bold text-[#745800] block pt-2 border-t border-[#F3DEC8]">18,000+ PIN Codes</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA BANNER SECTION -->
+<section class="py-16 bg-[#B51D04] text-white">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-8">
+<div class="space-y-2 text-center md:text-left">
+<span class="text-xs uppercase font-black tracking-widest text-[#FFDF98]">Diwali &amp; Festive Season 2025</span>
+<h3 class="text-2xl sm:text-4xl font-black uppercase tracking-tight">Experience the Sovereign Magic This Festival</h3>
+<p class="text-sm text-[#FFDAD3] font-body-text">Factory fresh batches shipped directly from Sivakasi workshops to your doorstep.</p>
+</div>
+<div class="flex items-center gap-4 flex-wrap justify-center">
+<a class="bg-white text-[#B51D04] hover:bg-[#FFF5ED] px-8 py-3.5 font-bold uppercase tracking-wider text-xs transition-all shadow-md" href="#">
+          EXPLORE CATALOG
+        </a>
+<a class="border-2 border-white text-white hover:bg-white/10 px-8 py-3.5 font-bold uppercase tracking-wider text-xs transition-all" href="#">
+          CONTACT CONCIERGE
+        </a>
+</div>
+</div>
+</section>
+<!-- GLOBAL FOOTER -->
+<footer class="bg-[#FFF8F0] border-t border-[#F3DEC8] pt-14 pb-8 text-[#5B403B]">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[#F3DEC8]">
+<!-- Brand Info -->
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 bg-[#B51D04] rotate-45 flex items-center justify-center text-white text-xs font-bold">
+<span class="-rotate-45 font-serif font-black">S</span>
+</div>
+<span class="text-lg font-black tracking-widest text-[#B51D04] uppercase font-sans">SOVEREIGN</span>
+</div>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed">
+            Ceremonial Illumination &amp; Heirloom Craftsmanship. Sivakasi registered manufacturer &amp; direct festival supplier since 1984.
+          </p>
+<div class="text-[11px] font-bold text-[#2B160E] uppercase tracking-wider">
+            PESO LICENSE #SV-7821-EXP
+          </div>
+</div>
+<!-- Navigation Links -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-[#2B160E] mb-4">Navigation</h4>
+<ul class="space-y-2 text-xs font-semibold">
+<li><a class="hover:text-[#B51D04] transition-colors" href="../index.html">Home</a></li>
+<li><a class="text-[#B51D04]" href="../about_us_heritage_purity_editorial_modern_edition/index.html">About Us</a></li>
+<li><a class="hover:text-[#B51D04] transition-colors" href="../products_bright_pastel_festive_catalog/index.html">Products Catalog</a></li>
+<li><a class="hover:text-[#B51D04] transition-colors" href="../contact_store_locator_bright_pastel_edition/index.html">Contact Concierge</a></li>
+</ul>
+</div>
+<!-- Interactive Modals Links -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-[#2B160E] mb-4">Compliance &amp; Safety</h4>
+<ul class="space-y-2 text-xs font-semibold">
+<li><button class="hover:text-[#B51D04] transition-colors text-left flex items-center gap-1.5" onclick="openModal('safety')"><span class="material-symbols-outlined text-sm text-[#B51D04]">arrow_forward</span>Safety Compliance Manual</button></li>
+<li><button class="hover:text-[#B51D04] transition-colors text-left flex items-center gap-1.5" onclick="openModal('depots')"><span class="material-symbols-outlined text-sm text-[#B51D04]">arrow_forward</span>Store Locator &amp; Depots</button></li>
+<li><button class="hover:text-[#B51D04] transition-colors text-left flex items-center gap-1.5" onclick="openModal('hotline')"><span class="material-symbols-outlined text-sm text-[#B51D04]">arrow_forward</span>Festival 24/7 Hotline</button></li>
+<li><button class="hover:text-[#B51D04] transition-colors text-left flex items-center gap-1.5" onclick="openModal('permits')"><span class="material-symbols-outlined text-sm text-[#B51D04]">arrow_forward</span>Permits &amp; Express Delivery</button></li>
+<li><button class="hover:text-[#B51D04] transition-colors text-left flex items-center gap-1.5" onclick="openModal('terms')"><span class="material-symbols-outlined text-sm text-[#B51D04]">arrow_forward</span>Terms of Grandeur</button></li>
+</ul>
+</div>
+<!-- Factory Headquarters -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-[#2B160E] mb-4">Factory Headquarters</h4>
+<p class="text-xs text-[#5B403B] font-body-text leading-relaxed mb-3">
+            Sovereign Pyrotechnic Works, 42-B Sattur Road, Sivakasi, Tamil Nadu 626123.
+          </p>
+<p class="text-xs font-bold text-[#2B160E]">Direct Desk: +91 4562 234000</p>
+<p class="text-xs font-bold text-[#2B160E]">WhatsApp: +91 98400 12345</p>
+</div>
+</div>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#745800] gap-4">
+<p class="font-body-text">© 2025 Sovereign Pyrotechnics. Heirloom Craftsmanship &amp; Ceremonial Illumination. All Rights Reserved.</p>
+<div class="flex items-center gap-4 text-[#2B160E] font-bold text-[11px] tracking-wider uppercase">
+<span>ZERO PLASTIC PACKAGING</span>
+<span>•</span>
+<span>100% GREEN RAW MATERIAL</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- REUSABLE INTERACTIVE MODAL DIALOG -->
+<div aria-labelledby="modal-title" aria-modal="true" class="fixed inset-0 z-50 overflow-y-auto hidden" id="info-modal" role="dialog">
+<div class="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+<div class="fixed inset-0 bg-[#2B160E]/50 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+<span aria-hidden="true" class="hidden sm:inline-block sm:align-middle sm:h-screen">​</span>
+<div class="inline-block align-bottom bg-[#FFFDF9] border-2 border-[#F3DEC8] text-left overflow-hidden shadow-2xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full p-6">
+<div class="flex items-start justify-between border-b border-[#F3DEC8] pb-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-2xl text-[#B51D04]" id="modal-icon">verified</span>
+<h3 class="text-lg font-black text-[#2B160E] uppercase tracking-wide" id="modal-title">Modal Header</h3>
+</div>
+<button class="text-[#5B403B] hover:text-[#2B160E] p-1" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="mt-4">
+<p class="text-sm text-[#5B403B] font-body-text leading-relaxed" id="modal-content">
+            Modal description content goes here.
+          </p>
+</div>
+<div class="mt-6 pt-4 border-t border-[#F3DEC8] flex justify-end">
+<button class="bg-[#B51D04] text-white px-5 py-2 font-bold text-xs uppercase tracking-widest hover:bg-[#8F1100] transition-colors" onclick="closeModal()" type="button">
+            Close Window
+          </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    const modalData = {
+      safety: {
+        title: "Safety Compliance Manual",
+        icon: "health_and_safety",
+        content: "Always light fireworks in open outdoor areas with a minimum safety perimeter of 5 meters for sparklers and 15 meters for aerial repeaters. Keep a water bucket nearby. Never attempt to re-ignite a defective or dud unit. Sovereign fireworks are formulated with SWAS zero-barium chemistry for clean burning."
+      },
+      depots: {
+        title: "Store Locator & Depots",
+        icon: "storefront",
+        content: "Our primary direct dispensary is located at 42-B Sattur Road, Sivakasi. We also operate certified temporary seasonal collection hubs in Madurai, Chennai, Bengaluru, and Hyderabad ahead of Diwali and Muhurat wedding schedules."
+      },
+      hotline: {
+        title: "Festival 24/7 Concierge",
+        icon: "support_agent",
+        content: "During peak festival dispatch windows, our dedicated support lines run around the clock. Contact us on WhatsApp at +91 98400 12345 or direct desk at +91 4562 234000 for emergency batch tracking and consignment confirmation."
+      },
+      permits: {
+        title: "Permits & Express Delivery",
+        icon: "local_police",
+        content: "All shipments travel under Form LE-3 explosive transport transit passes issued by PESO. Packages are dispatched exclusively through licensed hazardous freight logistics with 5-ply waterproof barrier wrapping and live GPS consignment updates."
+      },
+      terms: {
+        title: "Terms of Grandeur & Guarantee",
+        icon: "verified",
+        content: "We stand by our Zero Breakage and 100% Ignition Guarantee. In the rare event of transit damage or ignition issues, contact our concierge within 48 hours for immediate replacement or full festive credit."
+      }
+    };
+
+    function openModal(key) {
+      const data = modalData[key];
+      if (!data) return;
+      document.getElementById('modal-title').innerText = data.title;
+      document.getElementById('modal-icon').innerText = data.icon;
+      document.getElementById('modal-content').innerText = data.content;
+      document.getElementById('info-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('info-modal').classList.add('hidden');
+    }
+  </script>
+  <script src="../shared_cart.js"></script>
+</body></html>

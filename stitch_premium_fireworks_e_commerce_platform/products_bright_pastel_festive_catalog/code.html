@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Imperial Products Catalog | Sovereign Pyrotechnics</title>
+<!-- Fonts: Outfit & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#b51d04", "primary-container": "#d9381e", secondary: "#904d00", "secondary-container": "#fe932c", tertiary: "#745800", "tertiary-container": "#927000", background: "#fff8f6", surface: "#fff8f6", "surface-container-lowest": "#ffffff", "surface-container-low": "#fff1ec", "surface-container": "#ffe9e2", "surface-container-high": "#ffe2d9", "surface-container-highest": "#ffdbcf", "on-surface": "#2b160e", "on-surface-variant": "#5b403b", outline: "#907069", "outline-variant": "#e4beb6", "gold-accent": "#d49b29", "marigold-light": "#FFF7DF", "apricot-subtle": "#FFF4EE", "on-background": "#2b160e", "secondary-fixed-dim": "#ffb77d", "on-primary-container": "#fffcff", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-dim": "#f9d2c4", "inverse-on-surface": "#ffede7", "primary-fixed-dim": "#ffb4a6", "on-error-container": "#93000a", "on-secondary-container": "#663500", "surface-bright": "#fff8f6", "on-tertiary-fixed": "#251a00", "on-secondary-fixed": "#2f1500", "on-primary-fixed": "#3f0300", "on-primary-fixed-variant": "#8f1100", "on-secondary-fixed-variant": "#6e3900", "secondary-fixed": "#ffdcc3", "primary-fixed": "#ffdad3", "tertiary-fixed": "#ffdf98", "surface-tint": "#b82007", "inverse-primary": "#ffb4a6", error: "#ba1a1a", "on-tertiary-container": "#fffcff", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#5a4300", "inverse-surface": "#432b22", "tertiary-fixed-dim": "#eec14b", "surface-variant": "#ffdbcf"}, fontFamily: {sans: ["Outfit", "Plus Jakarta Sans", "sans-serif"], outfit: ["Outfit", "sans-serif"], body: ["Plus Jakarta Sans"], headline: ["Outfit"], display: ["Outfit"], label: ["Outfit"]}, fontSize: {}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+  * {
+    border-radius: 0px !important;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #FFFDF8;
+    color: #241815;
+  }
+  .font-outfit {
+    font-family: 'Outfit', sans-serif;
+  }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+  .warm-shadow {
+    box-shadow: 4px 4px 0px #F59E0B;
+  }
+  .cart-drawer-open {
+    transform: translateX(0) !important;
+  }
+  .product-modal-card {
+    border-radius: 0.5rem !important;
+  }
+  #productDetailsModal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(24, 16, 12, 0.62);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 220ms ease;
+    padding: 1rem;
+  }
+  #productDetailsModal.is-open {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+  #productDetailsModalCard {
+    opacity: 0 !important;
+    transform: scale(0.96) translateY(8px) !important;
+    transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), opacity 220ms ease;
+  }
+  #productDetailsModal.is-open #productDetailsModalCard {
+    opacity: 1 !important;
+    transform: scale(1) translateY(0) !important;
+  }
+  .product-details-panel {
+    width: min(100%, 50rem);
+    max-height: min(92vh, 650px);
+    overflow-y: auto;
+    background: #FFFDF8;
+    border: 1px solid #E8D8C4;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 25px 65px -12px rgba(36, 24, 21, 0.38), 0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  }
+  #productDetailsModal .rounded-modal-panel {
+    border-radius: 1.25rem !important;
+  }
+  #productDetailsModal .rounded-modal-img-wrap {
+    border-radius: 0.875rem !important;
+  }
+  #productDetailsModal .rounded-modal-img {
+    border-radius: 0.875rem !important;
+  }
+  #productDetailsModal .rounded-modal-thumb {
+    border-radius: 0.5rem !important;
+  }
+  #productDetailsModal .rounded-modal-pill {
+    border-radius: 0.375rem !important;
+  }
+  #productDetailsModal .rounded-modal-box {
+    border-radius: 0.5rem !important;
+  }
+  #productDetailsModal .rounded-modal-btn {
+    border-radius: 0.5rem !important;
+  }
+  #productDetailsModal .rounded-modal-nav {
+    border-radius: 9999px !important;
+  }
+  #productDetailsModal .product-modal-thumb-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: all 150ms ease;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0;
+    background: #FFF8E8;
+  }
+  #productDetailsModal .product-modal-thumb-btn.is-active {
+    border-color: #b51d04 !important;
+    box-shadow: 0 0 0 1px #b51d04;
+  }
+  #productDetailsModal .product-modal-thumb-btn:hover:not(.is-active) {
+    border-color: #fe932c !important;
+  }
+  .custom-modal-scroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-modal-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-modal-scroll::-webkit-scrollbar-thumb {
+    background: #E8D8C4;
+    border-radius: 3px !important;
+  }
+</style>
+</head>
+<body class="bg-[#FFFDF8] text-[#241815] antialiased selection:bg-[#fe932c]/30 selection:text-[#904d00]">
+<!-- Top Bright Festive Announcement Ticker -->
+<div class="bg-[#FFF1EC] text-[#904d00] py-2 px-6 border-b border-[#E8D8C4]">
+<div class="max-w-7xl mx-auto flex items-center justify-center text-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#b51d04]" data-icon="sparkles">auto_awesome</span>
+<p class="font-outfit font-bold text-xs md:text-sm tracking-widest uppercase">
+      DIWALI FESTIVE DISPATCH ACTIVE • GUARANTEED 48-HR ALL-INDIA EXPRESS DELIVERY • 100% CERTIFIED GREEN CRACKERS
+    </p>
+<span class="material-symbols-outlined text-sm text-[#b51d04]" data-icon="sparkles">auto_awesome</span>
+</div>
+</div>
+<!-- Header (Bright Warm Pastel Linen & Marigold, Zero Dark Tone) -->
+<header class="bg-[#FFFDF8] border-b border-[#E8D8C4] sticky top-0 z-40">
+<div class="w-full h-20 px-6 md:px-12 max-w-7xl mx-auto flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-2 group" href="#">
+<span class="material-symbols-outlined text-3xl text-[#b51d04]">local_fire_department</span>
+<div class="flex flex-col">
+<span class="font-outfit text-2xl font-black tracking-widest text-[#904d00] uppercase leading-none">
+          SOVEREIGN
+        </span>
+<span class="font-outfit text-[10px] tracking-[0.25em] text-[#b51d04] font-bold uppercase mt-0.5">
+          Ceremonial Fireworks
+        </span>
+</div>
+</a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8 font-outfit text-sm font-semibold uppercase tracking-wider">
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors pb-1" href="#">
+        Home
+      </a>
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors pb-1" href="#">
+        About Us
+      </a>
+<!-- Active Target -->
+<a class="text-[#b51d04] border-b-2 border-[#b51d04] pb-1 font-bold" href="#">
+        Products
+      </a>
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors pb-1" href="#">
+        Bulk Enquiries
+      </a>
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors pb-1" href="#">
+        Contact
+      </a>
+</nav>
+<!-- Prominent Burst Box (Cart Button) -->
+<button class="bg-[#FFF8E8] border-2 border-[#fe932c] text-[#904d00] px-5 py-2.5 font-outfit text-sm uppercase font-bold tracking-wider flex items-center gap-2.5 hover:bg-[#fe932c] hover:text-white transition-all duration-150" id="openCartBtn">
+<span class="material-symbols-outlined text-xl" data-icon="shopping_bag">shopping_bag</span>
+<span>Burst Box</span>
+<span class="bg-[#b51d04] text-white text-xs px-2 py-0.5 font-bold" id="headerCartCount">3</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 md:px-12 py-10">
+<!-- Breadcrumb & Hero Lead -->
+<div class="flex flex-col md:flex-row md:items-end justify-between border-b border-[#E8D8C4] pb-8 mb-8 gap-4">
+<div>
+<div class="flex items-center gap-2 text-[#b51d04] font-outfit text-xs font-bold uppercase tracking-widest mb-2">
+<span class="w-8 h-[2px] bg-[#b51d04]"></span>
+        IMPERIAL CATALOGUE 2024
+      </div>
+<h1 class="font-outfit text-3xl md:text-5xl font-bold text-[#241815] tracking-tight leading-none">
+        Ceremonial Fireworks
+      </h1>
+<p class="font-body text-[#69534c] text-sm md:text-base mt-2 max-w-xl">
+        Heritage hand-crafted pyrotechnics manufactured directly at Sivakasi. Low smoke, vibrant festive illumination, strictly 100% green certified.
+      </p>
+</div>
+<div class="text-left md:text-right">
+<span class="inline-flex items-center gap-2 bg-[#FFF8E8] border border-[#d49b29] px-4 py-2 text-[#904d00] font-outfit text-xs font-bold uppercase tracking-wider">
+<span class="w-2 h-2 bg-[#b51d04]"></span>
+        8 Mastercraft Categories In Stock
+      </span>
+</div>
+</div>
+<!-- Category Filter Bar & Sorting Controller -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 mb-10 pb-6 border-b border-[#E8D8C4]">
+<!-- Horizontal Category Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 lg:pb-0">
+<button class="bg-[#b51d04] text-white px-5 py-2 font-outfit text-xs font-bold uppercase tracking-wider border border-[#b51d04] whitespace-nowrap shadow-sm">
+        All
+      </button>
+<button class="bg-[#FFF8E8] hover:bg-[#FFF1EC] text-[#69534c] hover:text-[#904d00] px-4 py-2 font-outfit text-xs font-semibold uppercase tracking-wider border border-[#E8D8C4] hover:border-[#fe932c] transition-colors whitespace-nowrap">
+        Sparklers
+      </button>
+<button class="bg-[#FFF8E8] hover:bg-[#FFF1EC] text-[#69534c] hover:text-[#904d00] px-4 py-2 font-outfit text-xs font-semibold uppercase tracking-wider border border-[#E8D8C4] hover:border-[#fe932c] transition-colors whitespace-nowrap">
+        Chakkars
+      </button>
+<button class="bg-[#FFF8E8] hover:bg-[#FFF1EC] text-[#69534c] hover:text-[#904d00] px-4 py-2 font-outfit text-xs font-semibold uppercase tracking-wider border border-[#E8D8C4] hover:border-[#fe932c] transition-colors whitespace-nowrap">
+        Flower Pots
+      </button>
+<button class="bg-[#FFF8E8] hover:bg-[#FFF1EC] text-[#69534c] hover:text-[#904d00] px-4 py-2 font-outfit text-xs font-semibold uppercase tracking-wider border border-[#E8D8C4] hover:border-[#fe932c] transition-colors whitespace-nowrap">
+        Rockets
+      </button>
+<button class="bg-[#FFF8E8] hover:bg-[#FFF1EC] text-[#69534c] hover:text-[#904d00] px-4 py-2 font-outfit text-xs font-semibold uppercase tracking-wider border border-[#E8D8C4] hover:border-[#fe932c] transition-colors whitespace-nowrap">
+        Garlands
+      </button>
+<button class="bg-[#FFF8E8] hover:bg-[#FFF1EC] text-[#69534c] hover:text-[#904d00] px-4 py-2 font-outfit text-xs font-semibold uppercase tracking-wider border border-[#E8D8C4] hover:border-[#fe932c] transition-colors whitespace-nowrap">
+        Fancy Items
+      </button>
+<button class="bg-[#FFF8E8] hover:bg-[#FFF1EC] text-[#69534c] hover:text-[#904d00] px-4 py-2 font-outfit text-xs font-semibold uppercase tracking-wider border border-[#E8D8C4] hover:border-[#fe932c] transition-colors whitespace-nowrap">
+        Gift Boxes
+      </button>
+</div>
+<!-- Quick Sorting Bar -->
+<div class="flex items-center gap-3 self-end lg:self-auto">
+<label class="font-outfit text-xs uppercase tracking-wider text-[#69534c] font-bold" for="sort-select">
+        Sort:
+      </label>
+<select class="bg-white border border-[#E8D8C4] text-[#241815] font-outfit text-xs font-medium px-4 py-2 uppercase tracking-wide focus:border-[#fe932c] focus:ring-0 cursor-pointer" id="sort-select">
+<option>Popularity (Highest)</option>
+<option>Price: Low to High</option>
+<option>Price: High to Low</option>
+</select>
+</div>
+</div>
+<!-- Product Showcase Grid (Modern Geometric Sans-Serif, Warm Pastel Accents) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="bg-white border border-[#E8D8C4] hover:border-[#fe932c] transition-all duration-200 flex flex-col justify-between shadow-[0_2px_8px_rgba(232,216,196,0.25)] hover:shadow-[0_4px_16px_rgba(245,158,11,0.18)] cursor-pointer" data-product-id="1" role="button" tabindex="0" aria-label="View details for 120-Shot Golden Brocade Aerial">
+<div>
+<div class="relative w-full aspect-[4/3] bg-[#FFF8E8] overflow-hidden border-b border-[#E8D8C4]">
+<img alt="120-shot fireworks repeater box" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBAq42C-AMl6N428EJgR7bo-Ar0z1fV8_0ivbnXE3bsfWm5yITeSaONRsdWuGwA3pPj-4gbbQky-aCMSZKJPBQJ5YzjWJUc9PLpdMLCvfUA8BPsxU9hshNInvqbFfE5ydXgVecmZpX_4p_cIg3d_xK5yYOgxgyuwVKb8QKd1yjilTCz7UbzTcQyoRvu0QiGDl9R_mv7YIlBL-VgAoS5WwJvU8mxlya3KIJybvVYq2YojGd5RAL-dEIsQ"/>
+<span class="absolute top-3 left-3 bg-[#b51d04] text-white px-2.5 py-1 font-outfit text-[11px] uppercase font-bold tracking-widest">
+            Festival Offer
+          </span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[#904d00] font-outfit text-xs uppercase tracking-wider font-bold">
+              Aerial Multi-Shot
+            </span>
+<span class="bg-[#FFF1EC] text-[#904d00] border border-[#E8D8C4] px-2 py-0.5 font-outfit text-[11px] uppercase font-bold">
+              1 Box (120 Repeater)
+            </span>
+</div>
+<h3 class="font-outfit text-lg font-bold text-[#241815] mb-3 leading-snug">
+            120-Shot Golden Brocade Aerial
+          </h3>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-outfit text-2xl font-bold text-[#b51d04]">
+              ₹3,450
+            </span>
+<span class="text-[#69534c]/60 line-through font-outfit text-sm">
+              ₹5,999
+            </span>
+<span class="text-[#904d00] font-outfit text-xs uppercase font-bold tracking-wide">
+              42% OFF
+            </span>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<button class="w-full bg-[#FFF8E8] text-[#904d00] hover:bg-[#b51d04] hover:text-white py-3 px-4 font-outfit text-xs uppercase font-bold tracking-wider transition-all duration-150 flex items-center justify-center gap-2 border-2 border-[#fe932c]" onclick="addToCart('120-Shot Golden Brocade Aerial', 3450, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBBAq42C-AMl6N428EJgR7bo-Ar0z1fV8_0ivbnXE3bsfWm5yITeSaONRsdWuGwA3pPj-4gbbQky-aCMSZKJPBQJ5YzjWJUc9PLpdMLCvfUA8BPsxU9hshNInvqbFfE5ydXgVecmZpX_4p_cIg3d_xK5yYOgxgyuwVKb8QKd1yjilTCz7UbzTcQyoRvu0QiGDl9R_mv7YIlBL-VgAoS5WwJvU8mxlya3KIJybvVYq2YojGd5RAL-dEIsQ')">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+          ADD TO BOX
+        </button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white border border-[#E8D8C4] hover:border-[#fe932c] transition-all duration-200 flex flex-col justify-between shadow-[0_2px_8px_rgba(232,216,196,0.25)] hover:shadow-[0_4px_16px_rgba(245,158,11,0.18)] cursor-pointer" data-product-id="2" role="button" tabindex="0" aria-label="View details for Tri-Color Deluxe Flower Pot 10 Pcs">
+<div>
+<div class="relative w-full aspect-[4/3] bg-[#FFF8E8] overflow-hidden border-b border-[#E8D8C4]">
+<img alt="Pack of deluxe flower pots crackers" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDZERYow5MMypN35M4NcmDc1-ZpO7vpIDt5mjG7WiKeHfhn3Zw8VF-dJwM3U4JB0_kiJgA8xWW1L4eoslMxVq-wA2LmRWnqrl0SyZYr3dY3mqFOwK-DBotia9VKQI8N9nM7XEH4aHNrz8Gx6XygDxjDzM6q-vKJttax3W6eVlP0gRDIkdOpi1W1e9nM1AXmSQQ-40HfusWReALsZo52kyLuJxgG8O_CcCLTvVpaGrmbmTlFudsBeb4tg"/>
+<span class="absolute top-3 left-3 bg-[#fe932c] text-white px-2.5 py-1 font-outfit text-[11px] uppercase font-bold tracking-widest">
+            Bestseller
+          </span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[#904d00] font-outfit text-xs uppercase tracking-wider font-bold">
+              Fountains
+            </span>
+<span class="bg-[#FFF1EC] text-[#904d00] border border-[#E8D8C4] px-2 py-0.5 font-outfit text-[11px] uppercase font-bold">
+              Box of 10 Pcs
+            </span>
+</div>
+<h3 class="font-outfit text-lg font-bold text-[#241815] mb-3 leading-snug">
+            Tri-Color Deluxe Flower Pot 10 Pcs
+          </h3>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-outfit text-2xl font-bold text-[#b51d04]">
+              ₹650
+            </span>
+<span class="text-[#69534c]/60 line-through font-outfit text-sm">
+              ₹1,200
+            </span>
+<span class="text-[#904d00] font-outfit text-xs uppercase font-bold tracking-wide">
+              45% OFF
+            </span>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<button class="w-full bg-[#FFF8E8] text-[#904d00] hover:bg-[#b51d04] hover:text-white py-3 px-4 font-outfit text-xs uppercase font-bold tracking-wider transition-all duration-150 flex items-center justify-center gap-2 border-2 border-[#fe932c]" onclick="addToCart('Tri-Color Deluxe Flower Pot 10 Pcs', 650, 'https://lh3.googleusercontent.com/aida-public/AB6AXuCDZERYow5MMypN35M4NcmDc1-ZpO7vpIDt5mjG7WiKeHfhn3Zw8VF-dJwM3U4JB0_kiJgA8xWW1L4eoslMxVq-wA2LmRWnqrl0SyZYr3dY3mqFOwK-DBotia9VKQI8N9nM7XEH4aHNrz8Gx6XygDxjDzM6q-vKJttax3W6eVlP0gRDIkdOpi1W1e9nM1AXmSQQ-40HfusWReALsZo52kyLuJxgG8O_CcCLTvVpaGrmbmTlFudsBeb4tg')">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+          ADD TO BOX
+        </button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white border border-[#E8D8C4] hover:border-[#fe932c] transition-all duration-200 flex flex-col justify-between shadow-[0_2px_8px_rgba(232,216,196,0.25)] hover:shadow-[0_4px_16px_rgba(245,158,11,0.18)] cursor-pointer" data-product-id="3" role="button" tabindex="0" aria-label="View details for Special Spinning Zamin Chakkar">
+<div>
+<div class="relative w-full aspect-[4/3] bg-[#FFF8E8] overflow-hidden border-b border-[#E8D8C4]">
+<img alt="High speed ground chakkars spinning fireworks" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAS2bEMZKdFdDGc_P0UrHUiZQXpwjz9iAzIU9Nu_ygkyp7xBQgT9VtESS-0VY4B3gcV153nCNq3XbFv7fNEx7dXW-rPAVPAJQijXkicGzrDNsCdQn-MfaLhKRS40pfXB7PcyszjB5IRO3ByUgjgB-awA_-aIOa2rZEHwi-pLDDz_vbAUu5yjhGiZz-43Cmy4yGP_pDYHt3Fvq8rNsKZrdcCrLDiXa_K5VAc1sjE77PhsGeWydKsa1CUg"/>
+<span class="absolute top-3 left-3 bg-[#745800] text-white px-2.5 py-1 font-outfit text-[11px] uppercase font-bold tracking-widest">
+            High Rotation
+          </span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[#904d00] font-outfit text-xs uppercase tracking-wider font-bold">
+              Ground Spinners
+            </span>
+<span class="bg-[#FFF1EC] text-[#904d00] border border-[#E8D8C4] px-2 py-0.5 font-outfit text-[11px] uppercase font-bold">
+              Pack of 20 Units
+            </span>
+</div>
+<h3 class="font-outfit text-lg font-bold text-[#241815] mb-3 leading-snug">
+            Special Spinning Zamin Chakkar
+          </h3>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-outfit text-2xl font-bold text-[#b51d04]">
+              ₹480
+            </span>
+<span class="text-[#69534c]/60 line-through font-outfit text-sm">
+              ₹850
+            </span>
+<span class="text-[#904d00] font-outfit text-xs uppercase font-bold tracking-wide">
+              43% OFF
+            </span>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<button class="w-full bg-[#FFF8E8] text-[#904d00] hover:bg-[#b51d04] hover:text-white py-3 px-4 font-outfit text-xs uppercase font-bold tracking-wider transition-all duration-150 flex items-center justify-center gap-2 border-2 border-[#fe932c]" onclick="addToCart('Special Spinning Zamin Chakkar', 480, 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAS2bEMZKdFdDGc_P0UrHUiZQXpwjz9iAzIU9Nu_ygkyp7xBQgT9VtESS-0VY4B3gcV153nCNq3XbFv7fNEx7dXW-rPAVPAJQijXkicGzrDNsCdQn-MfaLhKRS40pfXB7PcyszjB5IRO3ByUgjgB-awA_-aIOa2rZEHwi-pLDDz_vbAUu5yjhGiZz-43Cmy4yGP_pDYHt3Fvq8rNsKZrdcCrLDiXa_K5VAc1sjE77PhsGeWydKsa1CUg')">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+          ADD TO BOX
+        </button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white border border-[#E8D8C4] hover:border-[#fe932c] transition-all duration-200 flex flex-col justify-between shadow-[0_2px_8px_rgba(232,216,196,0.25)] hover:shadow-[0_4px_16px_rgba(245,158,11,0.18)] cursor-pointer" data-product-id="4" role="button" tabindex="0" aria-label="View details for Whistling Deluxe Sky Rocket">
+<div>
+<div class="relative w-full aspect-[4/3] bg-[#FFF8E8] overflow-hidden border-b border-[#E8D8C4]">
+<img alt="Whistling sky rocket pyrotechnics" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS5IWQeGk13EoC3F6BWOGVOSAsOZQP29dhXIOeg6LYWmgM8t5Me2yE8STyBvnk8MNTljIe7xfSjlqhFL2ipFHgPLvgVpZ93kdhdr5BVN75vFwQ_OOKcs3-jmD2zVZl5t6--wSgGY5bIcwRt6rEhMva_vTKrG5XSiOoy04NA9xq8MgIABtp9edhMwqsWwP8CiPLRF9vKsFPwxEuDw-Y2Svp_2jP4izYNHAUKq4LKhfHMr7htipdVLSPQA"/>
+<span class="absolute top-3 left-3 bg-[#b51d04] text-white px-2.5 py-1 font-outfit text-[11px] uppercase font-bold tracking-widest">
+            High Altitude
+          </span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[#904d00] font-outfit text-xs uppercase tracking-wider font-bold">
+              High Aerial
+            </span>
+<span class="bg-[#FFF1EC] text-[#904d00] border border-[#E8D8C4] px-2 py-0.5 font-outfit text-[11px] uppercase font-bold">
+              Pack of 10 Rockets
+            </span>
+</div>
+<h3 class="font-outfit text-lg font-bold text-[#241815] mb-3 leading-snug">
+            Whistling Deluxe Sky Rocket
+          </h3>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-outfit text-2xl font-bold text-[#b51d04]">
+              ₹890
+            </span>
+<span class="text-[#69534c]/60 line-through font-outfit text-sm">
+              ₹1,600
+            </span>
+<span class="text-[#904d00] font-outfit text-xs uppercase font-bold tracking-wide">
+              44% OFF
+            </span>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<button class="w-full bg-[#FFF8E8] text-[#904d00] hover:bg-[#b51d04] hover:text-white py-3 px-4 font-outfit text-xs uppercase font-bold tracking-wider transition-all duration-150 flex items-center justify-center gap-2 border-2 border-[#fe932c]" onclick="addToCart('Whistling Deluxe Sky Rocket', 890, 'https://lh3.googleusercontent.com/aida-public/AB6AXuDS5IWQeGk13EoC3F6BWOGVOSAsOZQP29dhXIOeg6LYWmgM8t5Me2yE8STyBvnk8MNTljIe7xfSjlqhFL2ipFHgPLvgVpZ93kdhdr5BVN75vFwQ_OOKcs3-jmD2zVZl5t6--wSgGY5bIcwRt6rEhMva_vTKrG5XSiOoy04NA9xq8MgIABtp9edhMwqsWwP8CiPLRF9vKsFPwxEuDw-Y2Svp_2jP4izYNHAUKq4LKhfHMr7htipdVLSPQA')">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+          ADD TO BOX
+        </button>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-white border border-[#E8D8C4] hover:border-[#fe932c] transition-all duration-200 flex flex-col justify-between shadow-[0_2px_8px_rgba(232,216,196,0.25)] hover:shadow-[0_4px_16px_rgba(245,158,11,0.18)] cursor-pointer" data-product-id="5" role="button" tabindex="0" aria-label="View details for 1000 Wala Festive Garland">
+<div>
+<div class="relative w-full aspect-[4/3] bg-[#FFF8E8] overflow-hidden border-b border-[#E8D8C4]">
+<img alt="Ceremonial 1000 wala red cracker garland roll" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUc6DJeDwy3NTUbS4rEh1i5n5DkQY9BAMeix-ZMbvutb_-6E9FtPe3MnKbTVoIiQfOA0lxMHNXkn-mhANxf9FbZlKxWB0DtEr6KSCzeRYHX9lCjbvT96viX55C69m4nkqLWb9dtDblT1Jl56hYe-hkwK_3aomPr_gugz3Jsz3VfCMZozEI8oXDCIl-F3zUVqrBQgbvsferjfGfjKIY-jPw_cFufmkKso8OMsNXCuHD106MWs6wr5ztdQ"/>
+<span class="absolute top-3 left-3 bg-[#b51d04] text-white px-2.5 py-1 font-outfit text-[11px] uppercase font-bold tracking-widest">
+            Limited Batch
+          </span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[#904d00] font-outfit text-xs uppercase tracking-wider font-bold">
+              Ceremonial Garland
+            </span>
+<span class="bg-[#FFF1EC] text-[#904d00] border border-[#E8D8C4] px-2 py-0.5 font-outfit text-[11px] uppercase font-bold">
+              1 Garland (1000 Shots)
+            </span>
+</div>
+<h3 class="font-outfit text-lg font-bold text-[#241815] mb-3 leading-snug">
+            1000 Wala Festive Garland
+          </h3>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-outfit text-2xl font-bold text-[#b51d04]">
+              ₹1,150
+            </span>
+<span class="text-[#69534c]/60 line-through font-outfit text-sm">
+              ₹2,200
+            </span>
+<span class="text-[#904d00] font-outfit text-xs uppercase font-bold tracking-wide">
+              47% OFF
+            </span>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<button class="w-full bg-[#FFF8E8] text-[#904d00] hover:bg-[#b51d04] hover:text-white py-3 px-4 font-outfit text-xs uppercase font-bold tracking-wider transition-all duration-150 flex items-center justify-center gap-2 border-2 border-[#fe932c]" onclick="addToCart('1000 Wala Festive Garland', 1150, 'https://lh3.googleusercontent.com/aida-public/AB6AXuBUc6DJeDwy3NTUbS4rEh1i5n5DkQY9BAMeix-ZMbvutb_-6E9FtPe3MnKbTVoIiQfOA0lxMHNXkn-mhANxf9FbZlKxWB0DtEr6KSCzeRYHX9lCjbvT96viX55C69m4nkqLWb9dtDblT1Jl56hYe-hkwK_3aomPr_gugz3Jsz3VfCMZozEI8oXDCIl-F3zUVqrBQgbvsferjfGfjKIY-jPw_cFufmkKso8OMsNXCuHD106MWs6wr5ztdQ')">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+          ADD TO BOX
+        </button>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-white border border-[#E8D8C4] hover:border-[#fe932c] transition-all duration-200 flex flex-col justify-between shadow-[0_2px_8px_rgba(232,216,196,0.25)] hover:shadow-[0_4px_16px_rgba(245,158,11,0.18)] cursor-pointer" data-product-id="6" role="button" tabindex="0" aria-label="View details for Sovereign Royal Hamper Box">
+<div>
+<div class="relative w-full aspect-[4/3] bg-[#FFF8E8] overflow-hidden border-b border-[#E8D8C4]">
+<img alt="Grand Sovereign fireworks hamper box" class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACGHPzQiOzOO5a6FEA1aYwX6hNgSbjNI3S19a2NpMYC6WLR2BBNSHXgjkOojYpcwv5JyH9OeccwSwVouRVnwGN1SFSRkkPRW8gcU7bOcIWQ1zC9xeYJjwoxsrh0iXTAiTPajVvJeVFDluYDhSVBznUw_epm0GxqOaMc4fcBSnK_QHrG5GvUYJBE9tiuyt2Y7IHCEP5HVrkkJ9ZUptte3Z9vWHpR5B3nABZHycff2PmeLLiutUcuzFURw"/>
+<span class="absolute top-3 left-3 bg-[#b51d04] text-white px-2.5 py-1 font-outfit text-[11px] uppercase font-bold tracking-widest">
+            Grand Hamper
+          </span>
+</div>
+<div class="p-5">
+<div class="flex justify-between items-start mb-2">
+<span class="text-[#904d00] font-outfit text-xs uppercase tracking-wider font-bold">
+              Royal Assortment
+            </span>
+<span class="bg-[#FFF1EC] text-[#904d00] border border-[#E8D8C4] px-2 py-0.5 font-outfit text-[11px] uppercase font-bold">
+              52 Items In Box
+            </span>
+</div>
+<h3 class="font-outfit text-lg font-bold text-[#241815] mb-3 leading-snug">
+            Sovereign Royal Hamper Box
+          </h3>
+<div class="flex items-baseline gap-3 mb-2">
+<span class="font-outfit text-2xl font-bold text-[#b51d04]">
+              ₹5,800
+            </span>
+<span class="text-[#69534c]/60 line-through font-outfit text-sm">
+              ₹9,500
+            </span>
+<span class="text-[#904d00] font-outfit text-xs uppercase font-bold tracking-wide">
+              38% OFF
+            </span>
+</div>
+</div>
+</div>
+<div class="p-5 pt-0">
+<button class="w-full bg-[#FFF8E8] text-[#904d00] hover:bg-[#b51d04] hover:text-white py-3 px-4 font-outfit text-xs uppercase font-bold tracking-wider transition-all duration-150 flex items-center justify-center gap-2 border-2 border-[#fe932c]" onclick="addToCart('Sovereign Royal Hamper Box', 5800, 'https://lh3.googleusercontent.com/aida-public/AB6AXuACGHPzQiOzOO5a6FEA1aYwX6hNgSbjNI3S19a2NpMYC6WLR2BBNSHXgjkOojYpcwv5JyH9OeccwSwVouRVnwGN1SFSRkkPRW8gcU7bOcIWQ1zC9xeYJjwoxsrh0iXTAiTPajVvJeVFDluYDhSVBznUw_epm0GxqOaMc4fcBSnK_QHrG5GvUYJBE9tiuyt2Y7IHCEP5HVrkkJ9ZUptte3Z9vWHpR5B3nABZHycff2PmeLLiutUcuzFURw')">
+<span class="material-symbols-outlined text-lg" data-icon="add_shopping_cart">add_shopping_cart</span>
+          ADD TO BOX
+        </button>
+</div>
+</div>
+</div>
+<!-- Festive Trust Assurance Bar (Bright Warm Champagne & Pale Marigold, ZERO Dark Tones) -->
+<div class="mt-14 p-8 bg-[#FFF8E8] text-[#241815] border border-[#E8D8C4] shadow-sm">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-[#E8D8C4]">
+<div class="flex items-center gap-4 px-4 py-2">
+<span class="material-symbols-outlined text-4xl text-[#b51d04]" data-icon="verified_user">verified_user</span>
+<div>
+<h4 class="font-outfit text-sm uppercase tracking-wider text-[#241815] font-bold">Certified Green Firecrackers</h4>
+<p class="font-body text-xs text-[#69534c] mt-0.5">CSIR-NEERI Approved formulation with minimal emissions</p>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 py-2">
+<span class="material-symbols-outlined text-4xl text-[#fe932c]" data-icon="local_shipping">local_shipping</span>
+<div>
+<h4 class="font-outfit text-sm uppercase tracking-wider text-[#241815] font-bold">Safe Armored Transport</h4>
+<p class="font-body text-xs text-[#69534c] mt-0.5">Explosive-safe moisture proof delivery container</p>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 py-2">
+<span class="material-symbols-outlined text-4xl text-[#745800]" data-icon="payments">payments</span>
+<div>
+<h4 class="font-outfit text-sm uppercase tracking-wider text-[#241815] font-bold">Wholesale Direct Rate</h4>
+<p class="font-body text-xs text-[#69534c] mt-0.5">Directly from Sivakasi heritage manufacturing yards</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Product Details Modal (Single Reusable Modal for All Products) -->
+<div
+  id="productDetailsModal"
+  class="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 md:p-6"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="productModalTitle"
+  aria-hidden="true"
+>
+  <div id="productDetailsModalCard" class="product-details-panel rounded-modal-panel custom-modal-scroll p-5 sm:p-6 md:p-7 relative">
+    <div class="grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr] gap-6 md:gap-7 items-start">
+      
+      <!-- Left Column: Visuals & Thumbnails Carousel -->
+      <div class="flex flex-col">
+        <!-- Main Product Image -->
+        <div class="rounded-modal-img-wrap aspect-square w-full bg-[#FFF8E8] overflow-hidden border border-[#E8D8C4] shadow-inner relative flex items-center justify-center">
+          <img id="productModalImage" class="rounded-modal-img w-full h-full object-cover transition-opacity duration-200" src="" alt="" />
+        </div>
+
+        <!-- Thumbnails Strip with Left/Right Navigation -->
+        <div class="flex items-center justify-center gap-1.5 sm:gap-2 mt-3.5">
+          <button type="button" id="modalPrevThumbBtn" class="rounded-modal-nav w-7 h-7 flex items-center justify-center text-[#69534c] hover:text-[#b51d04] hover:bg-[#FFF1EC] transition-colors" aria-label="Previous image">
+            <span class="material-symbols-outlined text-[18px]">chevron_left</span>
+          </button>
+          <div id="productModalThumbsStrip" class="flex items-center gap-2 overflow-x-auto py-1 px-0.5 max-w-full">
+            <!-- Dynamic thumbnails injected by JavaScript -->
+          </div>
+          <button type="button" id="modalNextThumbBtn" class="rounded-modal-nav w-7 h-7 flex items-center justify-center text-[#69534c] hover:text-[#b51d04] hover:bg-[#FFF1EC] transition-colors" aria-label="Next image">
+            <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Right Column: Product Details Content -->
+      <div class="flex flex-col">
+        <!-- Category Badge -->
+        <div>
+          <span id="productModalCategory" class="rounded-modal-pill inline-block bg-[#FFF1EC] text-[#904d00] font-outfit text-[11px] font-bold uppercase tracking-wider px-3 py-1 border border-[#F5D8CE]"></span>
+        </div>
+
+        <!-- Title -->
+        <h2 id="productModalTitle" class="font-outfit text-xl sm:text-2xl font-bold leading-tight text-[#241815] mt-2.5"></h2>
+
+        <!-- Tagline / Subtitle -->
+        <p id="productModalSubtitle" class="font-body text-xs sm:text-sm text-[#69534c] mt-1 font-medium"></p>
+
+        <!-- Rating & Certification Row -->
+        <div class="flex items-center gap-2.5 mt-3 text-xs text-[#69534c]">
+          <div class="flex items-center gap-1">
+            <span class="text-[#f59e0b] text-sm leading-none font-bold">★</span>
+            <span id="productModalRating" class="font-outfit font-semibold text-[#241815]">4.6 (120 reviews)</span>
+          </div>
+          <span class="text-[#E8D8C4]">|</span>
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-sm text-[#2E7D32]">verified_user</span>
+            <span id="productModalCertified" class="font-body text-xs font-medium text-[#241815]">100% Safe & Certified</span>
+          </div>
+        </div>
+
+        <!-- Description Paragraph -->
+        <p id="productModalDescription" class="font-body text-xs sm:text-[13px] leading-relaxed text-[#69534c] mt-3.5"></p>
+
+        <!-- Mfg & Best Before Highlight Boxes (Strictly below description, above price) -->
+        <div class="grid grid-cols-2 gap-2.5 sm:gap-3 mt-4">
+          <!-- Mfg Box -->
+          <div class="rounded-modal-box bg-[#FFF1EC] border border-[#F5D8CE] p-2.5 sm:p-3 flex items-start gap-2 sm:gap-2.5 shadow-sm">
+            <span class="material-symbols-outlined text-[#b51d04] text-[18px] sm:text-[20px] shrink-0 mt-0.5">calendar_month</span>
+            <div class="min-w-0">
+              <span class="block font-outfit text-xs sm:text-[13px] font-bold text-[#241815] leading-snug">Mfg: <span id="productModalMfg">August 2026</span></span>
+            </div>
+          </div>
+          <!-- Best Before Box -->
+          <div class="rounded-modal-box bg-[#FFF1EC] border border-[#F5D8CE] p-2.5 sm:p-3 flex items-start gap-2 sm:gap-2.5 shadow-sm">
+            <span class="material-symbols-outlined text-[#b51d04] text-[18px] sm:text-[20px] shrink-0 mt-0.5">calendar_month</span>
+            <div class="min-w-0">
+              <span class="block font-outfit text-xs sm:text-[13px] font-bold text-[#241815] leading-snug">Best Before: <span id="productModalExpiry">July 2028</span></span>
+              <span class="block font-body text-[10px] text-[#69534c] mt-0.5 font-medium leading-none" id="productModalExpirySub">(24 Months from Mfg)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Price, Offer & ADD Action Row -->
+        <div class="flex items-center justify-between mt-5 sm:mt-6 pt-3 border-t border-[#E8D8C4]/60 gap-3">
+          <div class="flex items-baseline gap-2 sm:gap-2.5 flex-wrap">
+            <span id="productModalPrice" class="font-outfit text-2xl sm:text-[26px] font-bold text-[#b51d04] leading-none"></span>
+            <span id="productModalOriginalPrice" class="font-outfit text-sm text-[#69534c]/60 line-through leading-none"></span>
+            <span id="productModalOffer" class="font-outfit text-xs font-bold text-[#d48344] uppercase tracking-wide leading-none"></span>
+          </div>
+          <button id="productModalAddButton" type="button" class="rounded-modal-btn border-2 border-[#fe932c] bg-[#FFF8E8] text-[#904d00] hover:bg-[#b51d04] hover:text-white hover:border-[#b51d04] px-5 sm:px-6 py-2.5 font-outfit text-xs font-bold uppercase tracking-wider transition-all duration-150 flex items-center gap-2 shadow-sm shrink-0">
+            <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+            <span>ADD</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Interactive Slide-Out Burst Box Cart Drawer -->
+<div class="fixed inset-0 bg-[#241815]/40 z-50 transition-opacity duration-300 opacity-0 pointer-events-none" id="cartDrawerBackdrop"></div>
+<aside class="fixed top-0 right-0 h-full w-full max-w-md bg-[#FFFDF8] border-l border-[#E8D8C4] shadow-2xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between" id="cartDrawer">
+<!-- Drawer Header -->
+<div class="p-6 border-b border-[#E8D8C4] bg-[#FFF8E8] flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl text-[#b51d04]">shopping_bag</span>
+<h2 class="font-outfit text-lg font-bold uppercase tracking-wider text-[#241815]">
+        Your Burst Box (<span id="cartItemCountLabel">3</span>)
+      </h2>
+</div>
+<button class="p-1 text-[#69534c] hover:text-[#b51d04] transition-colors" id="closeCartBtn">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<!-- Cart Items List Container -->
+<div class="flex-1 overflow-y-auto p-6 space-y-4" id="cartItemsList">
+<!-- Items rendered dynamically by JS -->
+</div>
+<!-- Drawer Footer: Subtotal & Checkout -->
+<div class="p-6 border-t border-[#E8D8C4] bg-[#FFF8E8] space-y-4">
+<div class="flex justify-between items-center text-sm font-outfit">
+<span class="text-[#69534c] font-semibold uppercase">Diwali Festive Discount</span>
+<span class="text-[#b51d04] font-bold">-₹1,200</span>
+</div>
+<div class="flex justify-between items-center text-base font-outfit border-t border-[#E8D8C4] pt-3">
+<span class="text-[#241815] font-bold uppercase tracking-wider">Estimated Total</span>
+<span class="text-2xl font-bold text-[#b51d04]" id="cartSubtotal">₹4,580</span>
+</div>
+<a class="block w-full bg-[#b51d04] hover:bg-[#d9381e] text-white py-3.5 text-center font-outfit text-sm uppercase font-bold tracking-widest transition-colors shadow-sm" href="#">
+      Proceed to Checkout
+    </a>
+<p class="text-[11px] text-center text-[#69534c] font-medium">
+      Free express shipping applied. Guaranteed festival arrival.
+    </p>
+</div>
+</aside>
+<!-- Bright Festive Footer (Replaced dark footer with warm ivory/linen, dark text, golden accents) -->
+<footer class="bg-[#FFF8E8] border-t border-[#E8D8C4] mt-16 text-[#241815]">
+<div class="w-full py-16 px-6 md:px-12 max-w-7xl mx-auto flex flex-col gap-12">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-[#E8D8C4]">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-2xl text-[#b51d04]">local_fire_department</span>
+<span class="font-outfit text-2xl font-black text-[#904d00] uppercase tracking-widest">
+            SOVEREIGN
+          </span>
+</div>
+<p class="text-[#69534c] font-body text-xs mt-1 max-w-md">
+          Ceremonial Illumination &amp; Heirloom Craftsmanship. Sivakasi registered manufacturer &amp; direct festival supplier.
+        </p>
+</div>
+<!-- Footer Links -->
+<nav class="flex flex-wrap gap-6 md:gap-8 font-outfit text-xs font-bold uppercase tracking-wider">
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors" href="#">
+          Safety Compliance
+        </a>
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors" href="#">
+          Store Locator
+        </a>
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors" href="#">
+          Festival Hotline
+        </a>
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors" href="#">
+          Permits &amp; Delivery
+        </a>
+<a class="text-[#69534c] hover:text-[#b51d04] transition-colors" href="#">
+          Terms of Service
+        </a>
+</nav>
+</div>
+<!-- Copyright & Quality Certification -->
+<div class="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4 text-[#69534c] font-body text-xs">
+<p>© 2024 SOVEREIGN PYROTECHNICS. HEIRLOOM CRAFTSMANSHIP &amp; CEREMONIAL ILLUMINATION. ALL RIGHTS RESERVED.</p>
+<div class="flex items-center gap-2 text-[#904d00] font-outfit font-bold uppercase tracking-wider text-[11px] bg-white border border-[#E8D8C4] px-3 py-1">
+<span class="material-symbols-outlined text-base text-[#d49b29]">verified</span>
+        ISO 9001:2015 Pyrotechnic Standard
+      </div>
+</div>
+</div>
+</footer>
+<script>
+  // Central product registry with rich gallery and Sivakasi certification metadata
+  const productCatalogData = {
+    '1': {
+      title: '120-Shot Golden Brocade Aerial',
+      category: 'Aerial Multi-Shot',
+      subtitle: 'Grand aerial repeater. Sky-filling golden brocades.',
+      rating: '4.8 (145 reviews)',
+      certified: '100% Safe & Certified',
+      mfgDate: 'August 2026',
+      expiryDate: 'July 2028',
+      expirySub: '(24 Months from Mfg)',
+      description: 'A 120-shot aerial repeater that builds from golden brocade tails into a broad, ceremonial finale. A commanding choice for large family celebrations and community displays. Sivakasi direct heritage pyrotechnic formulation.',
+      thumbnails: [
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuBBAq42C-AMl6N428EJgR7bo-Ar0z1fV8_0ivbnXE3bsfWm5yITeSaONRsdWuGwA3pPj-4gbbQky-aCMSZKJPBQJ5YzjWJUc9PLpdMLCvfUA8BPsxU9hshNInvqbFfE5ydXgVecmZpX_4p_cIg3d_xK5yYOgxgyuwVKb8QKd1yjilTCz7UbzTcQyoRvu0QiGDl9R_mv7YIlBL-VgAoS5WwJvU8mxlya3KIJybvVYq2YojGd5RAL-dEIsQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuASOrdw6gL5tJTxeBCrkWrAYNjchbV6El3rrIa7C8xSIiirAATGwd2umpTB8V-d6UZM0UrJ26LDT2gLufzL_aFIFVWrhwM-IOLYnTz7OVbpOd5lMcQxCvWIcvNcqTQFRWJb5bD_sFwWQX3qmhpG8z1b8sP5K6RS5slUwc4lq7KPQ3pwX1yG-9LVuZ3-CJTlics-ELMRizQUtApOxxGF8Yi0ydrSNKsqsmf6zwHcj_seBttCtBkE9Z4JVQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuDw5V5ecECLQE-EbRjvFSDR7W27C4wnYaIkQ6liSn2hsImu7ckpzKf4_RMpFWYHevS1i7QkMIJDaaN3oMEAhs6FD3wLImapZKsrjBLRqKxAqwPxTaL5EwfbNhXAZE_B5XLyQ8uHgoRYapgqj-sGvrpgAVYcAb02NnGlEilknCUbL8ovmzALe-U1RkkRZe5AbPAljOisTSmfYatDxfXyxZbcDVyT8oKfTZ5-3pfQHLLpi1_trOSpUn-d9w',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuC8Wq1QpDZWPTIg6TLA8Rqg7KKRzLvNdgVXXHusqknrhfyXXiVkFxfWZ9DOKeKoG1shz8tFTBpTqC4Tb8Aa2GD22rcW3ivJRdnm4mG2C0gzYEKPk8FRlqTE0IQX8hTFnzzlA62zw2lnUiXKV9A3nw9OG9xA-NCH9U81oQwYpQTzplBEUAiYd9p96mDfXt71k3V3La_179eWct4UUvNFMbyQtHtyfVn2XfJjnpCA37wSjlIDMTSwQZ0cgQ'
+      ]
+    },
+    '2': {
+      title: 'Tri-Color Deluxe Flower Pot 10 Pcs',
+      category: 'Fountains',
+      subtitle: 'Three-tier chromatic fountain of brilliant sparks.',
+      rating: '4.7 (96 reviews)',
+      certified: '100% Safe & Certified',
+      mfgDate: 'August 2026',
+      expiryDate: 'July 2028',
+      expirySub: '(24 Months from Mfg)',
+      description: 'A box of 10 deluxe flower pots that rise through three vibrant colours with a steady, sparkling fountain. A dependable celebration staple made in Sivakasi with minimal smoke and clean luminous reports.',
+      thumbnails: [
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuCDZERYow5MMypN35M4NcmDc1-ZpO7vpIDt5mjG7WiKeHfhn3Zw8VF-dJwM3U4JB0_kiJgA8xWW1L4eoslMxVq-wA2LmRWnqrl0SyZYr3dY3mqFOwK-DBotia9VKQI8N9nM7XEH4aHNrz8Gx6XygDxjDzM6q-vKJttax3W6eVlP0gRDIkdOpi1W1e9nM1AXmSQQ-40HfusWReALsZo52kyLuJxgG8O_CcCLTvVpaGrmbmTlFudsBeb4tg',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuBIPuXgS3FrAKT1SSYLsDpu7RlbAipFMJCZht3IpIOXQy9Ks80ro-tKZ0VxecJfIAxupchgWLxpd1ik2P7RqLWR0ND9VEJlrk-KYq1N9ggpfUXQ0KS8DYJL-thFnWoEQdwYg0qadsC0UnP9-w3iqhhYI8zQM26ZF34IVoUzt_IFVtdbldGrSXo8JjR9Kwx93F3xQEQW2zzu6gg_SFURQWC15nDVRLisCbNWmZdYhO02sARfTkiXSeFvJA',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuA6rU__LbUOdPO3gZ3rFbTDewrNy5m7lmb4_tGO-EEwVxzqoWvpxzYjtoJoCCk82r92x8dtebrY5QtWDfOyfulU8vkJeY76p6SnVtjPzwOICdqVzuqD2Ugud_cSmNKPzfyS2pB-xsTz91abp1nUu6KW-wfJ0a22uWjy782f5ga8a7bCuo_plJfy9M3pxLpQPdEL3rsWol2S07C9bqhgAhysNVEZPKRpqVrcj-2686LDEgb99e-Gw668CQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuCcQ07ubPuc3DbMn7Oq6DYlw4mH2L6a1VJpX0RM3G3cMMNXA83Ths4wZdR39nAjGuzAY4xT_2BqFi0JZRP5cg6IGYV2mAWwRma3evecCt6s7oXLwemFtJ0MFz-h_Cs_tkhnEyWiMLk8Y_30t8LlTFLpsWzOLjWRm8XljsyHJXZUzMsAi5qcrb_8jGZmuFWoeIx3UWw0CE7mDkZxBAv3pphl3LyMR0qprIbT29jX8IAupnlfrUMSDIkqDw'
+      ]
+    },
+    '3': {
+      title: "Ground Chakkar Big (10's)",
+      category: 'Ground Spinners',
+      subtitle: 'Bright spins. Bigger thrills.',
+      rating: '4.6 (120 reviews)',
+      certified: '100% Safe & Certified',
+      mfgDate: 'August 2026',
+      expiryDate: 'July 2028',
+      expirySub: '(24 Months from Mfg)',
+      description: "Ground Chakkar Big 10's — a pack of 10 large spinning chakkars, each delivering a bright, colourful burst of sparks. A classic favourite for festive celebrations, bringing joy and excitement to kids and families. Made with high-quality materials from Sivakasi, ensuring safe and vibrant performance.",
+      thumbnails: [
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuCxylB2WUpivqXCmn2ufWxEmxjYndUz6naMC8G1IfkFi_pvmy0X8coiHvdaIKgqt4Hbte5SJ7NgMS1KZimFdFzLQRA6v6DvyePIJVqOTO-8PIQl-wIWZ7ld4zKicV2C_FX2He3Op2w2OU5OtZSPfYRSiJfIrqznhGKnrf7kifUtO9Xv09pHFbDAB79oy1Ze1rxaUvuJt_U7ZGm2Eu_nqlvN_iVT4Dte0Tus0H5xJctJWmJDckTLktE-fQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuAAS2bEMZKdFdDGc_P0UrHUiZQXpwjz9iAzIU9Nu_ygkyp7xBQgT9VtESS-0VY4B3gcV153nCNq3XbFv7fNEx7dXW-rPAVPAJQijXkicGzrDNsCdQn-MfaLhKRS40pfXB7PcyszjB5IRO3ByUgjgB-awA_-aIOa2rZEHwi-pLDDz_vbAUu5yjhGiZz-43Cmy4yGP_pDYHt3Fvq8rNsKZrdcCrLDiXa_K5VAc1sjE77PhsGeWydKsa1CUg',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuC8Wq1QpDZWPTIg6TLA8Rqg7KKRzLvNdgVXXHusqknrhfyXXiVkFxfWZ9DOKeKoG1shz8tFTBpTqC4Tb8Aa2GD22rcW3ivJRdnm4mG2C0gzYEKPk8FRlqTE0IQX8hTFnzzlA62zw2lnUiXKV9A3nw9OG9xA-NCH9U81oQwYpQTzplBEUAiYd9p96mDfXt71k3V3La_179eWct4UUvNFMbyQtHtyfVn2XfJjnpCA37wSjlIDMTSwQZ0cgQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuCxylB2WUpivqXCmn2ufWxEmxjYndUz6naMC8G1IfkFi_pvmy0X8coiHvdaIKgqt4Hbte5SJ7NgMS1KZimFdFzLQRA6v6DvyePIJVqOTO-8PIQl-wIWZ7ld4zKicV2C_FX2He3Op2w2OU5OtZSPfYRSiJfIrqznhGKnrf7kifUtO9Xv09pHFbDAB79oy1Ze1rxaUvuJt_U7ZGm2Eu_nqlvN_iVT4Dte0Tus0H5xJctJWmJDckTLktE-fQ'
+      ]
+    },
+    '4': {
+      title: 'Whistling Deluxe Sky Rocket',
+      category: 'High Aerial',
+      subtitle: 'Whistling sonic ascent with vivid sky break.',
+      rating: '4.5 (84 reviews)',
+      certified: '100% Safe & Certified',
+      mfgDate: 'August 2026',
+      expiryDate: 'July 2028',
+      expirySub: '(24 Months from Mfg)',
+      description: 'Ten whistle rockets designed for a clean lift, a distinctive ascent whistle, and a bright aerial break. Ideal for open spaces and coordinated festive moments. Certified Sivakasi green formulation.',
+      thumbnails: [
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuDS5IWQeGk13EoC3F6BWOGVOSAsOZQP29dhXIOeg6LYWmgM8t5Me2yE8STyBvnk8MNTljIe7xfSjlqhFL2ipFHgPLvgVpZ93kdhdr5BVN75vFwQ_OOKcs3-jmD2zVZl5t6--wSgGY5bIcwRt6rEhMva_vTKrG5XSiOoy04NA9xq8MgIABtp9edhMwqsWwP8CiPLRF9vKsFPwxEuDw-Y2Svp_2jP4izYNHAUKq4LKhfHMr7htipdVLSPQA',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuAtEqfBaWRF20rrcTBKfjcbi3Cq9v3Ow9XODjtdYA_scdD5u2UieDt65G-8iWF7abA8jg5BOBVjgoZd_XRh5FfOVgUZL0MuQpmKmlABNwCZeryEq9j8Az5iGgfekR97cQsgvG_OO369fqaCeRgMpRMmiuto4i0f-TMeNj_XabLYqyER_xP4yYyMGIUhX-YmmxcvnjzkrvfwnQv1wtqZolJ1hokDCYFMVVrxVck5aU2XWziAqWHGueWtow',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuASOrdw6gL5tJTxeBCrkWrAYNjchbV6El3rrIa7C8xSIiirAATGwd2umpTB8V-d6UZM0UrJ26LDT2gLufzL_aFIFVWrhwM-IOLYnTz7OVbpOd5lMcQxCvWIcvNcqTQFRWJb5bD_sFwWQX3qmhpG8z1b8sP5K6RS5slUwc4lq7KPQ3pwX1yG-9LVuZ3-CJTlics-ELMRizQUtApOxxGF8Yi0ydrSNKsqsmf6zwHcj_seBttCtBkE9Z4JVQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuDw5V5ecECLQE-EbRjvFSDR7W27C4wnYaIkQ6liSn2hsImu7ckpzKf4_RMpFWYHevS1i7QkMIJDaaN3oMEAhs6FD3wLImapZKsrjBLRqKxAqwPxTaL5EwfbNhXAZE_B5XLyQ8uHgoRYapgqj-sGvrpgAVYcAb02NnGlEilknCUbL8ovmzALe-U1RkkRZe5AbPAljOisTSmfYatDxfXyxZbcDVyT8oKfTZ5-3pfQHLLpi1_trOSpUn-d9w'
+      ]
+    },
+    '5': {
+      title: '1000 Wala Festive Garland',
+      category: 'Ceremonial Garland',
+      subtitle: 'Traditional red garland roll with rhythmic report.',
+      rating: '4.9 (210 reviews)',
+      certified: '100% Safe & Certified',
+      mfgDate: 'August 2026',
+      expiryDate: 'July 2028',
+      expirySub: '(24 Months from Mfg)',
+      description: 'A full 1000-shot ceremonial garland with a confident, rhythmic report. This limited batch is prepared for high-energy Diwali entrances and traditional festive gatherings with genuine Sivakasi pride.',
+      thumbnails: [
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuBUc6DJeDwy3NTUbS4rEh1i5n5DkQY9BAMeix-ZMbvutb_-6E9FtPe3MnKbTVoIiQfOA0lxMHNXkn-mhANxf9FbZlKxWB0DtEr6KSCzeRYHX9lCjbvT96viX55C69m4nkqLWb9dtDblT1Jl56hYe-hkwK_3aomPr_gugz3Jsz3VfCMZozEI8oXDCIl-F3zUVqrBQgbvsferjfGfjKIY-jPw_cFufmkKso8OMsNXCuHD106MWs6wr5ztdQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuAhRft10wUN__I7s_g-BomBHMhCiBl_-gb2QsSl-XxffHp9jqOLL6swGlWJ3HqWINB-jedEpyjgLiO3OCDBc62Q_2RYQ4jzIyy6sUiS58JqqdjNOqWbI9N3DijfYMdm-VcvZ2teSX7vkTKfHVsbCrg592uc8ml5jGD5eHYST6adCz3PuJqygn-9iJGvghRw5-ihGGeMarXhZzADcV39snsrH_Qil96Ta7LyCiXjssNwc-6SzRixxhmeOg',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuB4e__cHTx7kTs8UT3N2-3g_stUlsehbv0wZ9gbwn5qAVMyzeOqfdgATAMn85V0TcE_PtSkb1EskjaBWcyThkGi98vygARppKgxCvoExBa8DeEtIaIfsMojjb66ZhS1elT2PukpFcbcnSqMI6peK3cjxKhcZ782KYg5MLI9GZr6XwzeOEEsxkBTJHNp6gVpAhnU-ThE-AkMzePyYWB_5xoX7oQKYBcPyQ9YEOAGciGP5zErf7vyU85fNQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuBUc6DJeDwy3NTUbS4rEh1i5n5DkQY9BAMeix-ZMbvutb_-6E9FtPe3MnKbTVoIiQfOA0lxMHNXkn-mhANxf9FbZlKxWB0DtEr6KSCzeRYHX9lCjbvT96viX55C69m4nkqLWb9dtDblT1Jl56hYe-hkwK_3aomPr_gugz3Jsz3VfCMZozEI8oXDCIl-F3zUVqrBQgbvsferjfGfjKIY-jPw_cFufmkKso8OMsNXCuHD106MWs6wr5ztdQ'
+      ]
+    },
+    '6': {
+      title: 'Sovereign Royal Hamper Box',
+      category: 'Royal Assortment',
+      subtitle: '52-item complete celebration treasury.',
+      rating: '4.9 (340 reviews)',
+      certified: '100% Safe & Certified',
+      mfgDate: 'August 2026',
+      expiryDate: 'July 2028',
+      expirySub: '(24 Months from Mfg)',
+      description: 'A 52-item Sovereign selection of fountains, aerials, sparklers, and festive favourites. A generous gift box for hosting a complete evening of illumination, packaged in heirloom gold-stamped presentation tin.',
+      thumbnails: [
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuACGHPzQiOzOO5a6FEA1aYwX6hNgSbjNI3S19a2NpMYC6WLR2BBNSHXgjkOojYpcwv5JyH9OeccwSwVouRVnwGN1SFSRkkPRW8gcU7bOcIWQ1zC9xeYJjwoxsrh0iXTAiTPajVvJeVFDluYDhSVBznUw_epm0GxqOaMc4fcBSnK_QHrG5GvUYJBE9tiuyt2Y7IHCEP5HVrkkJ9ZUptte3Z9vWHpR5B3nABZHycff2PmeLLiutUcuzFURw',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuCkYGvOrIyb5KKXsSEAPkeF3oQDQoJuqmC0Iy-7UQlK4OlTkIH3yjk0_tIcXt7j8laII-ho05MdsiY8Y7KgTtv0x9RWYIYSiCSe2Syj1GYQvoOeXMBL4F9uvWMkK3W7JfweAzDrKblaKaWA4DA2CiJ0LTFowFH7sZVQnogSL87NWQjHTo-7av_18t6yMG03YX0t8G1SJorhdDBBFOqYcGFl_LL3hvavigYZ9PJVRhN38GTUF7Q7_LwFLQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuD6w86V4vZ_zio9vK5PyKcp3XhJTG4IRVckjuuZQg7rbRk6Yw3fUvrqgXti5NPqw7kM7x5VThU9-E30vou8hKRB6xcQ32JW1Lq3oswk0MUcc40Xneo9VW66Q1JC_8KKImIslJqwnZQtsoyH8aXK5N59cxUpUYFk2tWNRJCP_zQYtGZbCEbLTH0Ip8HGFiGaOcUscU95H-yXaRQmJ3ynXEwFPhz4Ly_Z0fZY1TwK0BY6nXRBbXaSNUVadQ',
+        'https://lh3.googleusercontent.com/aida-public/AB6AXuC8Wq1QpDZWPTIg6TLA8Rqg7KKRzLvNdgVXXHusqknrhfyXXiVkFxfWZ9DOKeKoG1shz8tFTBpTqC4Tb8Aa2GD22rcW3ivJRdnm4mG2C0gzYEKPk8FRlqTE0IQX8hTFnzzlA62zw2lnUiXKV9A3nw9OG9xA-NCH9U81oQwYpQTzplBEUAiYd9p96mDfXt71k3V3La_179eWct4UUvNFMbyQtHtyfVn2XfJjnpCA37wSjlIDMTSwQZ0cgQ'
+      ]
+    }
+  };
+
+  // Dynamic product extractor supporting current and any future cards added to the page
+  function resolveProductData(card) {
+    const productId = card.dataset.productId || '';
+    const preset = productCatalogData[productId] || {};
+    
+    const titleElement = card.querySelector('h3');
+    const title = preset.title || (titleElement ? titleElement.textContent.trim() : 'Ceremonial Firework');
+    
+    const categorySpan = titleElement ? titleElement.previousElementSibling?.querySelector('span') : null;
+    const category = preset.category || (categorySpan ? categorySpan.textContent.trim() : 'Pyrotechnics');
+    
+    let price = 0;
+    let originalPrice = '';
+    let offer = 'Festival Offer';
+    
+    if (titleElement && titleElement.nextElementSibling) {
+      const priceSpans = titleElement.nextElementSibling.querySelectorAll('span');
+      if (priceSpans[0]) price = Number(priceSpans[0].textContent.replace(/[^\d]/g, '')) || 0;
+      if (priceSpans[1]) originalPrice = priceSpans[1].textContent.trim();
+      if (priceSpans[2]) offer = priceSpans[2].textContent.trim();
+    }
+    
+    const cardImg = card.querySelector('img');
+    const imgSrc = preset.thumbnails ? preset.thumbnails[0] : (cardImg ? cardImg.src : '');
+    const thumbnails = preset.thumbnails || [imgSrc];
+    
+    return {
+      id: productId,
+      title,
+      category,
+      subtitle: preset.subtitle || `${title} — Sivakasi Heritage Edition`,
+      rating: preset.rating || '4.8 (110 reviews)',
+      certified: preset.certified || '100% Safe & Certified',
+      price: price || preset.price || 500,
+      originalPrice: originalPrice || (preset.originalPrice ? '₹' + preset.originalPrice.toLocaleString('en-IN') : ''),
+      offer: offer || preset.offer || 'Festival Offer',
+      img: imgSrc,
+      mfgDate: preset.mfgDate || 'August 2026',
+      expiryDate: preset.expiryDate || 'July 2028',
+      expirySub: preset.expirySub || '(24 Months from Mfg)',
+      description: preset.description || `${title} is an authentic Sivakasi pyrotechnic creation crafted for vivid, luminous celebrations and certified safe for festival gatherings.`,
+      thumbnails: thumbnails.length ? thumbnails : [imgSrc]
+    };
+  }
+
+  // Initial Cart State
+  let cart = [
+    {
+      id: 1,
+      title: '120-Shot Golden Brocade Aerial',
+      price: 3450,
+      qty: 1,
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBBAq42C-AMl6N428EJgR7bo-Ar0z1fV8_0ivbnXE3bsfWm5yITeSaONRsdWuGwA3pPj-4gbbQky-aCMSZKJPBQJ5YzjWJUc9PLpdMLCvfUA8BPsxU9hshNInvqbFfE5ydXgVecmZpX_4p_cIg3d_xK5yYOgxgyuwVKb8QKd1yjilTCz7UbzTcQyoRvu0QiGDl9R_mv7YIlBL-VgAoS5WwJvU8mxlya3KIJybvVYq2YojGd5RAL-dEIsQ'
+    },
+    {
+      id: 2,
+      title: 'Tri-Color Deluxe Flower Pot 10 Pcs',
+      price: 650,
+      qty: 1,
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCDZERYow5MMypN35M4NcmDc1-ZpO7vpIDt5mjG7WiKeHfhn3Zw8VF-dJwM3U4JB0_kiJgA8xWW1L4eoslMxVq-wA2LmRWnqrl0SyZYr3dY3mqFOwK-DBotia9VKQI8N9nM7XEH4aHNrz8Gx6XygDxjDzM6q-vKJttax3W6eVlP0gRDIkdOpi1W1e9nM1AXmSQQ-40HfusWReALsZo52kyLuJxgG8O_CcCLTvVpaGrmbmTlFudsBeb4tg'
+    },
+    {
+      id: 3,
+      title: 'Special Spinning Zamin Chakkar',
+      price: 480,
+      qty: 1,
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAAS2bEMZKdFdDGc_P0UrHUiZQXpwjz9iAzIU9Nu_ygkyp7xBQgT9VtESS-0VY4B3gcV153nCNq3XbFv7fNEx7dXW-rPAVPAJQijXkicGzrDNsCdQn-MfaLhKRS40pfXB7PcyszjB5IRO3ByUgjgB-awA_-aIOa2rZEHwi-pLDDz_vbAUu5yjhGiZz-43Cmy4yGP_pDYHt3Fvq8rNsKZrdcCrLDiXa_K5VAc1sjE77PhsGeWydKsa1CUg'
+    }
+  ];
+
+  const cartDrawer = document.getElementById('cartDrawer');
+  const cartDrawerBackdrop = document.getElementById('cartDrawerBackdrop');
+  const openCartBtn = document.getElementById('openCartBtn');
+  const closeCartBtn = document.getElementById('closeCartBtn');
+  const cartItemsList = document.getElementById('cartItemsList');
+  const headerCartCount = document.getElementById('headerCartCount');
+  const cartItemCountLabel = document.getElementById('cartItemCountLabel');
+  const cartSubtotal = document.getElementById('cartSubtotal');
+
+  // Modal Elements
+  const productDetailsModal = document.getElementById('productDetailsModal');
+  const productDetailsModalCard = document.getElementById('productDetailsModalCard');
+  const productModalCategory = document.getElementById('productModalCategory');
+  const productModalImage = document.getElementById('productModalImage');
+  const productModalThumbsStrip = document.getElementById('productModalThumbsStrip');
+  const modalPrevThumbBtn = document.getElementById('modalPrevThumbBtn');
+  const modalNextThumbBtn = document.getElementById('modalNextThumbBtn');
+  const productModalTitle = document.getElementById('productModalTitle');
+  const productModalSubtitle = document.getElementById('productModalSubtitle');
+  const productModalRating = document.getElementById('productModalRating');
+  const productModalCertified = document.getElementById('productModalCertified');
+  const productModalDescription = document.getElementById('productModalDescription');
+  const productModalMfg = document.getElementById('productModalMfg');
+  const productModalExpiry = document.getElementById('productModalExpiry');
+  const productModalExpirySub = document.getElementById('productModalExpirySub');
+  const productModalPrice = document.getElementById('productModalPrice');
+  const productModalOriginalPrice = document.getElementById('productModalOriginalPrice');
+  const productModalOffer = document.getElementById('productModalOffer');
+  const productModalAddButton = document.getElementById('productModalAddButton');
+
+  let activeProduct = null;
+  let activeThumbnails = [];
+  let currentThumbIndex = 0;
+  let previouslyFocusedElement = null;
+  let previousBodyOverflow = '';
+
+  function renderModalThumbnails(thumbnails) {
+    activeThumbnails = thumbnails;
+    currentThumbIndex = 0;
+    productModalThumbsStrip.innerHTML = '';
+
+    thumbnails.forEach((src, idx) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = `product-modal-thumb-btn ${idx === 0 ? 'is-active' : ''}`;
+      btn.setAttribute('aria-label', `View image ${idx + 1}`);
+      btn.innerHTML = `<img src="${src}" class="w-full h-full object-cover" alt="" />`;
+      
+      btn.addEventListener('click', () => {
+        selectThumbnail(idx);
+      });
+      productModalThumbsStrip.appendChild(btn);
+    });
+  }
+
+  function selectThumbnail(idx) {
+    if (!activeThumbnails.length) return;
+    currentThumbIndex = (idx + activeThumbnails.length) % activeThumbnails.length;
+    productModalImage.src = activeThumbnails[currentThumbIndex];
+    
+    const thumbButtons = productModalThumbsStrip.querySelectorAll('.product-modal-thumb-btn');
+    thumbButtons.forEach((btn, i) => {
+      if (i === currentThumbIndex) {
+        btn.classList.add('is-active');
+      } else {
+        btn.classList.remove('is-active');
+      }
+    });
+  }
+
+  modalPrevThumbBtn?.addEventListener('click', () => {
+    selectThumbnail(currentThumbIndex - 1);
+  });
+
+  modalNextThumbBtn?.addEventListener('click', () => {
+    selectThumbnail(currentThumbIndex + 1);
+  });
+
+  function openProductModal(product) {
+    if (!product || !productDetailsModal) return;
+    activeProduct = product;
+    previouslyFocusedElement = document.activeElement;
+
+    productModalCategory.textContent = product.category;
+    productModalTitle.textContent = product.title;
+    productModalSubtitle.textContent = product.subtitle;
+    productModalRating.textContent = product.rating;
+    productModalCertified.textContent = product.certified;
+    productModalDescription.textContent = product.description;
+    productModalMfg.textContent = product.mfgDate;
+    productModalExpiry.textContent = product.expiryDate;
+    productModalExpirySub.textContent = product.expirySub;
+    productModalPrice.textContent = '₹' + product.price.toLocaleString('en-IN');
+    productModalOriginalPrice.textContent = product.originalPrice;
+    productModalOffer.textContent = product.offer;
+
+    // Render gallery
+    renderModalThumbnails(product.thumbnails);
+    productModalImage.src = product.thumbnails[0] || product.img;
+    productModalImage.alt = product.title;
+
+    previousBodyOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    productDetailsModal.classList.add('is-open');
+    productDetailsModal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeProductDetailsModal() {
+    if (productDetailsModal.getAttribute('aria-hidden') === 'true') return;
+    productDetailsModal.classList.remove('is-open');
+    productDetailsModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = previousBodyOverflow;
+    activeProduct = null;
+    if (previouslyFocusedElement) previouslyFocusedElement.focus();
+  }
+
+  // Bind all current and dynamically discovered product cards
+  function initializeProductCards() {
+    const cards = document.querySelectorAll('[data-product-id]');
+    cards.forEach((card) => {
+      // Prevent card's ADD TO BOX button from opening modal
+      card.querySelectorAll('button').forEach((button) => {
+        button.addEventListener('click', (event) => {
+          event.stopPropagation();
+        });
+      });
+
+      // Card click opens its own product modal
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('button')) return;
+        const productData = resolveProductData(card);
+        openProductModal(productData);
+      });
+
+      // Keyboard accessibility for card
+      card.addEventListener('keydown', (event) => {
+        if (!['Enter', ' '].includes(event.key)) return;
+        if (event.target !== card) return;
+        event.preventDefault();
+        const productData = resolveProductData(card);
+        openProductModal(productData);
+      });
+    });
+  }
+
+  initializeProductCards();
+
+  // Close by clicking outside (on blurred backdrop)
+  productDetailsModal.addEventListener('click', (event) => {
+    if (event.target === productDetailsModal) {
+      closeProductDetailsModal();
+    }
+  });
+
+  // Close by pressing Escape key
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && productDetailsModal.classList.contains('is-open')) {
+      closeProductDetailsModal();
+    }
+  });
+
+  // Modal ADD button adds item to Burst Box cart and closes modal
+  productModalAddButton.addEventListener('click', () => {
+    if (!activeProduct) return;
+    addToCart(activeProduct.title, activeProduct.price, activeProduct.img);
+    closeProductDetailsModal();
+  });
+
+  function openDrawer() {
+    cartDrawer.classList.add('cart-drawer-open');
+    cartDrawerBackdrop.classList.remove('opacity-0', 'pointer-events-none');
+    cartDrawerBackdrop.classList.add('opacity-100');
+  }
+
+  function closeDrawer() {
+    cartDrawer.classList.remove('cart-drawer-open');
+    cartDrawerBackdrop.classList.add('opacity-0', 'pointer-events-none');
+    cartDrawerBackdrop.classList.remove('opacity-100');
+  }
+
+  openCartBtn?.addEventListener('click', openDrawer);
+  closeCartBtn?.addEventListener('click', closeDrawer);
+  cartDrawerBackdrop?.addEventListener('click', closeDrawer);
+
+  function renderCart() {
+    const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+    headerCartCount.innerText = totalCount;
+    cartItemCountLabel.innerText = totalCount;
+    cartSubtotal.innerText = '₹' + subtotal.toLocaleString('en-IN');
+
+    if (cart.length === 0) {
+      cartItemsList.innerHTML = `
+        <div class="text-center py-12 text-[#69534c]">
+          <span class="material-symbols-outlined text-5xl text-[#fe932c] mb-2">shopping_basket</span>
+          <p class="font-outfit text-base font-bold text-[#241815]">Your Burst Box is empty</p>
+          <p class="text-xs mt-1">Add items from the catalog to ignite celebrations!</p>
+        </div>
+      `;
+      return;
+    }
+
+    cartItemsList.innerHTML = cart.map((item, idx) => `
+      <div class="flex items-center gap-3 p-3 bg-[#FFF8E8] border border-[#E8D8C4]">
+        <img src="${item.img}" class="w-16 h-16 object-cover border border-[#E8D8C4] shrink-0" alt="${item.title}" />
+        <div class="flex-1 min-w-0">
+          <h4 class="font-outfit font-bold text-xs text-[#241815] truncate">${item.title}</h4>
+          <p class="font-outfit font-bold text-[#b51d04] text-sm mt-0.5">₹${(item.price * item.qty).toLocaleString('en-IN')}</p>
+          <div class="flex items-center gap-2 mt-2">
+            <div class="flex items-center border border-[#E8D8C4] bg-white">
+              <button onclick="changeQty(${idx}, -1)" class="px-2 py-0.5 text-xs text-[#69534c] hover:bg-[#FFF1EC]">-</button>
+              <span class="px-2.5 py-0.5 text-xs font-outfit font-bold">${item.qty}</span>
+              <button onclick="changeQty(${idx}, 1)" class="px-2 py-0.5 text-xs text-[#69534c] hover:bg-[#FFF1EC]">+</button>
+            </div>
+            <button onclick="removeItem(${idx})" class="text-[11px] font-outfit text-[#b51d04] font-bold uppercase hover:underline ml-2">
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function changeQty(index, delta) {
+    if (cart[index]) {
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      renderCart();
+    }
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    renderCart();
+  }
+
+  function addToCart(title, price, img) {
+    const existing = cart.find(i => i.title === title);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id: Date.now(), title, price, qty: 1, img });
+    }
+    renderCart();
+    openDrawer();
+  }
+
+  window.openProductModal = openProductModal;
+  window.closeProductDetailsModal = closeProductDetailsModal;
+  window.changeQty = changeQty;
+  window.removeItem = removeItem;
+  window.addToCart = addToCart;
+
+  // Initial cart draw
+  renderCart();
+</script>
+</body></html>
