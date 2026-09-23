@@ -93,31 +93,48 @@ window.renderCart = function() {
   const discount = subtotal > 1000 ? 1000 : 0;
   const grandTotal = Math.max(0, subtotal - discount);
 
-  // Update badges and texts across various possible DOM IDs
+  // Confirmed order data (saved when payment is authorized)
+  const confirmedOrderJson = localStorage.getItem('lastConfirmedOrder');
+  const confirmedOrder = confirmedOrderJson ? JSON.parse(confirmedOrderJson) : (cart.length > 0 ? cart : []);
+  const confSubtotal = confirmedOrder.reduce((sum, item) => sum + (item.price * item.qty), 0);
+  const confDiscount = confSubtotal > 1000 ? 1000 : 0;
+  const confGrandTotal = Math.max(0, confSubtotal - confDiscount);
+
+  // Update badges and texts across various possible DOM IDs (active cart)
   const countElements = ['cartBadge', 'headerCartCount', 'cartItemCountLabel', 'cart-badge-count', 'cart-count-display'];
   countElements.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.innerText = totalCount;
   });
 
-  const subtotalElements = ['cartSubtotal', 'checkout-subtotal', 'confirmation-subtotal'];
+  const subtotalElements = ['cartSubtotal', 'checkout-subtotal'];
   subtotalElements.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.innerText = '₹' + subtotal.toLocaleString('en-IN');
   });
 
-  const totalElements = ['cartGrandTotal', 'checkout-grandtotal', 'confirmation-grandtotal'];
+  const totalElements = ['cartGrandTotal', 'checkout-grandtotal'];
   totalElements.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.innerText = '₹' + grandTotal.toLocaleString('en-IN');
   });
   
-  const discountElements = ['checkout-discount', 'confirmation-discount', 'cartDiscount'];
+  const discountElements = ['checkout-discount', 'cartDiscount'];
   discountElements.forEach(id => {
     const el = document.getElementById(id);
     if (el) el.innerText = '-₹' + discount.toLocaleString('en-IN');
   });
   
+  // Confirmation Page totals (from confirmed paid order)
+  const confSubtotalEl = document.getElementById('confirmation-subtotal');
+  if (confSubtotalEl) confSubtotalEl.innerText = '₹' + confSubtotal.toLocaleString('en-IN');
+  
+  const confDiscountEl = document.getElementById('confirmation-discount');
+  if (confDiscountEl) confDiscountEl.innerText = '-₹' + confDiscount.toLocaleString('en-IN');
+
+  const confGrandTotalEl = document.getElementById('confirmation-grandtotal');
+  if (confGrandTotalEl) confGrandTotalEl.innerText = '₹' + confGrandTotal.toLocaleString('en-IN');
+
   const crateCounter = document.getElementById('crate-counter');
   if (crateCounter) {
     crateCounter.innerText = totalCount + (totalCount === 1 ? ' CRATE' : ' CRATES');
@@ -158,10 +175,10 @@ window.renderCart = function() {
       `).join('');
     }
   } else if (confirmationList) {
-    if (cart.length === 0) {
+    if (confirmedOrder.length === 0) {
       confirmationList.innerHTML = `<div class="py-8 text-center text-on-surface-variant font-sans text-sm">Your order is empty.</div>`;
     } else {
-      confirmationList.innerHTML = cart.map((item, idx) => `
+      confirmationList.innerHTML = confirmedOrder.map((item, idx) => `
         <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div class="flex items-start gap-4">
             <div class="w-14 h-14 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant flex-shrink-0 text-primary">
@@ -225,6 +242,24 @@ window.renderCart = function() {
   }
 }
 
+window.getBaseUrl = function() {
+  const subdirs = [
+    'about_us_heritage_purity_editorial_modern_edition',
+    'billing_checkout_bright_pastel_edition',
+    'contact_store_locator_bright_pastel_edition',
+    'home_bright_pastel_festive_edition',
+    'payment_confirmation_order_status_sovereign_pyrotechnics',
+    'product_detail_120_shot_brocade_bright_pastel_edition',
+    'products_bright_pastel_festive_catalog'
+  ];
+  for (let i = 0; i < subdirs.length; i++) {
+    if (window.location.href.includes(subdirs[i])) {
+      return '..';
+    }
+  }
+  return '.';
+};
+
 window.proceedToCheckout = function(e) {
   if (e && typeof e.preventDefault === 'function') e.preventDefault();
   const cart = getCart();
@@ -237,17 +272,9 @@ window.proceedToCheckout = function(e) {
     return false;
   }
   
-  let baseUrl = '.';
-  if (window.location.href.includes('home_bright_pastel') || 
-      window.location.href.includes('products_') || 
-      window.location.href.includes('product_detail') || 
-      window.location.href.includes('about_us') || 
-      window.location.href.includes('contact_')) {
-    baseUrl = '..';
-  }
-  
+  const baseUrl = window.getBaseUrl();
   // Navigate to checkout
   window.location.href = baseUrl + '/billing_checkout_bright_pastel_edition/index.html';
-}
+};
 
 document.addEventListener('DOMContentLoaded', renderCart);

@@ -136,8 +136,8 @@
 <header class="bg-inverse-surface dark:bg-inverse-surface border-b border-outline dark:border-outline-variant w-full sticky top-0 z-50">
 <div class="w-full px-6 md:px-12 max-w-7xl mx-auto flex items-center justify-between h-20">
 <!-- Brand Logo Anchor -->
-<a class="text-headline-md font-headline-md tracking-widest text-primary-container dark:text-primary-container uppercase font-semibold flex items-center gap-2" href="../billing_checkout_bright_pastel_edition/index.html">
-<span class="material-symbols-outlined text-primary-container" data-icon="sparkles">arrow_back_ios_new</span>
+<a class="text-headline-md font-headline-md tracking-widest text-primary-container dark:text-primary-container uppercase font-semibold flex items-center gap-2" href="../index.html">
+<span class="material-symbols-outlined text-primary-container" data-icon="flare">flare</span>
         SOVEREIGN
       </a>
 <!-- Navigation Links -->
@@ -149,19 +149,27 @@
 </nav>
 <!-- Trailing Action Cluster -->
 <div class="flex items-center gap-4">
-<a class="relative p-2 text-surface hover:text-primary-container transition-colors duration-150 rounded-lg flex items-center justify-center" href="../billing_checkout_bright_pastel_edition/index.html">
-<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
-<span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-primary-container"></span>
-</a>
 <a class="inline-flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-primary transition-colors duration-150 border border-primary-container" href="../products_bright_pastel_festive_catalog/index.html">
-<span class="material-symbols-outlined text-sm" data-icon="local_fire_department">local_fire_department</span>
-          Burst Box
+<span class="material-symbols-outlined text-sm" data-icon="storefront">storefront</span>
+          Browse Products
         </a>
 </div>
 </div>
 </header>
 <!-- MAIN CANVAS: Architectural Festive Canvas -->
 <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10">
+<!-- Navigation Breadcrumb -->
+<div class="flex items-center gap-2 mb-6 text-xs font-semibold uppercase tracking-wider text-on-surface-variant">
+<a href="../index.html" class="hover:text-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">home</span> Home
+</a>
+<span>/</span>
+<a href="../products_bright_pastel_festive_catalog/index.html" class="hover:text-primary transition-colors">Catalog</a>
+<span>/</span>
+<a href="../billing_checkout_bright_pastel_edition/index.html" class="hover:text-primary transition-colors">Checkout</a>
+<span>/</span>
+<span class="text-primary font-bold">Order Confirmed (#SOV-94821)</span>
+</div>
 <!-- AUSPICIOUS BANNER / HEADER CONFIRMATION POD -->
 <div class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl p-6 md:p-10 mb-8 relative overflow-hidden">
 <!-- Decorative Imperial Sunburst Corner Accent -->
@@ -401,19 +409,30 @@
 </div>
 <!-- High-Impact Action CTAs -->
 <div class="flex flex-col gap-3">
-<!-- Primary CTA: Track on WhatsApp -->
-<button class="w-full bg-primary-container text-on-primary-container rounded-lg py-3.5 px-4 font-label-lg text-label-lg uppercase font-semibold flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-150 border border-primary-container shadow-none" onclick="simulateWhatsAppTrack()">
+<!-- Primary Action: Continue Shopping -->
+<a class="w-full bg-primary-container text-on-primary-container rounded-lg py-3.5 px-4 font-label-lg text-label-lg uppercase font-semibold flex items-center justify-center gap-2 hover:bg-primary transition-colors duration-150 border border-primary-container shadow-sm text-center" href="../products_bright_pastel_festive_catalog/index.html">
+<span class="material-symbols-outlined text-lg" data-icon="category">category</span>
+            Continue Shopping (Products Catalog)
+          </a>
+<!-- Secondary Action: Return Home -->
+<a class="w-full bg-surface-container-lowest text-on-surface border-2 border-outline-variant hover:border-primary-container rounded-lg py-3 px-4 font-label-md text-label-md uppercase font-semibold flex items-center justify-center gap-2 hover:bg-surface-container transition-colors duration-150 text-center" href="../index.html">
+<span class="material-symbols-outlined text-lg text-primary" data-icon="home">home</span>
+            Return to Homepage
+          </a>
+<!-- Action: Track on WhatsApp -->
+<button class="w-full bg-[#075E54] hover:bg-[#054c44] text-white rounded-lg py-3 px-4 font-label-md text-label-md uppercase font-semibold flex items-center justify-center gap-2 transition-colors duration-150 shadow-none cursor-pointer" onclick="simulateWhatsAppTrack()">
 <span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
             Track Live Freight on WhatsApp
           </button>
-<!-- Secondary CTA: Download Invoice -->
-<button class="w-full bg-surface-container-lowest text-on-surface border border-tertiary-fixed-dim rounded-lg py-3.5 px-4 font-label-lg text-label-lg uppercase font-semibold flex items-center justify-center gap-2 hover:bg-surface-container transition-colors duration-150" onclick="simulateInvoiceDownload()">
+<!-- Action: Download Invoice -->
+<button class="w-full bg-surface-container-lowest text-on-surface border border-tertiary-fixed-dim rounded-lg py-3 px-4 font-label-md text-label-md uppercase font-semibold flex items-center justify-center gap-2 hover:bg-surface-container transition-colors duration-150 cursor-pointer" onclick="simulateInvoiceDownload()">
 <span class="material-symbols-outlined text-lg text-tertiary" data-icon="description">description</span>
             Download Tax Invoice (PDF)
           </button>
-<!-- Tertiary CTA: Return Home -->
-<a class="w-full text-center py-2 text-primary font-label-md text-label-md uppercase tracking-wider font-semibold underline underline-offset-4 hover:text-on-primary-fixed-variant transition-colors duration-150" href="../products_bright_pastel_festive_catalog/index.html">
-            Continue Shopping / Return Home
+<!-- Action: Contact Store & Depot -->
+<a class="w-full text-center py-2 text-primary font-label-md text-label-md uppercase tracking-wider font-semibold underline underline-offset-4 hover:text-on-primary-fixed-variant transition-colors duration-150 flex items-center justify-center gap-1" href="../contact_store_locator_bright_pastel_edition/index.html">
+<span class="material-symbols-outlined text-sm">location_on</span>
+            Locate Nearest Sivakasi Depot
           </a>
 </div>
 <!-- Trust Badges Pod -->

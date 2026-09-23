@@ -46,16 +46,16 @@
 <header class="w-full bg-[#FFFDF8] border-b border-border-gold sticky top-0 z-50">
 <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between h-20">
 <!-- Brand Logo -->
-<a class="font-display text-2xl tracking-widest text-festive-red uppercase font-bold flex items-center gap-2.5" href="#">
+<a class="font-display text-2xl tracking-widest text-festive-red uppercase font-bold flex items-center gap-2.5" href="../index.html">
 <span class="w-3 h-3 bg-festive-red rotate-45 inline-block"></span>
       SOVEREIGN
     </a>
 <!-- Desktop Nav Links -->
 <nav class="hidden md:flex items-center space-x-9">
-<a class="font-display text-sm text-text-main font-semibold uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="#">Home</a>
-<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="#">About Us</a>
-<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="#">Products</a>
-<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="#">Contact</a>
+<a class="font-display text-sm text-text-main font-semibold uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="../index.html">Home</a>
+<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="../about_us_heritage_purity_editorial_modern_edition/index.html">About Us</a>
+<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="../products_bright_pastel_festive_catalog/index.html">Products</a>
+<a class="font-display text-sm text-text-muted font-medium uppercase tracking-wider pb-1 transition-colors duration-150 hover:text-festive-red" href="../contact_store_locator_bright_pastel_edition/index.html">Contact</a>
 </nav>
 <!-- Cart Access / Burst Box Action -->
 <div class="flex items-center space-x-4">
@@ -87,9 +87,11 @@
 <div class="mb-10 pb-5 border-b border-border-gold flex flex-col md:flex-row md:items-end justify-between gap-4">
 <div>
 <div class="flex items-center gap-2 mb-1.5">
-<span class="font-display text-xs text-festive-red tracking-widest uppercase font-bold">Heirloom Illuminations</span>
+<a href="../index.html" class="font-display text-xs text-festive-red hover:underline tracking-widest uppercase font-bold">Home</a>
 <span class="text-border-gold-dark font-medium">/</span>
-<span class="font-display text-xs text-text-muted tracking-wider uppercase font-semibold">Instant Checkout</span>
+<a href="../products_bright_pastel_festive_catalog/index.html" class="font-display text-xs text-festive-red hover:underline tracking-widest uppercase font-bold">Products</a>
+<span class="text-border-gold-dark font-medium">/</span>
+<span class="font-display text-xs text-text-muted tracking-wider uppercase font-semibold">Instant Checkout &amp; Billing</span>
 </div>
 <h1 class="font-display text-3xl md:text-4xl text-text-main font-bold tracking-tight">Express Billing &amp; Dispatch</h1>
 </div>
@@ -279,7 +281,7 @@
 <h2 class="font-display text-xl uppercase tracking-wider font-bold text-text-main">Burst Box Summary</h2>
 <p class="font-sans text-xs text-text-muted mt-0.5">Instant Item &amp; Quantity Management</p>
 </div>
-<span class="bg-[#FFF8EB] border border-festive-red text-festive-red font-display text-xs px-2.5 py-1 tracking-wider font-bold" id="crate-counter">3 CRATES</span>
+<span class="bg-[#FFF8EB] border border-festive-red text-festive-red font-display text-xs px-2.5 py-1 tracking-wider font-bold" id="crate-counter">0 CRATES</span>
 </div>
 <!-- Product Line Items dynamically populated -->
 <div class="divide-y divide-border-gold my-2" id="checkout-cart-item-list">
@@ -445,6 +447,10 @@
       alert('Your Burst Box is empty. Add items to checkout.');
       return;
     }
+    // Store confirmed order details for the receipt / confirmation screen
+    localStorage.setItem('lastConfirmedOrder', JSON.stringify(cart));
+    // Empty the active cart after successful payment confirmation
+    localStorage.setItem('burstBoxCart', JSON.stringify([]));
     window.location.href = '../payment_confirmation_order_status_sovereign_pyrotechnics/index.html';
   }
 </script>
