@@ -147,26 +147,26 @@ window.renderCart = function() {
 
   if (checkoutList && window.location.href.includes('billing_checkout')) {
     if (cart.length === 0) {
-      checkoutList.innerHTML = `<div class="py-8 text-center text-text-muted font-sans text-sm">Your Burst Box is empty.</div>`;
+      checkoutList.innerHTML = `<div class="py-8 text-center text-[#365F56] font-sans text-sm">Your Burst Box is empty.</div>`;
     } else {
       checkoutList.innerHTML = cart.map((item, idx) => `
         <div class="py-4 space-y-3" id="cart-item-${idx}">
           <div class="flex items-start justify-between gap-4">
             <div class="flex-grow">
-              <h3 class="font-display text-base font-bold text-text-main">${item.title}</h3>
+              <h3 class="font-serif text-base font-bold text-[#0C342C]">${item.title}</h3>
             </div>
             <div class="text-right">
-              <span class="font-display text-lg font-bold text-text-main whitespace-nowrap">₹${(item.price * item.qty).toLocaleString('en-IN')}</span>
+              <span class="font-display text-lg font-bold text-[#076653] whitespace-nowrap">₹${(item.price * item.qty).toLocaleString('en-IN')}</span>
             </div>
           </div>
           <div class="flex items-center justify-between pt-1">
-            <div class="flex items-center gap-2 border border-border-gold bg-white px-2 py-1">
-              <span class="font-display text-[11px] text-text-muted uppercase font-bold pr-1">Qty:</span>
-              <button type="button" class="w-6 h-6 flex items-center justify-center bg-surface-pastel hover:bg-festive-red hover:text-white border border-border-gold text-festive-red font-bold text-sm leading-none transition-colors" onclick="updateQty(${idx}, -1)" title="Decrease">−</button>
-              <span class="font-display text-xs font-bold text-text-main px-2">${item.qty}</span>
-              <button type="button" class="w-6 h-6 flex items-center justify-center bg-surface-pastel hover:bg-festive-red hover:text-white border border-border-gold text-festive-red font-bold text-sm leading-none transition-colors" onclick="updateQty(${idx}, 1)" title="Increase">+</button>
+            <div class="flex items-center gap-2 border border-[#E2FBCE] bg-white px-2 py-1">
+              <span class="font-display text-[11px] text-[#365F56] uppercase font-bold pr-1">Qty:</span>
+              <button type="button" class="w-6 h-6 flex items-center justify-center bg-[#E2FBCE] hover:bg-[#076653] hover:text-white border border-[#E2FBCE] text-[#076653] font-bold text-sm leading-none transition-colors" onclick="updateQty(${idx}, -1)" title="Decrease">−</button>
+              <span class="font-display text-xs font-bold text-[#0C342C] px-2">${item.qty}</span>
+              <button type="button" class="w-6 h-6 flex items-center justify-center bg-[#E2FBCE] hover:bg-[#076653] hover:text-white border border-[#E2FBCE] text-[#076653] font-bold text-sm leading-none transition-colors" onclick="updateQty(${idx}, 1)" title="Increase">+</button>
             </div>
-            <button type="button" class="flex items-center gap-1 font-display text-xs font-bold text-festive-red hover:text-festive-crimson uppercase tracking-wider transition-colors px-2 py-1" onclick="removeItem(${idx})">
+            <button type="button" class="flex items-center gap-1 font-display text-xs font-bold text-[#076653] hover:text-[#0C342C] uppercase tracking-wider transition-colors px-2 py-1" onclick="removeItem(${idx})">
               <span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
               <span class="">Remove</span>
             </button>
@@ -176,66 +176,54 @@ window.renderCart = function() {
     }
   } else if (confirmationList) {
     if (confirmedOrder.length === 0) {
-      confirmationList.innerHTML = `<div class="py-8 text-center text-on-surface-variant font-sans text-sm">Your order is empty.</div>`;
+      confirmationList.innerHTML = `<div class="py-8 text-center text-[#365F56] font-sans text-sm">Your order is empty.</div>`;
     } else {
       confirmationList.innerHTML = confirmedOrder.map((item, idx) => `
         <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div class="flex items-start gap-4">
-            <div class="w-14 h-14 rounded-lg bg-surface-container flex items-center justify-center border border-outline-variant flex-shrink-0 text-primary">
+            <div class="w-14 h-14 rounded-lg bg-[#E2FBCE] flex items-center justify-center border border-[#E2FBCE] flex-shrink-0 text-[#076653]">
               <span class="material-symbols-outlined text-2xl" data-icon="star">star</span>
             </div>
             <div>
               <div class="flex items-center gap-2">
-                <span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-bold uppercase border border-outline-variant">FESTIVE ITEM</span>
-                <h3 class="text-label-lg font-label-lg text-on-surface font-semibold">${item.title}</h3>
+                <span class="text-label-sm font-label-sm px-2 py-0.5 rounded bg-[#E2FBCE] text-[#076653] font-bold uppercase border border-[#076653]/30">FESTIVE ITEM</span>
+                <h3 class="font-serif text-base font-bold text-[#0C342C]">${item.title}</h3>
               </div>
-              <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">
+              <p class="text-body-sm font-body-sm text-[#365F56] mt-0.5">
                 Ceremonial pyrotechnic assortment.
               </p>
-              <p class="text-label-sm font-label-sm text-tertiary mt-1">Quantity: ${item.qty} Unit(s) · Sivakasi Sealed</p>
+              <p class="text-label-sm font-label-sm text-[#076653] mt-1 font-semibold">Quantity: ${item.qty} Unit(s) · Sivakasi Sealed</p>
             </div>
           </div>
           <div class="text-right sm:flex-shrink-0">
-            <p class="text-headline-sm font-headline-sm text-on-surface font-semibold">₹${(item.price * item.qty).toLocaleString('en-IN')}</p>
+            <p class="text-headline-sm font-headline-sm text-[#076653] font-bold">₹${(item.price * item.qty).toLocaleString('en-IN')}</p>
           </div>
         </div>
       `).join('');
     }
   } else if (drawerList) {
     if (cart.length === 0) {
-      // Determine stylistic version based on classes of the container's parent
-      const isModern = drawerList.closest('.bg-\\[\\#FFF8E8\\]') || drawerList.closest('.bg-festive-cream');
-      if (isModern) {
-        drawerList.innerHTML = `
-          <div class="text-center py-12 text-[#69534c]">
-            <span class="material-symbols-outlined text-5xl text-[#fe932c] mb-2">shopping_basket</span>
-            <p class="font-outfit text-base font-bold text-[#241815]">Your Burst Box is empty</p>
-            <p class="text-xs mt-1">Add items from the catalog to ignite celebrations!</p>
-          </div>
-        `;
-      } else {
-        drawerList.innerHTML = `
-          <div class="text-center py-12 text-text-muted">
-            <span class="material-symbols-outlined text-5xl text-primary mb-2">shopping_basket</span>
-            <p class="font-outfit text-base font-bold text-text-dark">Your Burst Box is empty</p>
-            <p class="text-xs mt-1">Add items from the catalog to ignite celebrations!</p>
-          </div>
-        `;
-      }
+      drawerList.innerHTML = `
+        <div class="text-center py-12 text-[#365F56]">
+          <span class="material-symbols-outlined text-5xl text-[#076653] mb-2">shopping_basket</span>
+          <p class="font-outfit text-base font-bold text-[#0C342C]">Your Burst Box is empty</p>
+          <p class="text-xs mt-1 text-[#365F56]">Add items from the catalog to ignite celebrations!</p>
+        </div>
+      `;
     } else {
       drawerList.innerHTML = cart.map((item, idx) => `
-        <div class="cart-item bg-white p-3.5 rounded-lg border border-festive-gold/50 shadow-sm flex items-center justify-between gap-3" data-name="${item.title}">
+        <div class="cart-item bg-white p-3.5 rounded-lg border border-[#E2FBCE] shadow-sm flex items-center justify-between gap-3" data-name="${item.title}">
           ${item.img ? `<img src="${item.img}" class="w-12 h-12 object-cover rounded shrink-0" alt="${item.title}" />` : ''}
           <div class="flex-1 min-w-0">
-            <h4 class="font-outfit text-sm font-bold text-text-dark truncate">${item.title}</h4>
-            <p class="font-outfit text-primary font-bold text-sm">₹<span class="item-price">${(item.price * item.qty).toLocaleString('en-IN')}</span></p>
+            <h4 class="font-serif text-sm font-bold text-[#0C342C] truncate">${item.title}</h4>
+            <p class="font-outfit text-[#076653] font-black text-sm">₹<span class="item-price">${(item.price * item.qty).toLocaleString('en-IN')}</span></p>
           </div>
-          <div class="flex items-center border border-festive-gold rounded bg-festive-cream">
-            <button type="button" onclick="updateQty(${idx}, -1)" class="px-2 py-0.5 text-text-dark hover:text-primary font-bold">-</button>
-            <span class="item-qty px-2 py-0.5 text-xs font-outfit font-bold">${item.qty}</span>
-            <button type="button" onclick="updateQty(${idx}, 1)" class="px-2 py-0.5 text-text-dark hover:text-primary font-bold">+</button>
+          <div class="flex items-center border border-[#E2FBCE] rounded bg-[#FFFDEE]">
+            <button type="button" onclick="updateQty(${idx}, -1)" class="px-2 py-0.5 text-[#0C342C] hover:text-[#076653] font-bold">-</button>
+            <span class="item-qty px-2 py-0.5 text-xs font-outfit font-bold text-[#0C342C]">${item.qty}</span>
+            <button type="button" onclick="updateQty(${idx}, 1)" class="px-2 py-0.5 text-[#0C342C] hover:text-[#076653] font-bold">+</button>
           </div>
-          <button type="button" onclick="removeItem(${idx})" class="text-text-muted hover:text-primary text-xs font-semibold uppercase">Remove</button>
+          <button type="button" onclick="removeItem(${idx})" class="text-[#365F56] hover:text-[#076653] text-xs font-bold uppercase">Remove</button>
         </div>
       `).join('');
     }
@@ -278,3 +266,4 @@ window.proceedToCheckout = function(e) {
 };
 
 document.addEventListener('DOMContentLoaded', renderCart);
+
