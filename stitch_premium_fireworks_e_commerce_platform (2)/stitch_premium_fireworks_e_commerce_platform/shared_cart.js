@@ -318,27 +318,18 @@ window.closeDrawer = function() {
 // Universal Mobile Menu Toggle
 window.toggleMobileNav = function(forceState) {
   const mobileNav = document.getElementById('mobileNavDrawer');
-  const mobileBackdrop = document.getElementById('mobileNavBackdrop');
   const mobileIcon = document.getElementById('mobileNavIcon');
   if (!mobileNav) return;
 
-  const isHidden = mobileNav.classList.contains('hidden') || mobileNav.classList.contains('-translate-y-full') || mobileNav.classList.contains('opacity-0');
+  const isHidden = mobileNav.classList.contains('hidden');
   const shouldOpen = typeof forceState === 'boolean' ? forceState : isHidden;
 
   if (shouldOpen) {
-    mobileNav.classList.remove('hidden', '-translate-y-full', 'opacity-0', 'pointer-events-none');
-    if (mobileBackdrop) {
-      mobileBackdrop.classList.remove('hidden', 'opacity-0', 'pointer-events-none');
-      mobileBackdrop.classList.add('opacity-100');
-    }
+    mobileNav.classList.remove('hidden');
     if (mobileIcon) mobileIcon.innerText = 'close';
     document.body.style.overflow = 'hidden';
   } else {
-    mobileNav.classList.add('hidden', '-translate-y-full', 'opacity-0', 'pointer-events-none');
-    if (mobileBackdrop) {
-      mobileBackdrop.classList.add('hidden', 'opacity-0', 'pointer-events-none');
-      mobileBackdrop.classList.remove('opacity-100');
-    }
+    mobileNav.classList.add('hidden');
     if (mobileIcon) mobileIcon.innerText = 'menu';
     document.body.style.overflow = '';
   }
