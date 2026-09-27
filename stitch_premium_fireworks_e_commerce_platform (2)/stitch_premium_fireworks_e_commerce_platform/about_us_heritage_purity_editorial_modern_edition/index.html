@@ -59,6 +59,17 @@
     };
   </script>
 <style>
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative;
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
     body {
       background-color: #FFFDEE;
       color: #0C342C;
@@ -176,7 +187,7 @@ WhatsApp Desk
 <div aria-labelledby="slide-over-title" aria-modal="true" class="fixed inset-0 z-50 overflow-hidden hidden" id="cart-drawer" role="dialog">
 <div class="absolute inset-0 bg-[#0C342C]/40 backdrop-blur-sm transition-opacity" id="cartDrawerBackdrop" onclick="toggleCartDrawer(false)"></div>
 <div class="fixed inset-y-0 right-0 max-w-full flex">
-<div class="w-screen max-w-md bg-[#FFFDEE] border-l border-[#E2FBCE] shadow-2xl flex flex-col justify-between" id="cartDrawer">
+<div class="w-full max-w-md bg-[#FFFDEE] border-l border-[#E2FBCE] shadow-2xl flex flex-col justify-between" id="cartDrawer">
 <!-- Drawer Header -->
 <div class="p-5 sm:p-3.5 sm:p-4 border-b border-[#E2FBCE] flex items-center justify-between bg-[#E2FBCE]/30">
 <div class="flex items-center gap-2">
@@ -211,7 +222,7 @@ WhatsApp Desk
 <!-- HERO BANNER: Editorial Magazine Layout -->
 <section class="relative bg-gradient-to-b from-[#FFFDEE] via-[#E2FBCE]/20 to-[#FFFDEE] border-b border-[#E2FBCE] py-3.5 sm:py-6 overflow-hidden">
 <!-- Subtle festive watermark badge -->
-<div class="absolute -right-16 -top-16 w-96 h-96 rounded-full bg-[#E2FBCE]/40 blur-3xl pointer-events-none"></div>
+<div class="absolute right-0 -top-16 w-96 h-96 rounded-full bg-[#E2FBCE]/40 blur-3xl pointer-events-none"></div>
 <div class="max-w-7xl mx-auto px-6">
 <!-- Eyebrow Ribbon -->
 <div class="flex items-center gap-2 mb-2 sm:mb-3">

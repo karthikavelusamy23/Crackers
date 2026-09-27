@@ -13,6 +13,17 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#076653", "primary-hover": "#0C342C", "primary-container": "#E2FBCE", secondary: "#0C342C", "secondary-hover": "#06231D", "secondary-container": "#E3EF26", tertiary: "#076653", "tertiary-container": "#E2FBCE", background: "#FFFDEE", surface: "#FFFFFF", "surface-container-lowest": "#ffffff", "surface-container-low": "#FFFDEE", "surface-container": "#F5FDEB", "surface-container-high": "#E2FBCE", "surface-container-highest": "#D0F5B4", "on-surface": "#0C342C", "on-surface-variant": "#365F56", outline: "#E2FBCE", "outline-variant": "rgba(226, 251, 206, 0.6)", "gold-accent": "#E3EF26", "marigold-light": "#FFFDEE", "apricot-subtle": "#E2FBCE", "festive-gold": "#E3EF26", "festive-gold-dark": "#076653", "on-background": "#0C342C", "secondary-fixed-dim": "#E2FBCE", "on-primary-container": "#FFFFFF", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "on-secondary": "#0C342C", "error-container": "#ffdad6", "surface-dim": "#E2FBCE", "inverse-on-surface": "#FFFDEE", "primary-fixed-dim": "#E2FBCE", "on-error-container": "#93000a", "on-secondary-container": "#0C342C", "surface-bright": "#FFFFFF", "on-tertiary-fixed": "#0C342C", "on-secondary-fixed": "#0C342C", "on-primary-fixed": "#0C342C", "on-primary-fixed-variant": "#0C342C", "on-secondary-fixed-variant": "#0C342C", "secondary-fixed": "#E2FBCE", "primary-fixed": "#E2FBCE", "tertiary-fixed": "#D0F5B4", "surface-tint": "#076653", "inverse-primary": "#E2FBCE", error: "#ba1a1a", "on-tertiary-container": "#FFFFFF", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#0C342C", "inverse-surface": "#06231D", "tertiary-fixed-dim": "#E2FBCE", "surface-variant": "#E2FBCE"}, fontFamily: {sans: ["'Plus Jakarta Sans'", "sans-serif"], body: ["'Plus Jakarta Sans'", "sans-serif"], outfit: ["'Outfit'", "sans-serif"], headline: ["'Outfit'", "sans-serif"], display: ["'Outfit'", "sans-serif"], serif: ["'Playfair Display'", "serif"], playfair: ["'Playfair Display'", "serif"], subheading: ["'Playfair Display'", "serif"], label: ["'Outfit'", "sans-serif"]}, fontSize: {}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
 <style>
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative;
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   /* Typography System */
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;

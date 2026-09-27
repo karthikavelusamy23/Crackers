@@ -115,6 +115,17 @@
     }
   </script>
 <style>
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative;
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
@@ -175,8 +186,8 @@
 <!-- Mobile Navigation Drawer -->
 <div id="mobileNavDrawer" class="hidden md:hidden fixed inset-0 z-50 overflow-hidden" role="dialog" aria-modal="true">
 <div class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="toggleMobileNav(false)"></div>
-<div class="fixed inset-y-0 left-0 max-w-full flex pr-10">
-<div class="w-screen max-w-xs bg-[#FFFDEE] border-r border-[#E2FBCE] shadow-2xl flex flex-col justify-between p-6">
+<div class="fixed inset-y-0 left-0 max-w-full flex">
+<div class="w-full max-w-xs bg-[#FFFDEE] border-r border-[#E2FBCE] shadow-2xl flex flex-col justify-between p-6">
 <div class="space-y-6">
 <div class="flex items-center justify-between pb-4 border-b border-[#E2FBCE]">
 <div class="flex items-center gap-2">
@@ -236,7 +247,7 @@
 <!-- AUSPICIOUS BANNER / HEADER CONFIRMATION POD -->
 <div class="w-full bg-white border-2 border-outline rounded-xl p-3.5 sm:p-5 mb-4 relative overflow-hidden shadow-sm">
 <!-- Decorative Corner Accent -->
-<div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#E2FBCE] opacity-40 pointer-events-none"></div>
+<div class="absolute -top-16 right-0 w-48 h-48 rounded-full bg-[#E2FBCE] opacity-40 pointer-events-none"></div>
 <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-5">
 <!-- Green Auspicious Seal -->

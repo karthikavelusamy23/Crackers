@@ -12,6 +12,17 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-warm": "#FFFDEE", "surface-pastel": "#E2FBCE", "surface-card": "#FFFFFF", "border-gold": "#E2FBCE", "border-gold-dark": "#C8F2A6", "festive-red": "#076653", "festive-crimson": "#0C342C", "festive-gold": "#E3EF26", "festive-amber": "#076653", "text-main": "#0C342C", "text-muted": "#365F56", "badge-bg": "#E2FBCE", primary: "#076653", "primary-hover": "#0C342C", secondary: "#0C342C", mango: "#E3EF26", "ocean-water": "#E2FBCE", "oiler-navy": "#0C342C", "text-dark": "#0C342C", "on-surface-variant": "#365F56", "on-background": "#0C342C", "secondary-fixed-dim": "#E2FBCE", "on-primary-container": "#FFFFFF", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "on-secondary": "#0C342C", "error-container": "#ffdad6", "surface-dim": "#E2FBCE", "surface-container": "#F5FDEB", surface: "#FFFFFF", "primary-container": "#E2FBCE", "inverse-on-surface": "#F5FDEB", "primary-fixed-dim": "#E2FBCE", background: "#FFFDEE", "on-error-container": "#93000a", "on-secondary-container": "#0C342C", "surface-bright": "#FFFFFF", "on-tertiary-fixed": "#0C342C", "on-secondary-fixed": "#0C342C", "on-primary-fixed": "#0C342C", "on-primary-fixed-variant": "#0C342C", "on-secondary-fixed-variant": "#0C342C", "secondary-fixed": "#E2FBCE", "primary-fixed": "#E2FBCE", "tertiary-container": "#076653", "surface-container-high": "#E2FBCE", "secondary-container": "#E3EF26", "surface-container-lowest": "#ffffff", outline: "#E2FBCE", "tertiary-fixed": "#E2FBCE", "on-surface": "#0C342C", "surface-tint": "#076653", "inverse-primary": "#E2FBCE", tertiary: "#076653", error: "#ba1a1a", "surface-container-highest": "#E2FBCE", "outline-variant": "#E2FBCE", "on-tertiary-container": "#FFFFFF", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#0C342C", "inverse-surface": "#0C342C", "surface-container-low": "#FFFDEE", "tertiary-fixed-dim": "#E2FBCE", "surface-variant": "#E2FBCE"}, fontFamily: {sans: ["'Plus Jakarta Sans'", "sans-serif"], body: ["'Plus Jakarta Sans'", "sans-serif"], outfit: ["'Outfit'", "sans-serif"], headline: ["'Outfit'", "sans-serif"], display: ["'Outfit'", "sans-serif"], serif: ["'Playfair Display'", "serif"], playfair: ["'Playfair Display'", "serif"], subheading: ["'Playfair Display'", "serif"], label: ["'Outfit'", "sans-serif"]}, fontSize: {}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
 <style>
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative;
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
     }
@@ -106,8 +117,8 @@
 <!-- Mobile Navigation Drawer -->
 <div id="mobileNavDrawer" class="hidden md:hidden fixed inset-0 z-50 overflow-hidden" role="dialog" aria-modal="true">
 <div class="fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity" onclick="toggleMobileNav(false)"></div>
-<div class="fixed inset-y-0 left-0 max-w-full flex pr-10">
-<div class="w-screen max-w-xs bg-[#FFFDEE] border-r border-[#E2FBCE] shadow-2xl flex flex-col justify-between p-6">
+<div class="fixed inset-y-0 left-0 max-w-full flex">
+<div class="w-full max-w-xs bg-[#FFFDEE] border-r border-[#E2FBCE] shadow-2xl flex flex-col justify-between p-6">
 <div class="space-y-6">
 <div class="flex items-center justify-between pb-4 border-b border-[#E2FBCE]">
 <div class="flex items-center gap-2">

@@ -12,6 +12,17 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"festive-cream": "#FFFDEE", "festive-champagne": "#FFFDEE", "festive-blush": "#F5FDEB", "festive-peach": "#E2FBCE", "festive-gold": "#E3EF26", "festive-gold-dark": "#076653", primary: "#076653", "primary-hover": "#0C342C", secondary: "#0C342C", "accent-vermilion": "#E3EF26", "text-dark": "#0C342C", "text-muted": "#365F56", "border-gold": "#E2FBCE", "border-light": "#E2FBCE", "lime-bright": "#E3EF26", "mint-pastel": "#E2FBCE", "cream-light": "#FFFDEE", "emerald-green": "#076653", "forest-green": "#0C342C", "dark-spruce": "#06231D", "on-surface-variant": "#365F56", "on-background": "#0C342C", "secondary-fixed-dim": "#E2FBCE", "on-primary-container": "#FFFFFF", "on-primary": "#ffffff", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "error-container": "#ffdad6", "surface-dim": "#E2FBCE", "surface-container": "#F5FDEB", surface: "#FFFFFF", "primary-container": "#E2FBCE", "inverse-on-surface": "#FFFDEE", "primary-fixed-dim": "#E2FBCE", background: "#FFFDEE", "on-error-container": "#93000a", "on-secondary-container": "#0C342C", "surface-bright": "#FFFFFF", "on-tertiary-fixed": "#0C342C", "on-secondary-fixed": "#0C342C", "on-primary-fixed": "#0C342C", "on-primary-fixed-variant": "#0C342C", "on-secondary-fixed-variant": "#0C342C", "secondary-fixed": "#E2FBCE", "primary-fixed": "#E2FBCE", "tertiary-container": "#076653", "surface-container-high": "#E2FBCE", "secondary-container": "#E3EF26", "surface-container-lowest": "#ffffff", outline: "#E2FBCE", "tertiary-fixed": "#D0F5B4", "on-surface": "#0C342C", "surface-tint": "#076653", "inverse-primary": "#E2FBCE", tertiary: "#076653", error: "#ba1a1a", "surface-container-highest": "#E2FBCE", "outline-variant": "#D0F5B4", "on-tertiary-container": "#FFFFFF", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#0C342C", "inverse-surface": "#06231D", "surface-container-low": "#FFFDEE", "tertiary-fixed-dim": "#E2FBCE", "surface-variant": "#E2FBCE"}, fontFamily: {sans: ["'Plus Jakarta Sans'", "sans-serif"], body: ["'Plus Jakarta Sans'", "sans-serif"], outfit: ["'Outfit'", "sans-serif"], headline: ["'Outfit'", "sans-serif"], display: ["'Outfit'", "sans-serif"], serif: ["'Playfair Display'", "serif"], playfair: ["'Playfair Display'", "serif"], subheading: ["'Playfair Display'", "serif"], label: ["'Outfit'", "sans-serif"]}, fontSize: {}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
 <style>
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    position: relative;
+    box-sizing: border-box;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
   /* Typography System */
   body {
     font-family: 'Plus Jakarta Sans', sans-serif;

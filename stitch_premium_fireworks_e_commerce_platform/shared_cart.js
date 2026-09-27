@@ -293,7 +293,7 @@ window.toggleCartDrawer = function(open) {
       backdrop.classList.remove('opacity-100');
       backdrop.classList.add('opacity-0', 'pointer-events-none');
     }
-    drawer.classList.add('translate-x-full');
+    drawer.classList.add('translate-x-full', 'hidden');
     drawer.classList.remove('cart-drawer-open');
     document.body.style.overflow = '';
   }
