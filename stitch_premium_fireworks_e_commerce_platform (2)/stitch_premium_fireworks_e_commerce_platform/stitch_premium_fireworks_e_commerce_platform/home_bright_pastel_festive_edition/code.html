@@ -34,40 +34,61 @@
     box-shadow: 0 14px 30px rgba(217, 56, 30, 0.12);
   }
 </style>
+<style>
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
 </head>
 <body class="bg-festive-cream text-text-dark font-sans antialiased selection:bg-festive-gold selection:text-text-dark min-h-screen flex flex-col">
 <!-- TOP ANNOUNCEMENT BANNER -->
-<div class="bg-festive-peach border-b border-festive-gold/40 text-text-dark py-2 px-4 text-center text-xs md:text-sm font-outfit font-semibold tracking-wider flex items-center justify-center gap-2">
+<div class="bg-festive-peach border-b border-festive-gold/40 text-text-dark py-2 px-3 sm:px-4 text-center text-[11px] sm:text-xs md:text-sm font-outfit font-semibold tracking-wider flex items-center justify-center gap-2 overflow-hidden w-full">
 <span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
 <span class="">DIWALI 2024 FACTORY BOOKINGS OPEN • 100% PESO CERTIFIED GREEN SIVAKASI FIREWORKS • FLAT WHOLESALE PRICING</span>
 </div>
 <!-- TOP APP BAR -->
-<header class="bg-festive-cream/95 backdrop-blur sticky top-0 z-40 border-b border-festive-gold/50 shadow-sm">
-<div class="w-full px-6 md:px-12 max-w-7xl mx-auto flex items-center justify-between h-20">
+<header class="bg-[#FFFDEE]/95 backdrop-blur sticky top-0 z-40 border-b border-[#E2FBCE] shadow-sm w-full">
+<div class="w-full px-4 sm:px-6 md:px-12 max-w-7xl mx-auto flex items-center justify-between h-14 sm:h-16 gap-2">
 <!-- Brand Logo -->
-<a class="flex items-center gap-2.5 group" href="#">
-<div class="w-10 h-10 rounded bg-gradient-to-br from-festive-gold to-secondary flex items-center justify-center text-festive-cream font-bold text-xl shadow-sm">
-<span class="material-symbols-outlined text-white text-[24px]">flare</span>
+<a class="flex items-center gap-2 sm:gap-2.5 group shrink-0 min-w-0" href="../index.html">
+<div style="width:2rem;height:2rem;border-radius:0.375rem;background:linear-gradient(135deg,#E3EF26,#076653);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 3px rgba(0,0,0,0.18);flex-shrink:0;">
+<span class="material-symbols-outlined" style="color:white;font-size:18px;line-height:1;">flare</span>
 </div>
-<div>
-<span class="font-outfit text-2xl tracking-widest text-primary uppercase font-extrabold block leading-none">JANAKI&amp;CO</span>
-<span class="text-[10px] tracking-widest text-secondary font-bold uppercase">JANAKI&amp;CO</span>
+<div class="min-w-0">
+<span class="font-outfit text-base sm:text-2xl tracking-widest text-[#076653] uppercase font-extrabold block leading-none truncate">JANAKI&amp;CO</span>
+<span class="text-[8px] sm:text-[10px] tracking-widest text-[#0C342C] font-bold uppercase block truncate">SIVAKASI MASTERS</span>
 </div>
 </a>
-<!-- Navigation Links -->
-<nav class="hidden md:flex items-center space-x-8">
-<a class="text-primary font-outfit text-sm font-bold uppercase tracking-wider border-b-2 border-primary pb-1" href="#">Home</a>
-<a class="text-text-muted hover:text-primary font-outfit text-sm font-semibold uppercase tracking-wider pb-1 transition-colors" href="#about">About Us</a>
-<a class="text-text-muted hover:text-primary font-outfit text-sm font-semibold uppercase tracking-wider pb-1 transition-colors" href="#cracker-categories">Products</a>
-<a class="text-text-muted hover:text-primary font-outfit text-sm font-semibold uppercase tracking-wider pb-1 transition-colors" href="#festival-offers">Offers</a>
-<a class="text-text-muted hover:text-primary font-outfit text-sm font-semibold uppercase tracking-wider pb-1 transition-colors" href="#contact">Contact</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-6 lg:gap-8 font-outfit text-sm font-semibold uppercase tracking-wider">
+<a class="text-[#076653] border-b-2 border-[#076653] font-bold pb-1" href="../index.html">Home</a>
+<a class="text-[#365F56] hover:text-[#076653] transition-colors pb-1" href="../about_us_heritage_purity_editorial_modern_edition/index.html">About Us</a>
+<a class="text-[#365F56] hover:text-[#076653] transition-colors pb-1" href="../products_bright_pastel_festive_catalog/index.html">Products</a>
+<a class="text-[#365F56] hover:text-[#076653] transition-colors pb-1" href="../contact_store_locator_bright_pastel_edition/index.html">Contact</a>
 </nav>
-<!-- Trailing Action / Burst Box Cart Button -->
-<div class="flex items-center space-x-3">
-<button class="relative bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded flex items-center gap-2.5 transition-all shadow-md active:scale-95 font-outfit text-sm tracking-wider uppercase font-bold" id="openCartBtn" onclick="toggleCartDrawer(true)">
-<span class="material-symbols-outlined text-[20px]">shopping_bag</span>
+<!-- Action Cluster: Burst Box Button + Mobile Hamburger -->
+<div class="flex items-center gap-2 sm:gap-3 shrink-0 ml-auto">
+<button class="bg-[#FFF8E8] border-2 border-[#E3EF26] text-[#0C342C] px-2.5 sm:px-4 py-1.5 sm:py-2 font-outfit text-xs sm:text-sm uppercase font-bold tracking-wider flex items-center gap-1.5 sm:gap-2 hover:bg-[#E3EF26] hover:text-white transition-all duration-150 shrink-0 shadow-sm" id="openCartBtn" onclick="typeof toggleCartDrawer === 'function' ? toggleCartDrawer(true) : (typeof toggleCart === 'function' ? toggleCart(true) : null)" aria-label="Open Burst Box">
+<span class="material-symbols-outlined text-base sm:text-lg" data-icon="shopping_bag">shopping_bag</span>
 <span class="hidden sm:inline">Burst Box</span>
-<span class="bg-festive-champagne text-primary font-black text-xs px-2 py-0.5 rounded-full border border-festive-gold shadow-inner" id="cartBadge">3</span>
+<span class="bg-[#076653] text-white text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 font-bold rounded-full" id="headerCartCount">0</span>
+</button>
+<!-- Mobile Hamburger Button -->
+<button class="md:hidden w-8 h-8 sm:w-9 sm:h-9 rounded bg-[#FFF8E8] hover:bg-[#E2FBCE] border border-[#E3EF26] text-[#076653] flex items-center justify-center transition shrink-0" onclick="toggleMobileNav()" aria-label="Toggle navigation menu">
+<span class="material-symbols-outlined text-xl sm:text-2xl" id="mobileNavIcon">menu</span>
 </button>
 </div>
 </div>
